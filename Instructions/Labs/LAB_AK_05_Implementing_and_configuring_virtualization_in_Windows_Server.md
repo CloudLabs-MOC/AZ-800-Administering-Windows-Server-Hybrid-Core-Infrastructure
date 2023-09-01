@@ -15,7 +15,7 @@ After completing this lab, you'll be able to:
 - Create and configure VMs.
 - Install and configure containers.
 
-## Estimated time: 60 minutes
+## Estimated timing: 60 minutes
 
 ## Lab Setup
 
