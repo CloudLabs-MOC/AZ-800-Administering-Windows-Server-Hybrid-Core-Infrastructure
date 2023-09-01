@@ -16,7 +16,7 @@ After completing this lab, you'll be able to:
 - Deploy Windows Admin Center gateway in Azure.
 - Verify functionality of Windows Admin Center gateway in Azure.
 
-## Estimated time: 90 minutes
+## Estimated timing: 90 minutes
 
 ## Lab setup
 
