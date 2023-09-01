@@ -13,7 +13,7 @@ After completing this lab, you'll be able to:
 - Deploy and configure DHCP.
 - Deploy and configure DNS.
 
-## Estimated time: 60 minutes
+## Estimated timing: 60 minutes
 
 ## Lab Setup
 

@@ -14,7 +14,7 @@ After completing this lab, you’ll be able to:
 - Deploy a new domain controller on Server Core.
 - Configure Group Policy.
 
-## Estimated time: 45 minutes
+## Estimated timing: 45 minutes
 
 ## Lab setup
 

@@ -20,7 +20,7 @@ After completing this lab, you'll be able to:
 - Verify integration between AD DS and Azure AD by testing the synchronization process.
 - Implementing Azure AD integration features in Active Directory, including Azure AD Password Protection for Windows Server Active Directory and SSPR with password writeback.
 
-## Estimated time: 60 minutes
+## Estimated timing: 60 minutes
 
 ## Lab setup
 

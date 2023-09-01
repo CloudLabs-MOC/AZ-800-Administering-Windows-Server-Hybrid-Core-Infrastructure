@@ -14,7 +14,7 @@ After completing this lab, you'll be able to:
 - Implement DNS name resolution in Azure
 - Deprovision the Azure environment
 
-## Estimated time: 60 minutes
+## Estimated timing: 60 minutes
 
 ## Lab setup
 
