@@ -15,7 +15,7 @@ After completing this lab, you'll be able to:
 - Configure Storage Spaces.
 - Implement Storage Spaces Direct.
 
-## Estimated time: 90 minutes
+## Estimated timing: 90 minutes
 
 ## Lab setup
 
