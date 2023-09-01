@@ -10,7 +10,7 @@ Contoso, Ltd. wants to implement several new servers in their environment, and t
 
 - Implement and configure Windows Admin Center
 
-## Estimated time: 45 minutes
+## Estimated timing: 45 minutes
 
 ## Lab setup
 
