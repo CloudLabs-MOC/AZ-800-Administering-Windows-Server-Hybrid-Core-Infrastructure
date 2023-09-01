@@ -21,7 +21,7 @@ After completing this lab, you'll be able to:
 - Configure Windows Server security in Azure VMs.
 - Deprovision the Azure environment.
 
-## Estimated time: 90 minutes
+## Estimated timing: 90 minutes
 
 ## Lab setup
 
