@@ -82,7 +82,7 @@ In this task, you will use the Azure portal to create resource groups and create
    |Setting|Value|
    |---|---|
    |Subscription|the name of the Azure subscription you will be using in this lab.|
-   |Resource group|the name of a new resource group **AZ800**|
+   |Resource group|the name of a new resource group **AZ800-L0601-RG**|
    |Virtual machine name|**az800l06-vm0**|
    |Region|Use the name of an Azure region in which you can provision Azure virtual machines|
    |Availability options|No infrastructure redundancy required|
@@ -205,7 +205,7 @@ In this task, you will use the Azure portal to create resource groups and create
    |Setting|Value|
    |---|---|
    |Subscription|the name of the Azure subscription you are using in this lab|
-   |Resource group|**AZ800**|
+   |Resource group|**AZ800-L0601-RG**|
    |Region|the name of the Azure region into which you can provision Azure VMs|
    |Admin Password|**Pa55w.rd1234**|
 
@@ -219,9 +219,9 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search for and select **Resource groups**.
 
-1. On the **Resource groups** page, select the **AZ800** entry.
+1. On the **Resource groups** page, select the **AZ800-L0601-RG** entry.
 
-1. On the **AZ800** page, on the **Overview** page, review the list of resources, including the Azure VM **az800l06-vm0**.
+1. On the **AZ800-L0601-RG** page, on the **Overview** page, review the list of resources, including the Azure VM **az800l06-vm0**.
 
 1. Within the list of resources, select the Azure VM **az800l06-vm0** entry. 
 
@@ -282,13 +282,13 @@ In this task, you will use the Azure portal to create resource groups and create
    |Setting|Value|
    |---|---|
    |Subscription|the name of the Azure subscription you are using in this lab|
-   |Resource group|**AZ800**|
+   |Resource group|**AZ800-L0601-RG**|
    |Name|**az800l06-vm0-nsg1**|
    |Region|the name of the Azure region into which you provisioned the Azure VM **az800l06-vm0**|
 
 1. On the **Create network security group** page, on the **Basics** tab, select **Review + create**, and then select **Create**.
 
-1. In the Azure portal, browse back to the **AZ800** page, and then in the list of resources, select the entry representing the newly created network security group **az800l06-vm0-nsg1**.
+1. In the Azure portal, browse back to the **AZ800-L0601-RG** page, and then in the list of resources, select the entry representing the newly created network security group **az800l06-vm0-nsg1**.
 
 1. On the **az800l06-vm0-nsg1** page, review the listing of the default inbound and outbound security rules, and then in the **Settings** section, select **Inbound
 security rules**.
@@ -309,7 +309,7 @@ security rules**.
 
 #### Task 2: Configure Inbound HTTP access to an Azure VM
 
-1. In the Azure portal, browse back to the **AZ800** page, and then in the list of resources, select the entry representing the Azure VM **az800l06-vm0**.
+1. In the Azure portal, browse back to the **AZ800-L0601-RG** page, and then in the list of resources, select the entry representing the Azure VM **az800l06-vm0**.
 
 1. On the **az800l06-vm0** page, under **Settings** section select **Networking**.
 
@@ -348,7 +348,7 @@ security rules**.
 
 >**Note**: This task is necessary to trigger re-evaluation of the JIT status of the Azure VM. By default, this might take up to 24 hours.
 
-1. In the Azure portal, browse back to the **AZ800** page, and then in the list of resources, select the entry representing the Azure VM **az800l06-vm0**.
+1. In the Azure portal, browse back to the **AZ800-L0601-RG** page, and then in the list of resources, select the entry representing the Azure VM **az800l06-vm0**.
 
 1. On the **az800l06-vm0** page, select **Configuration**. 
 
