@@ -229,11 +229,11 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. Browse back to the **AZ800** page, and in the **Settings** section, select **Deployments**.
 
-1. On the **AZ800 \| Deployments** page, select the **Microsoft.Template** link.
+1. On the **AZ800-L0601-RG | Deployments** page, select the **Microsoft.Template** link.
 
    ![Picture 1](media/template.png)
 
-1. On the **Microsoft.Template \| Overview** page, select **Template**, and note that this is the same template you used for deployment.
+1. On the **Microsoft.Template | Overview** page, select **Template**, and note that this is the same template you used for deployment.
 
 ## Exercise 4: Configuring administrative access to Azure VMs running Windows Server
 
