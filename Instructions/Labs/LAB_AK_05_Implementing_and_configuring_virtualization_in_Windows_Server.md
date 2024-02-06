@@ -201,6 +201,7 @@ After this exercise, you should have used Hyper-V Manager and Windows Admin Cent
    Install-PackageProvider -Name NuGet -Force
    Install-Module PowerShellGet -RequiredVersion 2.2.4 -SkipPublisherCheck
    ```
+ 	**Note:**  Copy and execute the commands one by one. 
 1. When prompted to confirm the installation of modules from an untrusted repository, press the **A** key, and then press Enter.
 
 1. After the installation completes, enter the following command, and then press Enter to restart **SEA-SVR1**:
