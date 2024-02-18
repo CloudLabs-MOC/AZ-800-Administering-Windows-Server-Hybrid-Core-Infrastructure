@@ -258,9 +258,13 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 1. When prompted with a **WARNING** message to sign in, copy the nine-character code in the warning message to the Clipboard.
 
+    ![](.\media\1.png)
+
 1. Switch to the Microsoft Edge window displaying the Azure portal, open a new tab by selecting **+**, and then, on the new tab, browse to **https://microsoft.com/devicelogin**.
 
 1. In Microsoft Edge, in the **Enter code** dialog box, paste the code you copied into Clipboard, and then, if needed, sign in with your Azure credentials, on the page displaying the message.
+
+      ![](.\media\02.png)
    
    >**Note**: Are you trying to sign in to Microsoft Azure PowerShell?, select **Continue**, and then close the Microsoft Edge tab you opened in the previous step.
    
@@ -298,9 +302,13 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 1. When prompted with a **WARNING** message to sign in, copy the nine-character code in the warning message to the Clipboard.
 
+    ![](.\media\1.png)
+
 1. Switch to the Microsoft Edge window displaying the Azure portal, open a new tab by selecting **+**, and then, on the new tab, browse to **https://microsoft.com/devicelogin**.
 
 1. In Microsoft Edge, in the **Enter code** dialog box, paste the code you copied into Clipboard, and then, if needed, sign in with your Azure credentials, on the page displaying the message.
+
+    ![](.\media\02.png)
    
    >**Note**: Are you trying to sign in to Microsoft Azure PowerShell?, select **Continue**, and then close the Microsoft Edge tab you opened in the previous step.
    
