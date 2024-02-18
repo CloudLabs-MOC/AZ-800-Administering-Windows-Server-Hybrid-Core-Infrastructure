@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Module 09: Implementing storage solutions in Windows Server",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/Getting-started-V2.md",
+         "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/LAB_AK_09_Implementing_storage_solutions_in_Windows_Server.md",
+        "Order": 2
+      }
+    ]
+  }
+]

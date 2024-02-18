@@ -24,7 +24,7 @@ In this lab, you will perform:
 
 #### Task 1: Deploy AD DS on a new Windows Server Core server
 
-1. Switch to **SEA-ADM1** and, if needed, sign in as **CONTOSO\Administrator** with a password of **Pa55w.rd** (Skip if already done).
+1. Connect to **SEA-ADM1** and, if needed, sign in as **CONTOSO\Administrator** with a password of **Pa55w.rd**.
 
 1. On **SEA-ADM1**, right click **Start**, and then select **Windows PowerShell (Admin)**.
 
@@ -347,5 +347,5 @@ In this lab, you have completed:
 - Create and edit GPO settings.
 - Apply and verify settings on the client computer.
 
-### Proceed to next Lab.
+## You have successfully completed this lab.
 

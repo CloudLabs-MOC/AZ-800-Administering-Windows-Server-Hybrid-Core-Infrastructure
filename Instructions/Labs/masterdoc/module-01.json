@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Module 01: Implementing identity services and Group Policy",
+    "Language": "English",
+    "Files": [
+       {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/Getting-started-V2.md",
+         "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/LAB_AK_01_Implementing_identity_services_and_Group_Policy.md",
+        "Order": 2
+      }
+    ]
+  }
+]

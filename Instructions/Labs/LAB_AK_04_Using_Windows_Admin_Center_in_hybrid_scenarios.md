@@ -77,6 +77,13 @@ In this lab, you will perform:
 
 1. On the **Add subnet** page, set the **Subnet address range** to **10.4.3.224/27**, and then select **Save** to create the **GatewaySubnet**.
 
+ > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+
 ## Exercise 2: Implementing hybrid connectivity by using the Azure Network Adapter
 
 #### Task 1: Register Windows Admin Center with Azure
@@ -109,7 +116,15 @@ In this lab, you will perform:
    - Username: **CONTOSO\Administrator**
    - Password: **Pa55w.rd**
 
-1. On the **All connections** page, select the **sea-adm1.contoso.com** entry. 
+1. In **Windows Admin Center**, select **Settings** (from the upper-right corner of the page) > **Extensions**. Then select **Extensions**:
+
+   ![](media/extended-network.png) 
+
+1. On the **Available extensions** tab, select **Extended network**, and then select **Install**.
+
+   >**Note**: After a few seconds you should see a message indicating a successful installation.
+
+1. Navigate to **All connections** page, select the **sea-adm1.contoso.com** entry. 
 
 1. In Windows Admin Center, from left pane, in the list of Tools, select **Networks**, and then select **+ Add Azure Network Adapter (Preview)**.
 
@@ -165,6 +180,12 @@ In this lab, you will perform:
 1. On the **Virtual network gateways** page, select **Refresh** and verify that the new entry with the name starting with **WAC-Created-vpngw-ID_NO** appears in the list of virtual network gateways.
 
 >**Note**: The provisioning of the Azure virtual network gateway can take up to 45 minutes. Do not wait for the provisioning to complete but instead proceed to the next exercise.
+
+ > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Exercise 3: Deploying Windows Admin Center gateway in Azure
 
@@ -226,23 +247,51 @@ In this lab, you will perform:
 
 1. When prompted to provide the password for the local Administrator account, enter **Pa55w.rd1234**
 
-   >**Note**: Wait for the provisioning script to complete. This might take about 10 minutes.
+   >**Note**: Wait for the provisioning script to complete. This might take about 10 minutes. If the script displays errors such as the one below, you can proceed to the next task.
 
-1. Verify that the script completed successfully and note the final message providing the URL containing the fully qualified name of the Azure VM that hosts the Windows Admin Center installation.
-
-   >**Note**: Record the fully qualified name of the Azure VM. You will need it later in this lab.
+    ![](media/error.png)  
 
 1. Close the Cloud Shell pane.
 
-#### Task 2: Review results of the script provisioning
+#### Task 2: Manual installation of WAC on the az800l04-vmwac
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search for and select **Resource groups**, and then, on the **Resource groups** page, select the **AZ800-L0401-RG** entry.
+1. Navigate to Virtual machines in the Azure portal and select **az800l04-vmwac**.
 
-1. On the **AZ800-L0401-RG** page, on the **Overview** page, review the list of resources, including the Azure VM **az800l04-vmwac**.
+1. On the left under **Settings**, click **Connect**.
 
-1. In the list of resources, select the Azure VM **az800l04-vmwac** entry, and then, on the **az800l04-vmwac** page, under **Settings** section select **Networking**.
+1. Click on **Download RDP file**.
+
+1. Select **Open File**, then proceed by clicking **Connect** in the warning popup window.
+
+1. Enter the password as **Pa55w.rd1234** and click **OK**.Then, proceed by selecting **Yes**.
+
+1. Once logged in, Select **NO** in the Network blue pane, and subsequently, **close** any open windows.
+
+1. Click the **Start** button and type **Edge**, click **Microsoft edge** and complete the Edge setup wizard.
+
+1. Enter **Windows Admin Center** in the URL field of Microsoft Edge, then click on the first link displayed in the search results.
+
+1. Select the **Download Windows Admin Center** button, then choose **Open file**. Close the Microsoft Edge browser. Proceed by checking the **I accept these terms** box, click **Next** five times, followed by **Install**. Finally, click **Finish** to complete the installation.
+
+   ![](media/windows_admin_center.png) 
+
+1. Navigate to the **Start** menu, right-click, go to **Shut down** or **sign out**, and select **Disconnect**.
+
+#### Task 3: Review results of the script provisioning
+
+1. From **SEA-ADM1**, Navigate to Azure portal and locate the vm named **az800l04-vmwac**.
+
+1. Copy the **Public IP Address** displayed on the Overview page. Next, open the Edge browser, right-click on the URL field, and choose the paste option. Ensure to prepend "https://" to the URL, and append the port number you configured for WAC, such as **443**. The resulting final URL should resemble this: **https://20.232.18.205:443/**. Finally, press the **Enter** key.
+
+1. Navigate back to Azure portal, select the Azure VM **az800l04-vmwac** entry, and then, on the **az800l04-vmwac** page, under **Settings** section select **Networking**.
 
 1. On the **az800l04-vmwac | Networking** page, on the **Inbound port rules** tab, note the entries representing the inbound port rule allowing connectivity on TCP port 5986 and the inbound rule allowing connectivity on TCP port 443.
+
+ > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Exercise 4: Verifying functionality of the Windows Admin Center gateway in Azure
 
@@ -333,4 +382,4 @@ In this lab, you have completed:
 - Deploying Windows Admin Center gateway in Azure
 - Verifying functionality of the Windows Admin Center gateway in Azure
 
-### Proceed to next Lab
+ ## You have successfully completed this lab

@@ -145,7 +145,7 @@ The main tasks for this exercise are as follows:
    |Client Address Space|192.168.0.0/24|
    |Authentication Certificate|Auto-generated Self-signed root and client Certificate|
 
-1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and verify that a new virtual network gateway with the name starting with **WAC-Created-vpngw-** is being provisioned.
+1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and verify that a new virtual network gateway with the name starting with **WAC-Created-vpngw-<inject key="DeploymentId"></inject>** is being provisioned.
 
    >**Note**: The provisioning of the Azure virtual network gateway can take up to 45 minutes. Do not wait for the provisioning to complete but instead proceed to the next exercise.
 

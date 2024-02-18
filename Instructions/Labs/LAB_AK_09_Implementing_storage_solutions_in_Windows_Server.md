@@ -643,4 +643,4 @@ In this lab, you have completed:
 - Configured redundant Storage Spaces
 - Tested the implementation of Storage Spaces Direct
 
-### Proceed to next Lab
+## You have successfully completed this lab.

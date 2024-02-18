@@ -1,4 +1,4 @@
-# Lab 2: Implementing integration between AD DS and Azure AD
+# Lab 2: Implementing integration between AD DS and Microsoft Entra ID
 
 ## Lab scenario
 
@@ -14,11 +14,11 @@ Your goal is to implement pass-through authentication between on-premises AD DS 
 
 In this lab, you will perform:
 
-- Exercise 1: Prepare Azure AD for integration with on-premises AD DS, including adding and verifying a custom domain.
-- Exercise 2: Prepare on-premises AD DS for integration with Azure AD, including running IdFix DirSync Error Remediation Tool.
+- Exercise 1: Prepare Entra ID for integration with on-premises AD DS, including adding and verifying a custom domain.
+- Exercise 2: Prepare on-premises AD DS for integration with Entra ID, including running IdFix DirSync Error Remediation Tool.
 - Exercise 3: Install and configure Microsoft Entra Connect.
-- Exercise 4: Verify integration between AD DS and Azure AD by testing the synchronization process.
-- Exercise 5: Implementing Azure AD integration features in Active Directory, including Azure AD Password Protection for Windows Server Active Directory and SSPR with password writeback.
+- Exercise 4: Verify integration between AD DS and Entra ID by testing the synchronization process.
+- Exercise 5: Implementing Entra ID integration features in Active Directory, including Entra ID Password Protection for Windows Server Active Directory and SSPR with password writeback.
 
 ## Estimated time: 60 minutes
 
@@ -62,6 +62,12 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 
    > **Note**: While, in general, you would use DNS records to verify a domain, this lab doesn't require the use of a verified domain.
 
+   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
 #### Task 2: Create a user with the Global Administrator role
 
 1. On **SEA-ADM1**, navigate back to the **Microsoft Entra ID** page in the Azure portal, from the left-hand navigation pane select **Users**.
@@ -83,6 +89,12 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 1. Under **Assignments** tab , select **+ Add role** and on **Directory roles** page, from the list of roles, select **Global administrator**, and then select **Select**.
 
 1. On the **Create new user** page, select **Next: Review + Create** and **Create**.
+
+   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 #### Task 3: Change the password for the user with the Global Administrator role
 
@@ -251,6 +263,12 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 
 1. Select **Edit properties**, select **All** tab, and review the attributes of the user account that was synced from Microsoft Entra ID.
 
+   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+   
 ## Exercise 5: Implementing Azure AD integration features in AD DS
 
 #### Task 1: Enable self-service password reset in Azure
@@ -259,15 +277,9 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 
 1. On the **Microsoft Entra ID** page, from the left-hand navigation pane, select **Licenses**.
 
-1. On the **Licenses** page, select **All products**.
+1. On the **Licenses** page, select **All products** under **Manage**.
 
-1. On the **All products** page, select **+ Try/Buy**.
-
-1. On the **Activate** page, under **Microsoft Entra ID PREMIUM P2**, select **Free trial**, and then select **Activate**.
-
-1. Browse to the **All products** page and select **Microsoft Entra ID Premium P2**.
-
-1. On the **Microsoft Entra ID Premium P2 \| Licensed users** page, select **+ Assign**.
+1. Browse to the **All products** page and select **Microsoft Entra ID Premium P2** and click on **+ Assign**.
 
 1. On the **Assign license** page, select **+ Add users and groups**.
 
@@ -287,9 +299,9 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 
 #### Task 2: Enable password writeback in Microsoft Entra Connect
 
-1. On **SEA-ADM1**, on the **Start** menu, expand **Microsoft Entra Connect**, and then select **Microsoft Entra Connect**.
+1. On **SEA-ADM1**, on the **Start** menu, expand **Azure AD Connect**, and then select **Azure AD Connect**.
 
-1. In the **Microsoft Microsoft Entra ID Connect** window, select **Configure**.
+1. In the **Azure AD Connect** window, select **Configure**.
 
 1. On the **Additional tasks** page, select **Customize synchronization options**, and then select **Next**.
 
@@ -309,11 +321,11 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, and **AZ-800T
 
 1. On the **Configuration complete** page, select **Exit**.
 
-#### Task 3: Enable pass-through authentication in Azure AD Connect
+#### Task 3: Enable pass-through authentication in Microsoft Entra Connect
 
 1. On **SEA-ADM1**, on the **Start** menu, expand **Azure AD Connect**, and then select **Azure AD Connect**.
 
-1. In the **Microsoft Microsoft Entra ID Connect** window, select **Configure**.
+1. In the **Azure AD Connect** window, select **Configure**.
 
 1. On the **Additional tasks** page, select **Change user sign-in**, then select **Next**.
 

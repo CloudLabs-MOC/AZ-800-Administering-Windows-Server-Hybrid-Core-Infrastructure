@@ -98,13 +98,21 @@ For this lab, you'll use the available VM environment and an Azure AD tenant.
 
 1. In the left pane, under **Gateway** section, select **Extensions**. Review the available extensions.
 
-1. Select the **Security (Preview)** extension, then right click and select **Install**. The extension will install and Windows Admin Center will refresh.
+   ![](media/lab3-t3-1.png) 
+
+1. Select the **Security (Preview) and DNS** extension, then right click and select **Install**. The extension will install and Windows Admin Center will refresh.
+
+   ![](media/lab3-t3-2.png) 
+
+   ![](media/lab3-t3-3.png) 
 
    > **Note**: If the **Security (Preview)** extension is not available, choose another Microsoft extension.
 
 1. In the details pane, select **Installed extensions** and verify that the list includes the extension you just installed.
 
 1. On the top menu, next to **Settings**, select the drop-down arrow, and then select **Server Manager**.
+
+   ![](media/lab3-t3-4.png)
 
 1. On the **Server connections** page, select the **sea-dc1.contoso.com** link.
 
@@ -115,7 +123,11 @@ For this lab, you'll use the available VM environment and an Azure AD tenant.
 
 1. To install the DNS PowerShell tools, in the left pane, in the list of **Tools**, select **DNS**, and then select **Install**. The tools will take less than a minute to install.
 
+   ![](media/lab3-t3-6.png)
+
 1. Select the **Contoso.com** zone and review the list of its DNS records.
+
+   ![](media/lab3-t3-7.png)
 
 #### Task 4: Verify remote administration
 
@@ -186,4 +198,4 @@ In this lab, you have completed:
 - Verify remote administration
 - Administer servers with Remote PowerShell
 
-### Proceed to next exercise
+## You have successfully completed this lab.

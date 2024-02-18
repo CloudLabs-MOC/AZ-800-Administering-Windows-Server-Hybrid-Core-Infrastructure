@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Module 05: Implementing and configuring virtualization in Windows Server",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/Getting-started-V2.md",
+         "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/LAB_AK_05_Implementing_and_configuring_virtualization_in_Windows_Server.md",
+        "Order": 2
+      }
+    ]
+  }
+]

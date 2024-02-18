@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/selfpaced/Instructions/Labs/Getting-started-V2.md",
+         "Order": 1
+      }
+    ]
+  }
+]

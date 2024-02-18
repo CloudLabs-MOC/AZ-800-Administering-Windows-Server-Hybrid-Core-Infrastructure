@@ -220,7 +220,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
 
 1. Select **Run diagnostic tests** and wait until results of the connectivity check are returned. Note that the status is **Unreachable**.
 
-      ![](media/mod814.png)
+      ![](media/Ex-1-T3-S8.png)
 
     > **Note**: This is expected because the two spoke virtual networks are not peered with each other and virtual network peering is not transitive.
 
@@ -230,7 +230,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
 
 1. On the **Virtual machines** page, in the list of virtual machines, select **az800l08-vm0**.
 
-1. On the **az800l08-vm0** virtual machine page, from the left navigation pane, under the **Networking** section, select **Networking settings**.
+1. On the **az800l08-vm0** virtual machine page, from the left navigation pane, under the **Networking** section, select **Network settings**.
 
 1. Select the **az800l08-nic0** link next to the **Network interface** label, and then, on the **az800l08-nic0** network interface page, from the left navigation pane, under **Settings** section, select **IP configurations**.
 
@@ -301,7 +301,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
 
     > **Note**: **10.80.0.4** represents the private IP address of **az800l08-vm0**. 
 
-    ![](media/mod811.png)
+    ![](media/Ex-1-T4-S15.png)
 
 1. Select **Add**.
 
@@ -376,7 +376,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
 
 1. Select **Run diagnostic tests** and wait until results of the connectivity check are returned. Verify that the status is **Reachable**. Review the network path and note that the traffic was routed via **10.80.0.4**, assigned to the **az800l08-nic0** network adapter. 
 
-     ![](media/mod809.png)
+     ![](media/Ex-1-T4-S32-1.png)
 
     > **Note**: This is expected because the traffic between spoke virtual networks is now routed via the virtual machine located in the hub virtual network, which functions as a router.
 
@@ -421,6 +421,8 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
     | Virtual network | **az800l08-vnet0 (AZ800-L0801-RG)** |
     | Enable auto registration | selected |
 
+    ![](media/Ex-2-T1-S6.png)
+
     >**Note:** Wait for the virtual network link to be created. This should take less than 1 minute.
 
 1. Repeat the previous step to create virtual network links (with auto registration enabled) named **az800l08-vnet1-link** and **az800l08-vnet2-link** for the virtual networks **az800l08-vnet1** and **az800l08-vnet2**, respectively.
@@ -439,12 +441,10 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
 
 1. On **SEA-ADM1**, in the Microsoft Edge window displaying the Azure portal, browse back to the **Network Watcher** page.
 
-1. On the **Network Watcher** under **Network diagnostic tools** section, select **Connection troubleshoot** page, initiate a check with the following settings (leave others with their default values):
+1. On the **Network Watcher** under **Network diagnostic tools** section, select **Connection troubleshoot** option, initiate a check with the following settings (leave others with their default values):
 
     | Setting | Value |
     | --- | --- |
-    | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **AZ800-L0801-RG** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az800l08-vm1** |
     | Destination | **Specify manually** |
@@ -453,9 +453,11 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
     | Protocol | **TCP** |
     | Destination Port | **3389** |
 
+    ![](media/Ex-2-T2-S2.png)
+
 1. Select **Run diagnostic tests** and wait until the results of the connectivity check are returned. Verify that the status is **Reachable**. 
 
-     ![](media/mod805.png)
+     ![](media/Ex-2-T2-S3-1.png)
 
     >**Note**: This is expected because the target fully qualified domain name (FQDN) is resolvable via the Azure private DNS zone. 
 
@@ -494,7 +496,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1** and **AZ-800T00A-ADM1** must be running
     | TTL unit | **Hours** |
     | IP address | 20.30.40.50 |
 
-    ![](media/mod803.png)
+    ![](media/Ex-2-T2-S6.png)
 
     >**Note**: The IP address and the corresponding name are entirely arbitrary. They are meant to provide a very simple example illustrating implementing public DNS records, rather than emulate a real world scenario, which would require purchasing a namespace from a DNS registrar. 
 
