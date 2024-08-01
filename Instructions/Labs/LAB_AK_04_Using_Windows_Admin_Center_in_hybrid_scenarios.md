@@ -151,7 +151,7 @@ In this lab, you will perform:
 1. In Windows Admin Center, verify that the sign in was successful and close the newly opened tab of the Microsoft Edge window.
 
 1. In the **Get started with Azure in Windows Admin Center** pane, ensure that **Microsoft Entra application** is set to **Create new**, and then select **Connect**.
->**Note**: Please wait until it successfully connected to Azure AD.
+	>**Note**: Please wait until it successfully connected to Azure AD.
 
 1. In the listing of the steps of the registration procedure, select **Sign in**. This will open a pop-up window labeled **Permissions requested**.
 

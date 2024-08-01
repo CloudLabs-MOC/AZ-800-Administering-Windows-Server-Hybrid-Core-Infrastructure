@@ -206,7 +206,7 @@ For this lab, you'll use the available VM environment.
 
 1. Refresh the page, select **Power**, select **Shut down**, and then select **Yes** to confirm.
 
-1. From the lefy navigation menu, in the **Tools** list, select **Virtual switches (1)** and identify the **existing switches (2)**.
+1. From the left navigation menu, in the **Tools** list, select **Virtual switches (1)** and identify the **existing switches (2)**.
 
    ![](media/virtualswitch.png)
 

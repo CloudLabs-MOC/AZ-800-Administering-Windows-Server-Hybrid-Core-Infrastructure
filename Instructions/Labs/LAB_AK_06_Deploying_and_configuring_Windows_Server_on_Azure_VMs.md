@@ -56,6 +56,8 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
 1. In the **Enter password** dialog box, copy and paste * Password: <inject key="AzureAdUserPassword"></inject> and then select **Sign in**.
 
+1. If **Action required** pop-up window appears, click on **Ask later**.
+
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
    >**Note**: Skip the remaining steps in this task and proceed directly to the next one if you have already enabled Microsoft Defender for Cloud in your Azure subscription.
