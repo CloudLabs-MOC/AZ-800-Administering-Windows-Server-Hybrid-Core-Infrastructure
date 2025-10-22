@@ -88,9 +88,9 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
       ![Enter Your Username](media/sc900-image-1.png)
  
-3. Next, provide your password:
+3. Next, provide your Temporary Access Pass:
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
       ![Enter Your Password](media1/ag2.png)
 
