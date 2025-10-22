@@ -25,7 +25,7 @@ In this lab, you will perform:
 
 1. On the **HOSTVM (1)** dropdown menu, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media/AZ-800-l1-1v2.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**  
 
