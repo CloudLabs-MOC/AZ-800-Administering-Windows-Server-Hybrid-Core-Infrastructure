@@ -46,7 +46,7 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
  
      ![Enter Your Username](./media/signin.png)
  
-3. Next, provide your password:
+3. Next, provide the Temporary Access Pass:
  
    - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
