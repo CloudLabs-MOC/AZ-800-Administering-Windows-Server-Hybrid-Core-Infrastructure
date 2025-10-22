@@ -36,10 +36,10 @@ In this lab, you will perform:
 
       ![Enter Your Username](./media/signin.png)
 
-1. In the **Enter password** dialog box, copy and paste 
+1. In the **Enter Temporary Access Pass** dialog box, copy and paste 
     - Password: <inject key="AzureAdUserPassword"></inject> and then select **Sign in**.
 
-      ![Enter Your Password](./media/signin1.png)  
+      ![Enter Your Password](./imagesa/pass.png)  
 
 1. If **Action Required** pop-up window appears, click on **Ask later**.
    
@@ -78,7 +78,7 @@ In this lab, you will perform:
    |Settings|Value|
    |--------|-----|
    |Resource group| **Use existing > AZ800-L0801-RG (1)**|
-   |Storage account| **blob<inject key="DeploymentID" enableCopy="false"/> (2)**|
+   |Storage account name| **blob<inject key="DeploymentID" enableCopy="false"/> (2)**|
    |File share| **fs<inject key="DeploymentID" enableCopy="false"/> (3)**|
    |Region| **East US (4)**|
 
@@ -148,13 +148,12 @@ In this lab, you will perform:
     | Setting | Value |
     | --- | --- |
     | Peering link name | **az800l08-vnet1_to_az800l08-vnet0 (1)** |
-    | Virtual network deployment model | **Resource manager (2)** |
-    | Subscription | Leave the default subscription **(3)** |
-    | Remote virtual network: Virtual network | **az800l08-vnet1(4)** |
-    | Allow 'az800l08-vnet1' to access 'az800l08-vnet0' | **Select the checkbox (5)** |
-    | Allow 'az800l08-vnet1' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox (6)** |
+    | Subscription | Leave the default subscription **(2)** |
+    | Remote virtual network: Virtual network | **az800l08-vnet1(3)** |
+    | Allow 'az800l08-vnet1' to access 'az800l08-vnet0' | **Select the checkbox (4)** |
+    | Allow 'az800l08-vnet1' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox (5)** |
 
-    ![](media/AZ-800-l8-8.png)
+    ![](imagesa/t2s5.png)
 
 1. Specify the following settings for **Local virtual network** (leave others with their default values), and then select **Add (4)**:
 
@@ -180,19 +179,23 @@ In this lab, you will perform:
 
     | Setting | Value |
     | --- | --- |
-    | Peering link name | **az800l08-vnet2_to_az800l08-vnet0** |
-    | Virtual network deployment model | **Resource manager** |
-    | Virtual network | **az800l08-vnet2** |    
-    | Allow 'az800l08-vnet2' to access 'az800l08-vnet0' | **Select the checkbox**|
-    | Allow 'az800l08-vnet2' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox** |
+    | Peering link name | **az800l08-vnet2_to_az800l08-vnet0** **(1)** |
+    | Subscription | Leave the default subscription **(2)** |
+    | Virtual network | **az800l08-vnet2** **(3)** |    
+    | Allow 'az800l08-vnet2' to access 'az800l08-vnet0' | **Select the checkbox** **(4)** |
+    | Allow 'az800l08-vnet2' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox** **(5)** |
 
-1. Specify the following settings for **Local virtual network** (leave others with their default values), and then select **Add**:
+    ![](imagesa/t2s8.png)
+
+1. Specify the following settings for **Local virtual network** (leave others with their default values), and then select **Add (4)**:
 
     | Setting | Value |
     | --- | --- |
-    | Peering link name | **az800l08-vnet0_to_az800l08-vnet2** |
-    | Allow 'az800l08-vnet0' to access 'az800l08-vnet2'| **Select the checkbox**|
-    | Allow 'az800l08-vnet0' to receive forwarded traffic from 'az800l08-vnet2' | **Select the checkbox** |
+    | Peering link name | **az800l08-vnet0_to_az800l08-vnet2** **(1)** |
+    | Allow 'az800l08-vnet0' to access 'az800l08-vnet2'| **Select the checkbox** **(2)** |
+    | Allow 'az800l08-vnet0' to receive forwarded traffic from 'az800l08-vnet2' | **Select the checkbox** **(3)** |
+
+    ![](imagesa/t2s9.png)
 
     >**Note**: This step establishes two peerings - one from **az800l08-vnet0** to **az800l08-vnet2** and the other from **az800l08-vnet2** to **az800l08-vnet0**. This completes setting up the hub and spoke topology (with the **az800l08-vnet0** virtual network serving the role of the hub, while **az800l08-vnet1** and **az800l08-vnet2** are its spokes).
 
@@ -322,13 +325,13 @@ In this lab, you will perform:
 
    > **Note**: Now you need to create and configure user-defined routes on the spoke virtual networks.
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search for **Route tables (1)** and select **Route tables (2)** from Services, and then, on the **Route tables** page, select **+ Create**.
+1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search for **route tables (1)** and select **Route tables (2)** from Services, and then, on the **Route tables** page, select **+ Create**.
 
    ![](media/lab8j12.png)
 
    ![](media/AZ-800-l8-16.png)
 
-1. Create a route table with the following settings (leave others with their default values):
+1. Create a route table with the following settings (leave others with their default values) and click **Review + create (4)**:
 
     | Setting | Value |
     | --- | --- |
@@ -340,7 +343,7 @@ In this lab, you will perform:
 
     ![](media/lab8j14.png)
 
-1. Select **Review + create (4)**, and then select **Create (5)**.
+1. Click **Create (5)** in Review + create page.
 
    ![](media/lab8j15.png)
 
@@ -411,7 +414,7 @@ In this lab, you will perform:
 
      ![](media/AZ-800-l8-20.png)
 
-1. Add a new route with the following settings:
+1. Add a new route with the following settings and click **Add (6)**.
 
     | Setting | Value |
     | --- | --- |
@@ -423,11 +426,9 @@ In this lab, you will perform:
 
     ![](media/lab8j22.png)
 
-1. Select **Add (6)**.
-
 1. Back on the **az800l08-rt21** route table page, from the left navigation pane, under the **Settings (1)** section, select **Subnets (2)**, and then select **+ Associate (3)**.
 
-1. Associate the route table **az800l08-rt21** with the following subnet:
+1. Associate the route table **az800l08-rt21** with the following subnet and click **OK (6)**.
 
     | Setting | Value |
     | --- | --- |
@@ -435,8 +436,6 @@ In this lab, you will perform:
     | Subnet | **subnet0 (5)** |
 
     ![](media/lab8j23.png)
-
-1. Select **OK (6)**.
 
 1. In the Azure portal, browse back to the **Network Watcher - Connection troubleshoot** page.
 
@@ -566,7 +565,7 @@ In this lab, you will perform:
 
     ![](media/AZ-800-l8-32.png)
 
-1. On the **Create DNS zone** page, specify the following settings (leave others with their default values):
+1. On the **Create DNS zone** page, specify the following settings (leave others with their default values) and click on **Review + create (3)**
 
     | Setting | Value |
     | --- | --- |
@@ -574,21 +573,23 @@ In this lab, you will perform:
     | Resource Group | Select **AZ800-L0802-RG (1)** from the drop-down list. |
     | Name | **mydns<inject key="DeploymentID" enableCopy="false"/>.com (2)** |
 
-    ![](media/lab8j34.png)
+    ![](imagesa/t3s2.png)
 
-1. Select **Review + create (3)**, and then select **Create (4)**.
+1. Select **Create**.
 
-    ![](media/lab8j35.png)
+    ![](imagesa/t3s3.png)
 
     >**Note**: Wait for the DNS zone to be created. This should take about 1 minute.
 
 1. Select **Go to resource** to open the page of the newly created DNS zone.
 
+    ![](imagesa/t3s4.png) 
+
 1. On the DNS zone page, under **DNS management (1)**, select **Recordset (2)** and click on **+ Add (3)**.
 
     ![](media/AZ-800-l8-33.png)     
 
-1. In the Add a record set pane, specify the following settings (leave others with their default values):
+1. In the Add a record set pane, specify the following settings (leave others with their default values) and click **Add (10)**.
 
     | Setting | Value |
     | --- | --- |
@@ -602,8 +603,6 @@ In this lab, you will perform:
     ![](media/AZ-800-l8-34.png) 
 
     >**Note**: The IP address and the corresponding name are entirely arbitrary. They are meant to provide a very simple example illustrating implementing public DNS records, rather than emulate a real world scenario, which would require purchasing a namespace from a DNS registrar. 
-
-1. Select **Add (10)**
 
 1. On the DNS zone page, identify the full name of **Name server 1**.
 
