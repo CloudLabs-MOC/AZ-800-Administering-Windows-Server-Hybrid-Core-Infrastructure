@@ -44,15 +44,9 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
    ![](media/lab6f1.png)
 
-1. In the **Enter password** dialog box, copy and paste **Password (1)**: <inject key="AzureAdUserPassword"></inject> and then select **Sign in (2)**.
+1. In the **Temporary Access Pass** dialog box, copy and paste **Password (1)**: <inject key="AzureAdUserPassword"></inject> and then select **Sign in (2)**.
 
-   ![](media/lab6f2.png)
-
-1. If you see the pop-up **Action Required**, click **Ask Later**.
-
-   ![](media/action.png) 
-
-   >**Note:** Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
+   ![](media/TAP01.png)
 
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
@@ -113,20 +107,19 @@ In this task, you will use the Azure portal to create resource groups and create
 
    ![](media/lab6f8.png)
 
-1. Select **Next: Networking > (2)**, and in the **Create a virtual machine** page, on the **Networking** tab, select the **Edit virtual network** hyper link that follows the **Virtual network** text box.
+1. Select **Next: Networking > (2)**, and in the **Create a virtual machine** page, on the **Networking** tab, select the **Create new** hyper link that follows the **Virtual network** text box.
 
-    ![](media/AZ-800-l6-7.png)
+    ![](media/vnet1.png)
 
-1. On the **Virtual network** page, specify the following settings, leaving all other settings with their default values, and then select **Save (7)**:
+1. On the **Create Virtual network** page, specify the following settings, leaving all other settings with their default values:
 
    - Enter **az800l06-vnet (1)** in the **Name** field.  
-   - In the **Address range** field, specify **10.60.0.0/20 (2)**.  
-   - Click the **Edit (3)** icon under Subnets.  
-   - In the **Name** field, type **subnet0 (4)**.  
-   - In the **Size** drop-down, select **/24 (256 addresses) (5)**.  
-   - Click **Save (6)** on the subnet blade.  
+   - In the **Address range** field, specify **10.60.0.0/20 (2)**.   
+   - For the subnet, in the **Name** field, type **subnet0 (3)**.  
+   - In the **Address range** field, specify specify **10.60.0.0/24 (4)**.**.  
+   - Click **OK (5)**.  
 
-     ![](media/AZ-800-l6-5.png)
+     ![](media/vnet2.png)
 
 1. Back on the **Create a virtual machine** page, on the **Networking** tab, specify the following settings, leaving all other settings with their default values:
 
@@ -406,7 +399,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. On the **az800l06-vm0 \| Network settings** page, select the link designating the **network interface (2)** attached to **az800l06-vm0**.
 
-    ![](media/AZ-800-l6-20.png)
+    ![](media/nsg01.png)
 
 1. On the page displaying the network interface properties, in the vertical menu on the left side, in the **Settings** section, select **Network security group**. 
 
