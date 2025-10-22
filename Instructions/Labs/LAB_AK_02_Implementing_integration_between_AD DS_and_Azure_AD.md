@@ -52,12 +52,6 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
  
      ![Enter Your Password](media1/TAP01.png)   
 
-1. If you see the pop-up **Action Required**, click **Ask Later**.
-
-   ![](media/action.png) 
-
-   >**Note** : Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
-
 1. If prompted to **Stay signed in**, you can click **No**.
 
     ![](media/AZ-800-g7.png)
