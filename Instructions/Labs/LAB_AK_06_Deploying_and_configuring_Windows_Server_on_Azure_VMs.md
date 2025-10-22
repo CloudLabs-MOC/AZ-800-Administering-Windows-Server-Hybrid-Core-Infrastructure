@@ -46,7 +46,7 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
 1. In the **Temporary Access Pass** dialog box, copy and paste **Password (1)**: <inject key="AzureAdUserPassword"></inject> and then select **Sign in (2)**.
 
-   ![](media/TAP01.png)
+   ![](media1/TAP01.png)
 
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
@@ -109,7 +109,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. Select **Next: Networking > (2)**, and in the **Create a virtual machine** page, on the **Networking** tab, select the **Create new** hyper link that follows the **Virtual network** text box.
 
-    ![](media/vnet1.png)
+    ![](media1/vnet1.png)
 
 1. On the **Create Virtual network** page, specify the following settings, leaving all other settings with their default values:
 
@@ -119,7 +119,7 @@ In this task, you will use the Azure portal to create resource groups and create
    - In the **Address range** field, specify specify **10.60.0.0/24 (4)**.**.  
    - Click **OK (5)**.  
 
-     ![](media/vnet2.png)
+     ![](media1/vnet2.png)
 
 1. Back on the **Create a virtual machine** page, on the **Networking** tab, specify the following settings, leaving all other settings with their default values:
 
@@ -399,7 +399,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. On the **az800l06-vm0 \| Network settings** page, select the link designating the **network interface (2)** attached to **az800l06-vm0**.
 
-    ![](media/nsg01.png)
+    ![](media1/nsg01.png)
 
 1. On the page displaying the network interface properties, in the vertical menu on the left side, in the **Settings** section, select **Network security group**. 
 
