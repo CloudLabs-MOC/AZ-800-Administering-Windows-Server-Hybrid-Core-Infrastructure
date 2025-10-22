@@ -88,15 +88,13 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
       ![Enter Your Username](media/sc900-image-1.png)
  
-1. Next, provide your password:
+1. Next, provide the Temporary Acess Pass:
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
-      ![Enter Your Password](media/sc900-image-2.png)
+      ![Enter Your Password](media1/TAP01.png)
 
-1. If **Action required** pop-up window appears, click on **Ask later**
-
-    ![](media/getting_started_ask_later_sc.png)
+ > Note: The Temporary Acess Pass is an authentication method for logging in to the Azure portal, you can find it under the environment details tab specified as     Password.
 
 1. If prompted to **Stay signed in**, you can click **No**
  
@@ -106,37 +104,13 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
      ![](media/AZ-800-g8.png)
 
-## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
-
-1. At the **"More information required"** prompt, select **Next**.
-
-1. On the **"Keep your account secure"** page, select **Next** twice.
-
-1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-1. A **QR code** will be displayed on your computer screen.
-
-1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-1. After scanning, click **Next** to proceed.
-
-1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-       
-1. If prompted to stay signed in, you can click "No."
- 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
-
 ## Support Contact
  
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
  
 Learner Support Contacts:
  
-- Email Support: cloudlabs-support@spektrasystems.com
+- Email Support: labs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
  
 Click "Next" from the bottom right corner to embark on your Lab journey!
