@@ -122,13 +122,13 @@ In this exercise, you will implement hybrid connectivity using the Azure Network
 
 ### Task 1: Register Windows Admin Center with Azure
 
-In this task, you will register Windows Admin center with Azure.
+In this task, you will register the Windows Admin center with Azure.
 
 In this task, you will register windows admin center with Azure.
 
 1. On **SEA-ADM1**, start Microsoft Edge, and then browse to `https://SEA-ADM1.contoso.com`.
 
-   >**Note**: If you get **NET::ERR_CERT_DATE_INVALID** error, select **Advanced** on the Edge browser page, at the bottom of page select **Continue to sea-adm1-contoso.com (unsafe)**. 
+   >**Note**: If you get **NET::ERR_CERT_DATE_INVALID** error, select **Advanced (2)** on the Edge browser page, at the bottom of the page select **Continue to sea-adm1-contoso.com (unsafe) (3)**. 
 
     ![](media/lab7-171.png)
 
@@ -226,7 +226,7 @@ In this task, you will install windows admin center gateway in Azure.
 
 1. Back in the Azure portal, open the Cloud Shell pane by selecting the **Cloud Shell** icon.
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu, select **Upload**, and then upload the **C:\Users\Administrator.CONTOSO\Downloads\Deploy-WACAzVM.ps1** file into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Manage Files** icon, in the drop-down menu, select **Upload**, and then upload the **C:\Users\Administrator.CONTOSO\Downloads\Deploy-WACAzVM.ps1** file into the Cloud Shell home directory.
 
 1. From the Cloud Shell pane, run the following command to enable the compatibility for the **AzureRm** PowerShell cmdlets that are used by the Windows Admin Center provisioning script:
 
@@ -353,7 +353,7 @@ In this task, you will connect to the WAC gateway running in Azure VM.
 
 1. On **SEA-ADM1**, start Microsoft Edge and paste the **DNS Name** in the `https://` format.
 
-1. In Microsoft Edge window, disregard the message **Your connection isn't private**, select **Advanced**, and then select the link starting with the text **Continue to**.
+1. In Microsoft Edge window, disregard the message **Your connection isn't private**, select **Advanced (2)**, and then select the link starting with the text **Continue to (3)**.
 
    ![](media/lab4g30.png)  
 
@@ -380,12 +380,12 @@ In this task, you will enable powershell remoting on an Azure VM.
 
    ![](media/lab4g33.png)  
 
-1. If Windows Remote Management is disabled, on the **Run Command Script** page, in the **PowerShell Script** section, enter the following command (1), and then select **Run (2)** to enable it.
+1. If Windows Remote Management is disabled, on the **Run Command Script** page, in the **PowerShell Script** section, enter the following command, and then select **Run** to enable it.
 
    ```powershell
    winrm quickconfig -quiet
    ```
-   ![](media/lab4g34.png) 
+   ![](media1/ag4.png) 
 
 1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command, and then select **Run** to open the Windows Remote Management inbound port:
 
