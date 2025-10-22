@@ -6,7 +6,7 @@ Welcome to your AZ-800: Administering Windows Server Hybrid Core Infrastructure 
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](media/AZ-800-g1.png)
+![Access Your VM and Lab Guide](media1/ag1.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -92,7 +92,7 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-      ![Enter Your Password](media/sc900-image-2.png)
+      ![Enter Your Password](media1/ag2.png)
 
 4. If **Action required** pop-up window appears, click on **Ask later**
 
@@ -106,36 +106,6 @@ By following this workaround, you can ensure accurate execution of the PowerShel
 
     ![](media/AZ-800-g8.png)
 
-## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
-
-1. At the **"More information required"** prompt, select **Next**.
-
-1. On the **"Keep your account secure"** page, select **Next** twice.
-
-1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-1. A **QR code** will be displayed on your computer screen.
-
-1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-1. After scanning, click **Next** to proceed.
-
-    ![](media/AZ-800-g11.png)
-
-1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-       
-1. If prompted to **Stay signed in**, you can click **No.**
- 
-    ![](media/AZ-800-g7.png)
- 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**
-
-    ![](media/AZ-800-g8.png)
- 
 ## Support Contact
  
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
