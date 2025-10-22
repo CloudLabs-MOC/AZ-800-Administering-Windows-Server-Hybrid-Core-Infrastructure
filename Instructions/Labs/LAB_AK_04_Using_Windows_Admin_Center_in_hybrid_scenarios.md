@@ -39,7 +39,7 @@ In this task, you will create an Azure resource group using an ARM template. Thi
 1. On **SEA-ADM1**, start Microsoft Edge, go to the [Azure portal](https://portal.azure.com), and sign in by using the following credentials : 
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
 
 1. In the Azure portal, open the **Cloud Shell** pane by selecting the toolbar icon directly next to the search text box.
 
