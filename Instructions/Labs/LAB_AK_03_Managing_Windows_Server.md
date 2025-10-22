@@ -31,7 +31,7 @@ In this task, you will install Windows Admin Center on SEA-ADM1. You will downlo
 
     ![](media/AZ-800-l1-1.png)
 
-1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**  
 
     ![](media/AZ-800-l1-2.1.png)
 

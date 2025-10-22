@@ -25,9 +25,9 @@ In this lab, you will perform:
 
 1. On the **HOSTVM (1)** dropdown menu, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media/AZ-800-l1-1v2.png)
 
-1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**  
 
     ![](media/AZ-800-l1-2.1.png)
 
@@ -67,7 +67,7 @@ In this lab, you will perform:
 
        ![](media/lab7-174.png)
 
-1. In **All connections** pane, select **sea-svr6.contoso.com**.
+1. In **All connections** pane, select **sea-svr6.contoso.com** **(1)**. Click on **Connect(2)**.
 
    ![](media/lab7-176.png)
    
@@ -113,9 +113,9 @@ In this lab, you will perform:
 
 ### Task 3: Create a scope
 
-1. On **SEA-ADM1**, switch to Windows Admin Center in the Microsoft Edge window displaying the **DHCP** settings on **SEA-SVR1**.
+1. On **SEA-ADM1**, switch to Windows Admin Center in the Microsoft Edge window displaying the **DHCP** settings on connection **sea-svr6.contoso.com**
 
-   > **Note**: It might take a few minutes for the DHCP option to appear in the menu. If necessary, refresh the connection to sea-svr1. If prompted to install the DHCP Powershell tools, select **Install**.
+   > **Note**: It might take a few minutes for the DHCP option to appear in the menu. If necessary, refresh the connection to sea-svr6. If prompted to install the DHCP Powershell tools, select **Install**.
 
 1. On the **DHCP** page, select **+ New scope**.
 
@@ -147,7 +147,7 @@ In this lab, you will perform:
 
     ![](media/lab7-1714.png)
 
-1. In the **DHCP** window, in the Actions pane, select **More Actions**, and then select **Add Server**.
+1. In the **DHCP** window, in the Actions pane, select **More Actions (1)**, and then select **Add Server (2)**.
 
     ![](media/AZ-800-l7-5.png)
 
@@ -242,9 +242,9 @@ In this lab, you will perform:
 
    ![](media/AZ-800-l7-21.png)
 
-1. Under **sea-svr6 (172.16.10.44)**, select **IPv4**, and then verify that both scopes are listed. If necessary, press the **F5** key to refresh.
+1. Under sea-svr6 **(172.16.10.44)**, select **IPv4**, and then verify that both scopes are listed. If necessary, press the **F5** key to refresh.
 
-   ![](media/scopes.png)
+   ![](media/scopesv2.png)
 
 ### Task 5: Verify DHCP functionality
 
@@ -324,7 +324,7 @@ In this lab, you will perform:
    - Subnet mask: **255.255.0.0 (3)**
    - Default gateway: **172.16.10.1 (4)**
 
-1. In the **Internet Protocol Version 4 (TCP/IPv4) Properties** dialog box, select **Use the following DNS server addresses (5)**, set the **Preferred DNS server** to **172.16.10.10 (6)**, and then select **OK (7)**.
+1. In the **Internet Protocol Version 4 (TCP/IPv4) Properties** dialog box, select **Use the following DNS server addresses (5)**, set the **Preferred DNS server** to **172.16.10.10 (6)**, and then select **OK (7)**. Again click **OK** on Ethernet Properties menu.
 
     ![](media/AZ-800-l7-29.png)
 
@@ -344,7 +344,7 @@ In this lab, you will perform:
 
    > **Note**: Wait until the notification indicating that the DNS role is installed. If necessary, select the **Notifications** icon to verify the current status.
 
-1. Refresh the **Microsoft Edge** page, back on the **sea-svr1.contoso.com** page, in the **Tools** list, select **DNS (1)**, and then on the details pane, select **Install (2)** to install the DNS PowerShell tools. 
+1. Refresh the **Microsoft Edge** page, back on the **sea-svr6.contoso.com** page, in the **Tools** list, select **DNS (1)**, and then on the details pane, select **Install (2)** to install the DNS PowerShell tools. 
 
    ![](media/lab7-1742.png)
 
