@@ -34,7 +34,7 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
 
 1. On the **HOSTVM dropdown menu (1)**, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media1/sea-admswitching.png)
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
@@ -50,7 +50,7 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-     ![Enter Your Password](./media/signin1.png)   
+     ![Enter Your Password](media1/azpass.png)   
 
 1. If you see the pop-up **Action Required**, click **Ask Later**.
 
@@ -84,7 +84,7 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
 
 1. Here you can see the created Custom domain.   
 
-   ![](media/azz5.png)
+   ![](media1/customdomain.png)
 
    > **Note**: While, in general, you would use DNS records to verify a domain, this lab doesn't require the use of a verified domain.
 
@@ -115,7 +115,7 @@ In this task, you will create a new user account in Microsoft Entra ID and assig
 
     - Under **Password**, select the **Auto generate (3)** checkbox. Record the user name and password as you'll use it later in this lab.
 
-      ![](media/az-5.png)
+      ![](media1/newuser.png)
 
       > **Note:** Copy **User principal name**  and **Password** and paste in Notepad for later use.
 
@@ -135,7 +135,7 @@ In this task, you will create a new user account in Microsoft Entra ID and assig
 
 1. Once created you can see the created user in the **Users** page.
 
-    ![](media/azz2.png)
+    ![](media1/usercreated.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -335,7 +335,7 @@ In this task, you will use the Synchronization Service Manager to check the stat
             
 1. In the **Synchronization Service Manager** window, under the **Operations** tab, observe the tasks that were performed to sync the Microsoft Entra ID objects.
 
-   ![](media/AZ-800-l3-15.png)
+   ![](media1/usersync.png)
 
 1. Select the **Connectors (1)** tab and note the two connectors **(2)**.
 
@@ -725,11 +725,11 @@ In this task, you will configure password protection settings in Microsoft Entra
 
 1. On the **Security** page, under **Manage (1)** section, select **Authentication methods (2)**.
 
-   ![](media/AZ-800-l3-26.png)
+   ![](media1/securitypage.png)
 
 1. On the **Authentication methods** page, under **Manage (1)** section, select **Password protection (2)**.
 
-   ![](media/AZ-800-l3-28.png)
+   ![](media1/authpp.png)
 
 1. On the **Password protection** page, 
 
