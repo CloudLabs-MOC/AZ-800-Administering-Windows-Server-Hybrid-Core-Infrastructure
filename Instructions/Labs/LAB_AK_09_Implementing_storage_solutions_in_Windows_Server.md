@@ -65,11 +65,11 @@ In this lab, you will perform:
 
    ![](media/give-access01.png)
 
-1. In the **Network access** window, in the **Type a name and then click Add, or click the arrow to find someone** text box, type **Users (1)** and click **Add (2)**.
+1. In the **Network access** window, Under **Type a name and then click Add, or click the arrow to find someone** text box, type **Users (1)**, click **Add (2)** and select **Share (3)**.
 
    ![](media/AZ-800-l9-2.png)
 
-1. In the **Network access** window, select **Share (3)**, and once you are presented with the **Your folder is shared** window, select **Done**.
+1. Once you are presented with the **Your folder is shared** window, select **Done**.
 
    ![](media/AZ-800-l9-3.png)
 
@@ -281,9 +281,9 @@ In this lab, you will perform:
 
 ### Task 1: Install iSCSI and configure targets
 
-1. On **SEA-ADM1**, switch to the **Windows PowerShell** window.
+1. On **SEA-ADM1**, Open a new **Windows PowerShell** window.
 
-1. In the **Windows PowerShell** console, enter the following command and press Enter to establish a PowerShell Remoting session to **SEA-SVR3**:
+1. In the new **Windows PowerShell** console, enter the following command and press Enter to establish a PowerShell Remoting session to **SEA-SVR3**:
 
    ```powershell
    Enter-PSSession -ComputerName SEA-SVR3
@@ -294,12 +294,15 @@ In this lab, you will perform:
    ```powershell
    Install-WindowsFeature –Name FS-iSCSITarget-Server –IncludeManagementTools
    ```
-
 1. Enter the following commands and after each, press Enter to create a new volume formatted with ReFS on disk 2:
 
    ```powershell
    Initialize-Disk -Number 2
+   ```
+   ```powershell
    $partition2 = New-Partition -DiskNumber 2 -UseMaximumSize -AssignDriveLetter
+   ```
+   ```powershell
    Format-Volume -DriveLetter $partition2.DriveLetter -FileSystem ReFS
    ```
 
@@ -307,7 +310,11 @@ In this lab, you will perform:
 
    ```powershell
    Initialize-Disk -Number 3
+   ```
+   ```powershell
    $partition3 = New-Partition -DiskNumber 3 -UseMaximumSize -AssignDriveLetter
+   ```
+   ```powershell
    Format-Volume -DriveLetter $partition3.DriveLetter -FileSystem ReFS
    ```
 
