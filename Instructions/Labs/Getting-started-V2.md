@@ -94,10 +94,7 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
       ![Enter Your Password](media/lab2-12-1.png)
 
-4. If **Action required** pop-up window appears, click on **Ask later**
 
-    ![](media/getting_started_ask_later_sc.png)
-       
 5. If prompted to **Stay signed in**, you can click **No.**
  
     ![](media/AZ-800-g7.png)
@@ -106,35 +103,6 @@ By following this workaround, you can ensure accurate execution of the PowerShel
 
     ![](media/AZ-800-g8.png)
 
-## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
-
-1. At the **"More information required"** prompt, select **Next**.
-
-1. On the **"Keep your account secure"** page, select **Next** twice.
-
-1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-1. A **QR code** will be displayed on your computer screen.
-
-1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-1. After scanning, click **Next** to proceed.
-
-    ![](media/AZ-800-g11.png)
-
-1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-       
-1. If prompted to **Stay signed in**, you can click **No.**
- 
-    ![](media/AZ-800-g7.png)
- 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**
-
-    ![](media/AZ-800-g8.png)
  
 ## Support Contact
  
