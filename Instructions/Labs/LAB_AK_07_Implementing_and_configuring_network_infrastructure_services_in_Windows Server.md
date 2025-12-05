@@ -3,8 +3,7 @@
 ## Lab scenario
 
 Contoso, Ltd. is a large organization with complex requirements for network services. To help meet these requirements, you will deploy and configure DHCP so that it is highly available to ensure service availability. You will also set up DNS so that Trey Research, a department within Contoso, can have its own DNS server in the testing area. Finally, you will provide remote access to Windows Admin Center and secure it with Web Application Proxy.
-
-**Note:** An **[interactive lab simulation](https://mslabs.cloudguides.com/guides/AZ-800%20Lab%20Simulation%20-%20Implementing%20and%20configuring%20network%20infrastructure%20services%20in%20Windows%20Server)** is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+ 
 
 ## Lab objectives
 
@@ -44,6 +43,18 @@ In this lab, you will perform:
 
       ![](media/AZ-800-l5-11.png)
 
+1. On **SEA-ADM1**, in the upper-right corner of the Microsoft Edge window displaying Windows Admin Center, select the **Settings (1)** icon (the cog wheel).
+
+1. In the left pane, select **Extensions (2)**. Review the available extensions.
+
+1. Select the **DHCP** and **DNS (3)** extensions, and then select **Install (4)** if not installed already. The extension will install and Windows Admin Center will refresh.
+
+    ![](media/lab7-12-1.png)
+
+1. In the details pane, select **Installed extensions (2)** and verify that the list includes the extensions you just installed **DHCP** and **DNS**.
+
+    ![](media/lab7-12-2.png)
+
 1. In the All connections pane, select **+ Add (1)**.
 
    ![](media/lab7-173.png)
@@ -67,9 +78,9 @@ In this lab, you will perform:
 
        ![](media/lab7-174.png)
 
-1. In **All connections** pane, select **sea-svr6.contoso.com**.
+1. In **All connections** pane, select **sea-svr6.contoso.com (1)** and click on **Connect (2)**.
 
-   ![](media/lab7-176.png)
+    ![](media/lab7-12-3.png)
    
 1. On the **sea-svr6.contoso.com** page, in the **Tools** list, select **Roles & features (1)**. In the Roles and features pane, select the **DHCP Server (2)** checkbox, and then select **+ Install (3)**.
 
@@ -89,15 +100,17 @@ In this lab, you will perform:
 
 1. Wait for a notification that the DHCP PowerShell tools are installed. If necessary, select the **Notifications** icon to verify the current status.
 
+    ![](media/lab7-12-4.png)
+
 ### Task 2: Authorize the DHCP server
 
-1. On **SEA-ADM1**, select **Start**, and then select **Server Manager**.
+1. On **SEA-ADM1**, select **Start (1)**, and then select **Server Manager (2)**.
 
-   ![](media/az800lab7img8.png)
+   ![](media/start-sm01.png)
 
 1. In **Server Manager**, select **Notifications (1)** in the menu, and then select **Complete DHCP configuration (2)**.
 
-   ![](media/lab7-1710.png)
+   ![](media/lab7-12-5.png)
 
 1. In the **DHCP Post-Install configuration wizard** window, on the **Description** screen, select **Next**.
 
@@ -113,7 +126,7 @@ In this lab, you will perform:
 
 ### Task 3: Create a scope
 
-1. On **SEA-ADM1**, switch to Windows Admin Center in the Microsoft Edge window displaying the **DHCP** settings on **SEA-SVR1**.
+1. On **SEA-ADM1**, switch to Windows Admin Center in the Microsoft Edge window displaying the **DHCP** settings on **SEA-SVR6**.
 
    > **Note**: It might take a few minutes for the DHCP option to appear in the menu. If necessary, refresh the connection to sea-svr1. If prompted to install the DHCP Powershell tools, select **Install**.
 
@@ -161,7 +174,7 @@ In this lab, you will perform:
 
     ![](media/AZ-800-l7-6.png)
 
-1. In the **Scope Options (1)** dialog box, select the **006 DNS Servers (1)** checkbox.
+1. In the **Scope Options** dialog box, select the **006 DNS Servers (1)** checkbox.
 
     ![](media/AZ-800-l7-7.png)
 
@@ -248,9 +261,9 @@ In this lab, you will perform:
 
 ### Task 5: Verify DHCP functionality
 
-1. On **SEA-ADM1**, select **Start**, and then select **Settings**.
+1. On **SEA-ADM1**, select **Start (1)**, and then select **Settings (2)**.
 
-   ![](media/lab7-1729.png)
+    ![](media/lab7-12-6.png)
 
 1. In the **Settings** window, select **Network & Internet**, and then select **Network and Sharing Center**.
 
@@ -409,7 +422,7 @@ In this lab, you will perform:
 
 1. In the **SEA-SVR6.contoso.com Properties** dialog box, select the **Forwarders (1)** tab, and then select **Edit (2)**.
 
-   ![](media/lab7-1749.png)
+   ![](media/lab7-12-7.png)
 
 1. In the **Edit Forwarders** dialog box, in the **IP addresses for forwarding servers** box, enter **131.107.0.100 (1)**, and then select **OK (2)**.
 
@@ -443,7 +456,7 @@ In this lab, you will perform:
    Resolve-DnsName -Server sea-svr6.contoso.com -Name sea-dc1.contoso.com
    ```
    
-   ![](media/lab7-1752.png)
+   ![](media/lab7-12-8.png)
 
 ### Task 5: Configure DNS policies
 
@@ -472,7 +485,7 @@ In this lab, you will perform:
    Add-DnsServerQueryResolutionPolicy -Name 'HeadOfficePolicy' -Action ALLOW -ClientSubnet 'eq,HeadOfficeSubnet' -ZoneScope 'HeadOfficeScope,1' -ZoneName 'TreyResearch.net'
    ```
 
-   ![](media/lab7-1753.png)
+    ![](media/lab7-12-9.png)
 
 ### Task 6: Verify DNS policy functionality
 
@@ -489,7 +502,7 @@ In this lab, you will perform:
    ```
    > **Note**: Verify that the name resolves to the IP address **172.30.99.100** that was configured in the **HeadOfficePolicy**.
 
-   ![](media/lab7-1754.png)
+   ![](media/lab7-12-10.png)
 
 1. On **SEA-ADM1**, switch back to the **Ethernet Status** window.
 
@@ -510,7 +523,7 @@ In this lab, you will perform:
    ```powershell
    Resolve-DnsName -Server sea-svr6.contoso.com -Name testapp.treyresearch.net
    ```
-   ![](media/lab7-1756.png)
+   ![](media/lab7-12-11.png)
 
    > **Note**: Verify that the name resolves to **172.30.99.234**. This is expected, because the IP address of **SEA-ADM1** is no longer within the **HeadOfficeSubnet**. DNS queries originating from the **HeadOfficeSubnet** of **(172.16.10.0/24)** targeting `testapp.treyresearch.net` resolve to **172.30.99.100**. DNS queries from outside of this subnet targeting `testapp.treyresearch.net` resolve to **172.30.99.234**.
 

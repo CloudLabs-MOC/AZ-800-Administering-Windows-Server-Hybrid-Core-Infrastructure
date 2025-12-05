@@ -272,28 +272,21 @@ In this task, you will install Docker on Windows Server machine
    ```powershell
     Enter-PSSession -ComputerName SEA-SVR1
    ```
-1. In the **Windows PowerShell** console, enter the following commands, and then press Enter to force the use of TLS 1.2 and install the PowerShellGet module:
+1. In the **Windows PowerShell** console, enter the following commands, and then press Enter to install the Docker CE (Community Edition) on **SEA-SVR1**:
 
    ```powershell
-   [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
-   Install-PackageProvider -Name NuGet -Force
+   Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" -o install-docker-ce.ps1
+
+   .\install-docker-ce.ps1
    ```
-1. When prompted to install NuGet, press the **Y** key, and then press Enter.
-
-   ```powershell
-   Install-Module PowerShellGet -RequiredVersion 2.2.4 -SkipPublisherCheck
-   ```
-1. When prompted to confirm the installation of modules from an untrusted repository, press the **A** key, and then press Enter.
-
-    ![](media/AZ-800-l5-19.png)
-
+ 
 1. After the installation completes, enter the following command, and then press Enter to restart **SEA-SVR1**:
 
    ```powershell
    Restart-Computer -Force
    ```
 
-    ![](media/AZ-800-l5-20.png)
+    ![](media/lab5-12-08.png)
 
     > **Note:** Wait for **2–3 minutes** to **Restart Computer** before continuing with the next command
 
@@ -302,39 +295,18 @@ In this task, you will install Docker on Windows Server machine
    ```powershell
     Enter-PSSession -ComputerName SEA-SVR1
    ```  
-   
-1. In the **Windows PowerShell** console, enter the following command, and then press Enter to install the Docker Microsoft PackageManagement provider on **SEA-SVR1**:
+
+1. After reconnecting, run the Docker installation script again to complete the setup:
 
    ```powershell
-   Install-Module -Name DockerProvider -Repository PSGallery -Force
+   .\install-docker-ce.ps1
    ```
-1. At the NuGet Provider prompt, press the **Y** key, and then press Enter.
-1. In the **Windows PowerShell** console, enter the following command, and then press Enter to install the Docker runtime on **SEA-SVR1**:
 
-   ```powershell
-   Install-Package -Name docker -ProviderName DockerProvider
-   ```
-1. When prompted to confirm, press the **A** key, and then press Enter.
-
-    ![](media/AZ-800-l5-21.png)
-
-1. After the installation completes, enter the following commands, and then press Enter to restart **SEA-SVR1**:
-
-   ```powershell
-   Restart-Computer -Force
-   ```
+   ![](media/lab5-12-09.png)
 
 ### Task 2: Install and run a Windows container
 
 In this task, you will install and run windows container inside server machine.
-
-1. Wait for sometime until **SEA-SVR1** restarts, use the below PowerShell command again to establish a new PowerShell Remoting session to **SEA-SVR1**.
-   
-   ```powershell
-    Enter-PSSession -ComputerName SEA-SVR1
-   ```
-
-    > **Note:** For the remaining steps in this task, you will need to run interactive Docker commands that require a TTY-capable terminal. The PowerShell console in Windows Admin Center does not support TTY. Therefore, it is recommended to use the alternative method: open **Windows PowerShell** as Administrator on **SEA-ADM1** and run `Enter-PSSession -ComputerName SEA-SVR1` to establish a PowerShell Remoting session.
 
 1. In the **Windows PowerShell** console, enter the following command, and then press Enter to identify Docker images currently present on **SEA-SVR1**: 
 
@@ -343,6 +315,8 @@ In this task, you will install and run windows container inside server machine.
    ```
 
     ![](media/lab5-12-4.1.png)
+
+    > **Note:** For the remaining steps in this task, you will need to run interactive Docker commands that require a TTY-capable terminal. The PowerShell console in Windows Admin Center does not support TTY. Therefore, it is recommended to use the alternative method: open **Windows PowerShell** as Administrator on **SEA-ADM1** and run `Enter-PSSession -ComputerName SEA-SVR1` to establish a PowerShell Remoting session.
 
     > **Note:** Verify that there are no images in the local repository store.
 
@@ -361,6 +335,8 @@ In this task, you will install and run windows container inside server machine.
    ```powershell
    docker images
    ```
+
+   ![](media/lab5-12-10.png)
 
 1. Enter the following command, and then press Enter to launch a container based on the downloaded image:
 
@@ -452,7 +428,7 @@ In this task, you will use Windows Admin Center to manage containers.
 
 1. In the Containers pane, browse through the **Overview**, **Containers**, **Images**, **Networks**, and **Volumes** tabs.
 
-    ![](media/lab5-12-15.png)
+    ![](media/lab5-12-15n.png)
 
 ### Review
 In this lab, you have completed:

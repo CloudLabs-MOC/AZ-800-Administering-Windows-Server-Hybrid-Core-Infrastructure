@@ -4,8 +4,6 @@
 
 At Contoso, Ltd., you need to implement the Storage Spaces feature on the Windows Server servers to simplify storage access and provide redundancy at the storage level. Management wants you to test Data Deduplication to save storage. They also want you to implement Internet Small Computer System Interface (iSCSI) storage to provide a simpler solution for deploying storage in the organization. Additionally, the organization is exploring options for making storage highly available and researching the requirements that it must meet for high availability. You want to test the feasibility of using highly available storage, specifically Storage Spaces Direct.
 
-**Note:** An **[interactive lab simulation](https://mslabs.cloudguides.com/guides/AZ-800%20Lab%20Simulation%20-%20Implementing%20storage%20solutions%20in%20Windows%20Server)** is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
-
 ## Lab objectives
 
 In this lab, you will perform:
@@ -227,16 +225,16 @@ In this lab, you will perform:
 
    ![](media/AZ-800-l9-14.png)
 
-1. On the **sea-svr3.contoso.com (1)** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password and **Submit (4)**
+1. On the **sea-svr3.contoso.com (1)** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password.
 
-   ![](media/svm-loginpwsh01.png)
+   ![](media/lab9-12-1.png)
 
 1. In the **Windows PowerShell** console, enter the following command and then press Enter to trigger deduplication:
 
    ```powershell
    Start-DedupJob -Volume M: -Type Optimization –Memory 50
    ```
-   ![](media/AZ-800-l9-15.png)
+   ![](media/lab9-12-2.png)
 
 1. Switch back to the console session to **SEA-SVR3**.
 
@@ -269,9 +267,9 @@ In this lab, you will perform:
 
    ![](media/disk-refresh.png)
 
-1. Select the **M:** volume in the **VOLUMES (1)** section, right-click and select **Properties (2)** from the menu.
+1. Select the **M: (1)** volume in the **VOLUMES** section, right-click and select **Properties (2)** from the menu.
 
-   ![](media/volume-prop01.png)
+   ![](media/lab9-12-4.png)
 
 1. In the **Volume (M:\\) Properties** window, review the values for **Deduplication rate** and **Deduplication savings**.
 
@@ -292,7 +290,7 @@ In this lab, you will perform:
 1. Enter the following command and press Enter to install iSCSI target on **SEA-SVR3**:
 
    ```powershell
-   Install-WindowsFeature –Name FS-iSCSITarget-Server –IncludeManagementTools
+   Install-WindowsFeature -Name FS-iSCSITarget-Server -IncludeManagementTools
    ```
 
 1. Enter the following commands and after each, press Enter to create a new volume formatted with ReFS on disk 2:
@@ -401,7 +399,7 @@ In this lab, you will perform:
 
 1. On the **View results** page, select **Close**.
 
-    ![](media/AZ-800-l9-20.png)
+    ![](media/lab9-12-5.png)
 
 1. Create the second iSCSI virtual disk (F:), by repeating steps 6 through 9, selecting the existing iSCSI target, and completing the wizard using step 18 through 19,
 using the following settings:
@@ -633,6 +631,8 @@ using the following settings:
 
 1. In File Explorer, in the Details pane, display the context-sensitive menu, and then, in the menu, select **New Folder**. Replace the default name assigned to the new folder with **TestData**, and then press Enter.
 
+    ![](media/lab9-12-8.png)
+
 1. In File Explorer, double-click the newly created **TestData** folder.
 
 1. In File Explorer, in the Details pane, display context-sensitive menu, and then, in the menu, select **New**, and then select **Text Document**. Replace the default name assigned to the new file with **TestDocument**, and then press Enter.
@@ -724,7 +724,7 @@ using the following settings:
 
 1. In the Disks pane, scroll down to the listing of **SEA-SVR3** disks 1 through 4, and verify that their respective entries in the **Partition (2)** column are listed as **Unknown**.
 
-   ![](media/AZ-800-l9-50.png)
+   ![](media/lab9-12-9.png)
 
 1. Select each of the four disks in sequence, and right-click **(1)**. In the menu, select the **Bring Online (2)** option, and then in the **Bring Disk Online** window, select **Yes**.
 
@@ -898,6 +898,8 @@ using the following settings:
 1. Verify that when the page loads, the **Dashboard (2)** pane has an alert indicating that **SEA-SVR3 (3)** is not reachable.
 
    ![](media/server2alert01.png)
+
+   > **Note:** If there is no alert on the overview page, scroll to **Cluster resources** on the menu on the left and select **Servers** to see the status of the cluster member servers.
 
 1. Switch to the console session to **SEA-SVR3** and start it. 
 

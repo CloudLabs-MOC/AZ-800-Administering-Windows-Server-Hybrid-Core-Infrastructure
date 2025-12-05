@@ -64,7 +64,7 @@ In this task, you will create an Azure resource group using an ARM template. Thi
 1. From the Cloud Shell pane, run the following commands to create a resource group that will contain the resources you provision in this lab.
 
    ```powershell
-   $location = 'eastus'
+   $location = 'australiaeast'
    $rgName = 'AZ800-L0401-RG'
    New-AzSubscriptionDeployment `
      -Location $location `
@@ -74,7 +74,7 @@ In this task, you will create an Azure resource group using an ARM template. Thi
      -rgName $rgName
    ```
 
-   ![](media/lab4g6.png) 
+   ![](media/lab4-12-3.png) 
 
 ### Task 2: Create an Azure VM by using an Azure Resource Manager template
 
@@ -244,7 +244,7 @@ In this task, you will install windows admin center gateway in Azure.
    $vnetName = 'az800l04-vnet'
    $nsgName = 'az800l04-web-nsg'
    $subnetName = 'subnet1'
-   $location = 'eastus'
+   $location = 'australiaeast'
    $pipName = 'wac-public-ip'
    $size = 'Standard_D2s_v3'
    ```
