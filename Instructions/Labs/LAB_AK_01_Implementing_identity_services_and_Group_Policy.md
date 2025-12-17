@@ -17,6 +17,10 @@ In this lab, you will perform:
 
    ![](media/mod1art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.     
+
 ## Exercise 1: Deploying a new domain controller on Server Core
 
 In this exercise, you will install the Active Directory Domain Services (AD DS) role on a Server Core machine, promote it to a domain controller, and configure it for use in the Contoso.com domain. You will also manage Active Directory objects through PowerShell.
@@ -33,9 +37,13 @@ In this task, you will install the AD DS role on the SEA-SVR1 server using Power
 
     ![](media/AZ-800-l1-2.1.png)
 
+     >**Note:** If copy-paste is not working, please type the password manually.
+
 1. On **SEA-ADM1**, right click **Start (1)**, and then select **Windows PowerShell (Admin) (2)**.
 
     ![](media/AZ-800-l1-3.png)
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.    
 
 1. To install the AD DS server role, at the Windows PowerShell command prompt, enter the following command, and then press Enter:
 	
