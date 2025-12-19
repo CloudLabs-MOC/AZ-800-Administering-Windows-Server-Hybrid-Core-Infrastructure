@@ -24,6 +24,10 @@ In this lab, you will perform:
 
    ![](media/mod6art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Authoring Azure Resource Manager (ARM) templates for Azure VM deployment
 
 ### Task 1: Connect to your Azure subscription and enable enhanced security of Microsoft Defender for Cloud
