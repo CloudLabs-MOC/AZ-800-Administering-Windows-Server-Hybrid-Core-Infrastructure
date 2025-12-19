@@ -18,6 +18,10 @@ In this lab, you will perform:
 
    ![](media/mod7art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Deploying and configuring DHCP
 
 ### Task 1: Install the DHCP role
@@ -27,6 +31,8 @@ In this lab, you will perform:
     ![](media/AZ-800-l1-1.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+
+    >**Note:** If copy-paste is not working, please type the password manually.
 
     ![](media/AZ-800-l1-2.1.png)
 
@@ -391,6 +397,8 @@ In this lab, you will perform:
    - Time to live: **600 (6)**
 
      ![](media/AZ-800-l7-31.png)
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. On **SEA-ADM1**, select **Start (1)**, and then select **Windows PowerShell (2)**.
 

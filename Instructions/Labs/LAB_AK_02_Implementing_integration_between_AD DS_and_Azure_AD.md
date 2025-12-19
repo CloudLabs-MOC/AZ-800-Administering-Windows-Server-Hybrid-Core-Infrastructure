@@ -38,6 +38,8 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
+    >**Note:** If copy-paste is not working, please type the password manually.
+
     ![](media/AZ-800-l1-2.1.png)
 
 1. On **SEA-ADM1**, double-click on the **Azure portal**, and authenticate with your Azure credentials.
@@ -401,6 +403,8 @@ In this task, you will Start the sync between On-premises and Entra ID.
 
    ![](media/AZ-800-l3-20.png)
 
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 1. In the **Windows PowerShell** console, enter the following command, and then press Enter to trigger synchronization:
 
    ```powershell
@@ -606,6 +610,8 @@ In this task, you will install the Microsoft Entra ID Password Protection proxy 
 1. On **SEA-ADM1**, switch to the **Windows PowerShell** console window.
 
    >**Note:** Run all these commands only in **SEA-ADM1**'s Windows PowerShell, do not switch to other VM's.
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command, and then press Enter to remove the Zone.Identifier alternate data stream indicating that files have been downloaded from internet:
 

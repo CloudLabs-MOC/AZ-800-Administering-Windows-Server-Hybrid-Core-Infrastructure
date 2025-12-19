@@ -17,6 +17,10 @@ In this lab, you will perform:
 
    ![](media/mod8art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Implement virtual network routing in Azure
 
 ### Task 1: Provision lab infrastructure resources
@@ -27,7 +31,9 @@ In this lab, you will perform:
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
-    ![](media/AZ-800-l1-2.1.png)
+     >**Note:** If copy-paste is not working, please type the password manually.
+
+     ![](media/AZ-800-l1-2.1.png)
 
 1. On **SEA-ADM1**, double-click on Azure portal.
 
@@ -296,6 +302,8 @@ In this lab, you will perform:
 1. On the **az800l08-vm0** page, from the left navigation pane, under the **Operations (1)** section, select **Run command (2)**, and then, in the list of commands, select **RunPowerShellScript (3)**.
 
    ![](media/lab8j9.png)
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. On the **Run Command Script** page, enter the following command **(1)**, and then select **Run (2)** to install the Remote Access Windows Server role.
 
@@ -615,6 +623,8 @@ In this lab, you will perform:
 1. On **SEA-ADM1**, on the **Start (1)** menu, select **Windows PowerShell (2)**.
 
     ![](media/AZ-800-l7-32.png) 
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command, and then press Enter to test external name resolution of the **www** DNS record set in the newly created DNS zone (replace the placeholder `<Name server 1>` with the name of **Name server 1** you noted earlier in this task):
 

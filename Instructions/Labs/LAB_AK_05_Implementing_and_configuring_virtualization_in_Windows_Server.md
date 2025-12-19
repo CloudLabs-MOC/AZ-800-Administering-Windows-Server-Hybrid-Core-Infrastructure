@@ -21,6 +21,10 @@ In this lab, you will perform:
 
    ![](media/mod5art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Creating and configuring VMs
 In this exercise, you will install and configure the Hyper-V role on a Windows Server. You will ensure that the required hardware and software prerequisites are met and verify that Hyper-V is running correctly.
 
@@ -32,6 +36,8 @@ In this task, you will install the Hyper-V role on a Windows Server machine usin
     ![](media/AZ-800-l1-1.png)
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+
+    >**Note:** If copy-paste is not working, please type the password manually.
 
     ![](media/AZ-800-l1-2.1.png)
 
@@ -267,6 +273,8 @@ In this Exercise, you will install and configure containers in the server machin
 In this task, you will install Docker on Windows Server machine
 
 1. On **SEA-ADM1**, select **Start**, and then select **Windows PowerShell (Admin)**.
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command to establish remote powershell session on SEA-SVR1:
    ```powershell

@@ -19,6 +19,10 @@ In this lab, you will perform:
 
    ![](media/mod9art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Implementing Data Deduplication
 
 ### Task 1: Install the Data Deduplication role service
@@ -28,6 +32,8 @@ In this lab, you will perform:
     ![](media/AZ-800-l1-1.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+
+    >**Note:** If copy-paste is not working, please type the password manually.
 
     ![](media/AZ-800-l1-2.1.png)
 
@@ -77,9 +83,11 @@ In this lab, you will perform:
 
 1. Switch to the **SEA-SVR3** console session, and then, if needed, sign in as **CONTOSO\Administrator** with a password of **Pa55w.rd**.
 
-   > **Note:** Minimize the current VM window, then select and start **SEA-SVR3** from the **labVM** desktop.
+    > **Note:** Minimize the current VM window, then select and start **SEA-SVR3** from the **labVM** desktop.
 
-   ![](media/lab9k4.png)
+    >**Note:** If copy-paste is not working, please type the password manually.
+
+    ![](media/lab9k4.png)
 
 1. If presented with the **SConfig** menu, at **Enter number to select an option**, enter **15** and press Enter to exit to a **PowerShell** console session.
    
@@ -109,6 +117,8 @@ In this lab, you will perform:
    ```
 
 3. At the **Windows PowerShell** prompt, enter the following commands, and press Enter after each to copy from **SEA-ADM1** a script that creates sample files to be deduplicated, execute it, and identify the outcome:
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
    ## PowerShell Commands for Drive Mapping and File Management
 
@@ -227,7 +237,11 @@ In this lab, you will perform:
 
 1. On the **sea-svr3.contoso.com (1)** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password.
 
+   >**Note:** If copy-paste is not working, please type the password manually.
+
    ![](media/lab9-12-1.png)
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command and then press Enter to trigger deduplication:
 
@@ -280,6 +294,8 @@ In this lab, you will perform:
 ### Task 1: Install iSCSI and configure targets
 
 1. On **SEA-ADM1**, switch to the **Windows PowerShell** window.
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command and press Enter to establish a PowerShell Remoting session to **SEA-SVR3**:
 

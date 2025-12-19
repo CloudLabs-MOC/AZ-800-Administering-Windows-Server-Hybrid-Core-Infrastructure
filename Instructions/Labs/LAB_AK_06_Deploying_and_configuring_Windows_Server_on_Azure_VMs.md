@@ -36,7 +36,9 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
-    ![](media/AZ-800-l1-2.1.png)
+     >**Note:** If copy-paste is not working, please type the password manually.
+
+     ![](media/AZ-800-l1-2.1.png)
 
 1. On **SEA-ADM1**, start Microsoft Edge, go to the [Azure portal](https://portal.azure.com).
 

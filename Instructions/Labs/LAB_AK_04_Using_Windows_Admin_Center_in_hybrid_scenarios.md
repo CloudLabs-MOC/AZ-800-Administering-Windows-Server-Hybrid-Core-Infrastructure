@@ -20,6 +20,10 @@ In this lab, you will perform:
 
   ![](media/mod4art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Provisioning Azure VMs running Windows Server
 
 In this exercise, you will provision Azure VMs running Windows Server using Azure Resource Manager (ARM) templates. This will involve creating a resource group and deploying the VM using predefined ARM templates. You will also configure the virtual network to support Azure VMs.
@@ -33,6 +37,8 @@ In this task, you will create an Azure resource group using an ARM template. Thi
     ![](media/AZ-800-l1-1.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
+
+    >**Note:** If copy-paste is not working, please type the password manually.
 
     ![](media/AZ-800-l1-2.1.png)
 
@@ -216,6 +222,8 @@ In this exercise, you will deploy Windows Admin Center (WAC) in Azure to enable 
 In this task, you will install windows admin center gateway in Azure.
 
 1. On **SEA-ADM1**, switch to the Windows Powershell(Admin)
+
+1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. Run the below command to download **Deploy-WACAzVM.ps1**
 
