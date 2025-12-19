@@ -24,6 +24,10 @@ In this lab, you will perform:
 
    ![](media/mod2art.png)  
 
+### Note 
+
+While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+
 ## Exercise 1: Preparing Microsoft Entra ID for AD DS integration
 
 In this exercise, you will prepare Microsoft Entra ID for integration with on-premises AD DS. You will add and verify a custom domain, create a global administrator user, and ensure the account is secure by updating the password.
