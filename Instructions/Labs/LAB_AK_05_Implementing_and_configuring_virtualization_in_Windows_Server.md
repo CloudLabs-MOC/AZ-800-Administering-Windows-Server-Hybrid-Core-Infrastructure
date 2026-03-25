@@ -215,13 +215,21 @@ In this task, you will manage virtual machines using Windows Admin Center
 
      ![](media/AZ-800-l5-18.png)
 
-     > **Note:** If any of these extensions show an update available, make sure to update them before proceeding with the lab.
+     > **Note:** If any extension shows **Update available (1)**, select it and click **Update (2)** to install the latest version before proceeding.
+
+     ![](media/lab05-p2t1p1.png)
+
+1. Select **Windows Admin Center (1)** to return to the home page, then choose **sea-svr1.contoso.com (2)** from the server list.
+
+   ![](media/lab05-p2t1p2.png)
+
+   ![](media/lab05-p2t1p3.png)
 
 1. Select **sea-svr1.contoso.com**, from the left navigation menu, in the **Tools** list, select **Virtual machines (1)**, select the **Summary (2)** tab, and then review its content.
 
    ![](media/lab5h10.png)
 
-1. Select the **Inventory (1)** tab and verify that it contains **SEA-VM1(2)**.
+1. Select the **Inventory (1)** tab and verify that it contains **SEA-VM1 (2)**.
 
    ![](media/AZ-800-l5-13.png)
 
@@ -237,7 +245,7 @@ In this task, you will manage virtual machines using Windows Admin Center
 
 1. Select **New Virtual Hard Disk (1)**.
 
-1. On the **New Virtual Hard Disk** pane,Change the disk type to **fixed size(2)** and in the **Size (GB)** text box, type **5** **(3)** , leave other settings with their default values, and then select **Create (4)**.
+1. On the **New Virtual Hard Disk** pane,Change the disk type to **Fixed size (2)** and in the **Size (GB)** text box, type **5** **(3)** , leave other settings with their default values, and then select **Create (4)**.
 
    ![](media/AZ-800-l5-14.png)
 
@@ -247,9 +255,9 @@ In this task, you will manage virtual machines using Windows Admin Center
 
 1. Back on the **Inventory** page, select **SEA-VM1**.
 
-1. On the **Properties** pane of **SEA-VM1**, select **Power**, and then select **Start** to start **SEA-VM1**.
+1. On the **Properties** pane of **SEA-VM1**, select **Power (1)**, and then select **Start (2)** to start **SEA-VM1**.
 
-   ![](media/lab5-task4-19.png)
+   ![](media/lab05-p2t1p4.png)
 
 1. Scroll down and display the statistics for the running VM.
 
@@ -259,7 +267,7 @@ In this task, you will manage virtual machines using Windows Admin Center
 
    ![](media/lab5h13.png)
 
-1. From the lefy navigation menu, in the **Tools** list, select **Virtual switches (1)** and identify the **existing switches (2)**.
+1. From the left navigation menu, in the **Tools** list, select **Virtual switches (1)** and identify the **existing switches (2)**.
 
    ![](media/lab5-task4-22.png)
 
@@ -272,14 +280,20 @@ In this Exercise, you will install and configure containers in the server machin
 
 In this task, you will install Docker on Windows Server machine
 
-1. On **SEA-ADM1**, select **Start**, and then select **Windows PowerShell (Admin)**.
+1. On **SEA-ADM1**, right-click on the **Start (1)**, and then select **Windows PowerShell (Admin) (2)**.
+
+   ![](media/lab05-p2t1p5.png)
 
 1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 1. In the **Windows PowerShell** console, enter the following command to establish remote powershell session on SEA-SVR1:
+
    ```powershell
     Enter-PSSession -ComputerName SEA-SVR1
    ```
+
+   ![](media/lab05-p2t1p6.png)
+
 1. In the **Windows PowerShell** console, enter the following commands, and then press Enter to install the Docker CE (Community Edition) on **SEA-SVR1**:
 
    ```powershell
@@ -344,7 +358,7 @@ In this task, you will install and run windows container inside server machine.
    docker images
    ```
 
-   ![](media/lab5-12-10.png)
+   ![](media/lab05-p2t1p7.png)
 
 1. Enter the following command, and then press Enter to launch a container based on the downloaded image:
 
@@ -404,6 +418,9 @@ In this task, you will install and run windows container inside server machine.
    ```powershell
    docker run --rm helloworld cmd.exe /s /c "type C:\Users\Public\Hello.txt"
    ```
+
+   ![](media/lab05-p2t1p8.png)
+
    > **Note:** This command line outputs the content of the file you created earlier and stops the container again.
 
 1. Enter the following command, and then press Enter to launch a new container instance of the original image and check if the file you created is present:
