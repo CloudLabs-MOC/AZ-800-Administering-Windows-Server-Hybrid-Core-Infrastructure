@@ -135,7 +135,7 @@ In this task, you will create a new user account in Microsoft Entra ID and assig
     
     ![](media/az-7.png)
 
-1. On the **Create new user** page, select **Next: Review + Create** and **Create**.
+1. On the **Create new user** page, select **Review + create** and **Create**.
 
     ![](media/azz11.png)
 
@@ -510,9 +510,9 @@ In this task, you will configure password writeback in Microsoft Entra Connect t
 
    >**Note:** Wait for the configurations to get completed.
 
-1. On the **Configuration complete** page, select **Exit**.
+1. On the **Configuration complete** page, select **Exit**..
 
-   ![](media/az-33.png)
+   ![](media/lab02-p2t5p1.png)
 
     <!-- >**Note:** If you encounter the message **Directory synchronization is enabled for this directory, but has not taken effect. Please wait untill directory synchronization is ready** in the configuration window, allow up to 30 minutes for the synchronization process to complete.  -->
 

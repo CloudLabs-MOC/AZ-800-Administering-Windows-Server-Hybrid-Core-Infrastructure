@@ -81,7 +81,7 @@ In this task, you will configure the SEA-SVR1 server to be promoted to a domain 
 
 1. On **SEA-ADM1**, ensure that the installation of the **AD DS (1)** role on SEA-SRV1 is complete and that the server was added to **Server Manager**. Then select the **Notifications (2)** flag symbol.
    
-   ![](media/update3.png)
+   ![](media/lab01-p2t2p1.png)
 
 1. Note the post-deployment configuration of **SEA-SVR1**, and then select the **Promote this server to a domain controller** link.
    
@@ -225,6 +225,9 @@ In this task, you will create an Organizational Unit (OU) called Seattle, create
    ```powershell
    Get-ADGroupMember -Identity SeattleBranchUsers
    ```
+
+   ![](media/lab01-p2t3p1.png)
+
 1. To add the user to the local Administrators group, enter the following command, and then press Enter:
 
    ```powershell
@@ -254,7 +257,7 @@ In this task, you will create a new GPO named CONTOSO Standards, configure it to
 
 1. In the navigation pane, right-click or access the context menu for the **Group Policy Objects** container, and then select **New**.
 
-   ![](media/update22.png)
+   ![](media/lab01-p2t4p1.png)
 
 1. In the **Name** text box, enter **CONTOSO Standards (1)**, and then select **OK (2)**.
 
@@ -302,7 +305,7 @@ In this task, you will link the CONTOSO Standards GPO to the Contoso.com domain 
 
    ![](media/AZ-800-l1-22.png)
 
-1. In the **Select GPO** dialog box, select **CONTOSO Standards**, and then select **OK**.
+1. In the **Select GPO** dialog box, select **CONTOSO Standards (1)**, and then select **OK (2)**.
 
    ![](media/AZ-800-l1-21.png)
 
@@ -315,6 +318,10 @@ In this task, you will review the applied Group Policy settings on a client mach
 1. In the **Best match** list, select **Control Panel (2)**.
 
     ![](media/AZ-800-l1-23.png)
+
+1. Select the **System and Security** in Control panel window.
+
+   ![](media/lab01-p2t4p2.png)
 
 1. Select **System and Security (1)**, and under **Windows Defender Firewall**, select **Allow an app through Windows Firewall (2)**.
 
@@ -390,7 +397,7 @@ In this task, you will create and link a Seattle Application Override Group Poli
 
    ![](media/lab1f19.png)
 
-1. In the details pane, right-click or access the context menu for the **Seattle Application Override** GPO, and then select **Edit**.
+1. In the details pane, right-click or access the context menu for the **Seattle Application Override (1)** GPO, and then select **Edit (2)**.
 
     ![](media/lab1-12-11.png)
 
@@ -400,7 +407,7 @@ In this task, you will create and link a Seattle Application Override Group Poli
 
    ![](media/AZ-800-l1-24.png)
 
-1. Select **Disabled**, and then select **OK**.
+1. Select **Disabled (1)**, and then select **OK (2)**.
 
     ![](media/AZ-800-l1-25.png)
 
@@ -412,7 +419,7 @@ In this task, you will verify the order of precedence for Group Policy Objects (
 
 1. Back in the **Group Policy Management Console** tree, ensure that the **Seattle** OU is selected.
 
-1. Select the **Group Policy Inheritance** tab and review its content.
+1. Select the **Group Policy Inheritance (1)** tab and review its content **(2)**.
 
    ![](media/lab1f20.png)
 
@@ -456,7 +463,7 @@ In this task, you will configure the security filtering of the Seattle Applicati
 
     ![](media/AZ-800-l1-31.png)
 
-1. In the **Object Types** dialog box, select the **Computers** checkbox and then select **OK**.
+1. In the **Object Types** dialog box, select the **Computers (1)** checkbox and then select **OK (2)**.
 
    ![](media/lab1f24.png)
 
@@ -498,7 +505,7 @@ In this task, you will use the Group Policy Modeling Wizard to simulate the appl
 
 1. On the **User Security Groups** page, verify that the list of groups includes **CONTOSO\\SeattleBranchUsers (1)**, and then select **Next (2)**.
 
-   ![](media/lab1f29.png)
+   ![](media/lab01-p2t4p3.png)
 
 1. On the **Computer Security Groups** page, select **Next**.
 
