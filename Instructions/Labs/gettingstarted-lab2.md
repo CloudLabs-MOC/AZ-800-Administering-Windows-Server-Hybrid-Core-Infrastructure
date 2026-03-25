@@ -16,13 +16,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Access Your VM and Lab Guide](media/AZ-800-g2.png)
+![Access Your VM and Lab Guide](media/lab02-envtab.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Access Your VM and Lab Guide](media/AZ-800-g3.png)
+![Access Your VM and Lab Guide](media/lab02-splittab.png)
  
 ## Managing Your Virtual Machine
  
