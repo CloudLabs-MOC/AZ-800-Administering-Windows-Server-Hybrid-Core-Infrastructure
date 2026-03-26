@@ -45,7 +45,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. In the **Enter password** dialog box, copy and paste 
     - Password: <inject key="AzureAdUserPassword"></inject> and then select **Sign in**.
 
-      ![Enter Your Password](./media/signin1.png)  
+      ![Enter Your Password](./media/lab2-12-1.png)  
 
 1. If **Action Required** pop-up window appears, click on **Ask later**.
    
@@ -61,7 +61,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. In the Azure portal, open the **Cloud Shell (1)** pane by selecting the toolbar icon next to the search text box.
 
-   ![](media/AZ-800-l8-1.png)
+   ![](media/lab08-p2t1p1.png)
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell (2)**.
 
@@ -92,7 +92,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. In the toolbar of the Cloud Shell pane, Click on the **Manage files** drop down menu, select **Upload**.
 
-   ![](media/az6.png)
+   ![](media/lab08-p2t1p2.png)
 
 1. Upload the files **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab08\L08-rg_template.json** and **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab08\L08-rg_template.parameters.json** into the Cloud Shell home directory.
 
@@ -159,7 +159,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | Allow 'az800l08-vnet1' to access 'az800l08-vnet0' | **Select the checkbox (4)** |
     | Allow 'az800l08-vnet1' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox (5)** |
 
-    ![](images/t2s5.png)
+    ![](images/lab08-p2t1p3.png)
 
 1. Specify the following settings for **Local virtual network** (leave others with their default values), and then select **Add (4)**:
 
@@ -341,15 +341,15 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | --- | --- |
     | Subscription | Leave the default subscription |
     | Resource group |  Select **AZ800-L0801-RG (1)** from the drop down list |
-    | Location | the name of the Azure region in which you created the virtual networks |
     | Name | **az800l08-rt12 (2)** |
     | Propagate gateway routes | **No (3)** |
+    | Location | the name of the Azure region in which you created the virtual networks **(4)** |
 
-    ![](media/lab8j14.png)
+    ![](media/lab08-p2t1p4.png)
 
-1. Select **Review + create (4)**, and then select **Create (5)**.
+1. Select **Review + create (5)**, and then select **Create (6)**.
 
-   ![](media/lab8j15.png)
+   ![](media/lab08-p2t1p4.png)
 
    > **Note**: Wait for the route table to be created. This should take about 1 minute.
 
@@ -398,15 +398,15 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | --- | --- |
     | Subscription | Leave the default subscription |
     | Resource group |  Select **AZ800-L0801-RG (1)** from the drop down list |
-    | Region | the name of the Azure region in which you created the virtual networks |
     | Name | **az800l08-rt21 (2)** |
     | Propagate gateway routes | **No (3)** |
+    | Region | the name of the Azure region in which you created the virtual networks **(4)** |
 
-    ![](media/lab8j20.png)
+    ![](media/lab08-p2t1p7.png)
 
-1. Select **Review + create (4)**, and then select **Create (5)**.
+1. Select **Review + create (5)**, and then select **Create (6)**.
 
-    ![](media/AZ-800-l8-18.png)
+    ![](media/lab08-p2t1p8.png)
 
     > **Note**: Wait for the route table to be created. This should take about 3 minutes.
 
@@ -497,9 +497,9 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select **Review create (3)**, and then select **Create (4)**.
 
-   ![](media/lab8j26.png)
+   ![](media/lab08-p2t1p9.png)
 
-   ![](media/lab8j27.png)
+   ![](media/lab08-p2t1p10.png)
 
     >**Note**: Wait for the private DNS zone to be created. This should take about 2 minutes.
 
@@ -581,11 +581,11 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | Resource Group | Select **AZ800-L0802-RG (1)** from the drop-down list. |
     | Name | **mydns<inject key="DeploymentID" enableCopy="false"/>.com (2)** |
 
-    ![](media/lab8j34.png)
+    ![](media/lab08-p2t1p11.png)
 
 1. Select **Review + create (3)**, and then select **Create (4)**.
 
-    ![](media/lab8j35.png)
+    ![](media/lab08-p2t1p12.png)
 
     >**Note**: Wait for the DNS zone to be created. This should take about 1 minute.
 
@@ -593,7 +593,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the DNS zone page, under **DNS management (1)**, select **Recordset (2)** and click on **+ Add (3)**.
 
-    ![](media/AZ-800-l8-33.png)     
+    ![](media/lab08-p2t1p13.png)     
 
 1. In the Add a record set pane, specify the following settings (leave others with their default values):
 
@@ -612,9 +612,9 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select **Add (10)**
 
-1. On the DNS zone page, identify the full name of **Name server 1**.
+1. From the left navigation pane, select **Overview (1)** and on the DNS zone page, identify the full name of **Name server 1 (2)**.
 
-    ![](media/AZ-800-l8-35.png) 
+    ![](media/lab08-p2t1p14.png) 
 
     >**Note**: Record the full name of **Name server 1**. You will need it in the next task.
 
@@ -634,7 +634,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Verify that the output of the command includes the public IP address of **20.30.40.50**.
 
-     ![](media/AZ-800-l8-36.png) 
+     ![](media/lab08-p2t1p15.png) 
 
     >**Note**: The name resolution works as expected because the **nslookup** command allows you to specify the IP address of the DNS server to query for a record (which, in this case, is `<Name server 1>`). For the name resolution to work when querying any publicly accessible DNS server, you would need to register the domain name with a DNS registrar and configure the name servers listed on the public DNS zone page in the Azure portal as authoritative for the namespace corresponding to that domain.
 
@@ -649,4 +649,4 @@ In this lab, you have completed:
 - Configured Azure private and Azure public DNS name resolution.
 - Validated Azure private and Azure public DNS name resolution.
 
-### You have successfully completed the lab
+### You have successfully completed the lab.

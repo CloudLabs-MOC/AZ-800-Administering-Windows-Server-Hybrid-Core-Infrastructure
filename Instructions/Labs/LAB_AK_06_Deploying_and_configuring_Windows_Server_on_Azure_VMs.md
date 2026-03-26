@@ -192,7 +192,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. Open the **template.json (1)** file, select **Notepad (2)** as the editor, and click **OK (3)** to review its content. Keep the Notepad window open.  
 
-   ![](media/AZ-800-l6-42.png)
+   ![](media/lab06-p2t1p1.png)
 
 1. From File Explorer, open the **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab06\\template\\parameters.json** file in Notepad and review its content.
 
@@ -423,15 +423,16 @@ In this task, you will use the Azure portal to create resource groups and create
 
     ![](media/AZ-800-l6-33.png)
 
-1. On Basis tab of create public ip address specify the following and select **Review + create (3)** and **Create**.
+1. On Basis tab of create public ip address specify the following and select **Review + create (5)** and **Create**.
      
-      |Setting|Value|
-      |---|---|
-      |Resource group|Select **A9Z800-L0601-RG (1)** resource group from the dropdown|
-      |Name|**az800l06-vm0-pip1 (2)**|
-      |SKU|**Standard**|
+      | Setting        | Value                                                     |
+      | -------------- | --------------------------------------------------------- |
+      | Resource group | Select **AZ800-L0601-RG (1)** from the dropdown           |
+      | Region         | Select the same region as your deployed resources i.e., <inject key="Region"></inject> **(2)** |
+      | Name           | **az800l06-vm0-pip1 (3)**                                 |
+      | SKU            | **Standard (4)**                                          |
 
-      ![](media/lab6f41.png)
+      ![](media/lab06-p2t1p2.png)
       
 1. In the Azure portal, browse back to the **AZ800-L0601-RG** page, and then in the list of resources, select the entry representing the network interface, select **IP configurations (1)** under **Settings**, and then select the **ipconfig1 (2)** entry.
 
@@ -480,6 +481,8 @@ In this task, you will use the Azure portal to create resource groups and create
 1. On the **az800l06-vm0 \| Connect** page, under the **Native RDP** section, click **Request JIT + Check access (1)**, and then select **Download RDP file (2)**
 
     ![](media/AZ-800-l6-40.png)
+
+    >**Note:** The Request JIT process may take a 5-10 minutes to complete.
 
 1. On **Native RDP**, select **Download RDP File**,  follow prompts to connect to the target Azure VM.
 
