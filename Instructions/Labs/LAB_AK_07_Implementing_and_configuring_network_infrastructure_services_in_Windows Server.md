@@ -57,7 +57,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
     ![](media/lab7-12-1.png)
 
-1. In the details pane, select **Installed extensions (2)** and verify that the list includes the extensions you just installed **DHCP** and **DNS**.
+1. In the details pane, select **Installed extensions (1)** and verify that the list includes the extensions you just installed **DHCP** and **DNS** **(2)**.
 
     ![](media/lab7-12-2.png)
 
@@ -371,7 +371,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Wait until a notification appears indicating that the DNS PowerShell tools are installed. If necessary, select the **Notifications** icon to verify the current status.
 
-  >**Note**: If prompted **DNS powershell tools are  not installed** , click on **install**.
+   >**Note**: If prompted **DNS powershell tools are  not installed** , click on **install**.
 
 ### Task 2: Create a DNS zone
 
