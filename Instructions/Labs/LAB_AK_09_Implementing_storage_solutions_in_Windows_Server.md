@@ -231,15 +231,15 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
        ![](media/lab9k9.png)
 
-1. In **All connections** pane, select **sea-svr3.contoso.com**.
+1. In **All connections** pane, select **sea-svr3.contoso.com (1)**.
 
-   ![](media/AZ-800-l9-14.png)
+   ![](media/lab09-p2t1p1.png)
 
-1. On the **sea-svr3.contoso.com (1)** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password.
+1. On the **sea-svr3.contoso.com** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password.
 
    >**Note:** If copy-paste is not working, please type the password manually.
 
-   ![](media/lab9-12-1.png)
+   ![](media/lab09-p2t1p2.png)
 
 1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
@@ -264,7 +264,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    > **Note**: Compare the previously displayed values with the current ones. 
 
-1. Wait for **five to ten minutes** to allow the deduplication job to complete and repeat the previous step.
+1. Wait for **5 to 10 minutes** to allow the deduplication job to complete and repeat the previous step.
 
 1. Switch back to console session to **SEA-ADM1**.
 
@@ -363,7 +363,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    > **Note**: **SEA-DC1** has only a single disk hosting the boot and system volumes.
 
-1. In **Server Manager**, in **File and Storage Services**, select **iSCSI (1)**, select **Tasks (2)**, and then, in the drop-down menu, select **New iSCSI Virtual Disk (3)**.
+1. In **Server Manager**, in **File and Storage Services**, select **iSCSI (1)**, select **TASKS (2)**, and then, in the drop-down menu, select **New iSCSI Virtual Disk (3)**.
 
    ![](media/iscsi-vd01.png)
 
