@@ -97,9 +97,9 @@ In this task, you will use Windows Admin Center to add SEA-DC1 for remote admini
 
 1. Review the **All connections** page and note that it includes the **sea-adm1.contoso.com** entry. 
 
-1. On the **All connections** page, select **+ Add (1)**. 
+1. On the **All connections** page, select **+ Add (1)** > **Add manually (2)**
 
-   ![](media/lab3-12-3.png)
+   ![](media/wac45.png)
 
 1. In the Add or create resources pane, on the **Servers** tile, select **Add (2)**.
 
