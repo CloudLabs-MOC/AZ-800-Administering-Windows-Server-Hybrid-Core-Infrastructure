@@ -99,7 +99,7 @@ In this task, you will use Windows Admin Center to add SEA-DC1 for remote admini
 
 1. On the **All connections** page, select **+ Add (1)** > **Add manually (2)**
 
-   ![](media/wac45.png)
+   ![](images/WAC45.png)
 
 1. In the Add or create resources pane, on the **Servers** tile, select **Add (2)**.
 
