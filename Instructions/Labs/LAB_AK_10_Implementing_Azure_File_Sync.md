@@ -147,18 +147,18 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the **Basics** tab of the **Create a storage account** page, specify the following settings:
 
-   - Subscription: **Leave the deafult Subscription (1)**
+   - Subscription: **Leave the default Subscription (1)**
    - Resource group: Select **AZ800-L1001-RG (2)** resource group.
    - Storage account name: **storage<inject key="DeploymentID" enableCopy="false"/> (3)**
    - Region: Any Azure region in your geographical area in which you can create storage accounts **(4)**.
 
      >**Note:** Use the same region for deploying all resources in this lab.
 
-   - Performance	**Standard (general-purpose v2 account) (5)**
+   - Preferred storage type: **Azure Blob Storage or Azure Data Storage Gen2 (5)**
+   - Performance	**Standard (general-purpose v2 account) (6)**
+   - Redundancy: **Locally-redundant storage (LRS) (7)**
 
-   - Redundancy: **Locally-redundant storage (LRS) (6)**
-
-1. Accept the default values for all other settings, select **Review + Create (7)**, and then select **Create**.
+1. Accept the default values for all other settings, select **Review + Create (8)**, and then select **Create**.
 
    ![](./media/AZ-800-l10-13.png)
 
@@ -287,14 +287,14 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. Use File Explorer to copy the downloaded file to the **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10** folder.
    
    >**Note:** If you cannot copy StorageSyncAgent_WS2025.msi from the Downloads folder to C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10, please follow these steps:
-
-      * 1.Open two File Explorer windows.
-
-      * 2.In one window, navigate to the Downloads folder where **StorageSyncAgent_WS2025.msi** is located.
-
-      * 3.In the other window, navigate to **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10.**
-
-      * 4.Drag and drop the **StorageSyncAgent_WS2025.msi** file from the Downloads folder to the destination folder.
+    > 
+    >  1. Open two File Explorer windows.
+    >
+    >  2. In one window, navigate to the Downloads folder where **StorageSyncAgent_WS2025.msi** is located.
+    >
+    > 3. In the other window, navigate to **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10.**
+    >
+    > 4. Drag and drop the **StorageSyncAgent_WS2025.msi** file from the Downloads folder to the destination folder.
 
 1. In File Explorer displaying the content of the **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10** folder, in the details pane, select the file **Install-FileSyncServerCore.ps1 (1)**, display its context-sensitive menu, and right click, in the menu, select **Edit (2)**.
 
@@ -325,6 +325,10 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
     ![](./media/AZ-800-l10-35.png)
 
+    > **Note:** If you get the error **"The network path was not found"** as shown below, switch to **HostVM-<inject key="DeploymentID" enableCopy="false"/>** and check if **SEA-SVR1** VM is running or not. If not, restart the VM, navigate back to SEA-ADM1 VM and run the same command again.
+    >
+    >    ![](./media/AZ-800-l10-script-error.png)
+
 1. Review the script, and then execute it by selecting the **Run Script** icon in the toolbar or by pressing F5. 
 
    >**Note:** Monitor the script execution. This should take about 3 minutes.
@@ -353,7 +357,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
     ![](./media/AZ-800-l10-38.png)
 
-1. On **SEA-ADM1**, switch to the File Explorer window, in **Quick access** browse to the **\\\\SEA-SVR1\\Data** share, and verify that the folder doesn't currently contain **File1.txt**.
+1. On **SEA-ADM1**, switch to the File Explorer window, in **Quick access**, search for **\\\\SEA-SVR1\\Data** share, and verify that the folder doesn't currently contain **File1.txt**.
 
 1. Switch to the Microsoft Edge window displaying the Azure portal, on the **FileSync1 \| Registered servers** page, under **Sync** section, select **Sync Groups**, select **Sync1**, and then, on the **Sync1** page, select **+ Add server endpoint**.
 
@@ -381,6 +385,10 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](./media/AZ-800-l10-41.png)
 
    >**Note:** Monitor the script execution. This should take about 3 minutes.
+
+    > **Note:** If you get the error **"The network path was not found"** as shown below, switch to **HostVM-<inject key="DeploymentID" enableCopy="false"/>** and check if **SEA-SVR1** VM is running or not. If not, restart the VM, navigate back to SEA-ADM1 VM and run the same command again.
+    >
+    >    ![](./media/AZ-800-l10-script-error.png) 
 
 1. After running the script, you will see a warning message. At the last line, you'll find a prompt saying:
    "To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code."
@@ -412,11 +420,17 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. In **DFS Management**, in the navigation pane, right-click or access the context menu for **Branch1 (1)**, select **Delete (2)**, select the **Yes, delete the replication group, stop replicating all associated replicated folders, and delete all members of the replication group (1)** option, and then select **OK (2)**.
 
+    > **Note:** If the **Branch1** is not displayed in DFS Management, skip this step and continue with next steps.
+
     ![](./media/AZ-800-l10-43.png)
 
     ![](./media/AZ-800-l10-44.png)
 
-1. Switch to the Microsoft Edge window displaying the Azure portal, browse back to the **FileSync1** **Storage Sync Service** page, in the list of sync groups, select **Sync1**, and then, on the **Sync1** page, select **+ Add server endpoint**.
+1. Switch to the Microsoft Edge window displaying the Azure portal, browse back to the **FileSync1** **Storage Sync Service** page, in the list of sync groups, select **Sync1**,
+
+    ![](./media/AZ-800-l10-filesync1.png)
+
+1. Then, on the **Sync1** page, select **+ Add server endpoint**.
 
      ![](./media/AZ-800-l10-45.png)
 
@@ -477,7 +491,9 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 ### Task 1: Monitor File Sync replication
 
-1. On **SEA-ADM1**, use File Explorer to copy the **C:\\Windows\\INF** folder to **\\\\SEA-SVR2\\Data\\**. The folder will sync to the cloud endpoint, which will cause sync traffic.
+1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **C:\\Windows\\INF** and **\\\\SEA-SVR2\Data\\** side-by-side. Drag the folder INF and paste/drop it in **\\\\SEA-SVR2\\Data\\** folder. The folder will sync to the cloud endpoint, which will cause sync traffic.
+
+    ![](./media/AZ-800-l10-50.png)
 
 1. On **SEA-ADM1**, switch to the Azure portal displaying the **Sync1** sync group page of the **FileSync1** Storage Sync Service.
 
