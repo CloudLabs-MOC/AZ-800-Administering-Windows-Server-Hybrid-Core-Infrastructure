@@ -1,5 +1,6 @@
-# Lab 06: Deploying and configuring Windows Server on Azure VMs
 
+<<<<<<< HEAD
+=======
 ## Lab scenario
 
 You need to address concerns regarding your current infrastructure. You have an outdated operational model, a limited use of automation, and Information Security team concerns regarding additional controls that should be applied to Azure VMs running Windows Server-based workloads. You have decided to develop and implement an automated deployment and configuration process for Azure VMs running Windows Server.
@@ -529,3 +530,5 @@ In this lab, you have completed:
 - Connect to the Azure VM via JIT VM access.
 
 ## You have successfully completed this lab.
+
+>>>>>>> ebd00d9f0dc068fa734c4a24051900ae24df3584
