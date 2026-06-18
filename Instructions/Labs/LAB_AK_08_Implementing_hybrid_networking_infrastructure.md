@@ -17,9 +17,8 @@ In this lab, you will perform:
 
    ![](media/mod8art.png)  
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+>Note: 
+>While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Implement virtual network routing in Azure
 
@@ -27,7 +26,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the **HOSTVM (1)** dropdown menu, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media/hostvm.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
@@ -199,6 +198,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | Allow 'az800l08-vnet0' to access 'az800l08-vnet2'| **Select the checkbox**|
     | Allow 'az800l08-vnet0' to receive forwarded traffic from 'az800l08-vnet2' | **Select the checkbox** |
 
+    ![](media/new1.png)
+
     >**Note**: This step establishes two peerings - one from **az800l08-vnet0** to **az800l08-vnet2** and the other from **az800l08-vnet2** to **az800l08-vnet0**. This completes setting up the hub and spoke topology (with the **az800l08-vnet0** virtual network serving the role of the hub, while **az800l08-vnet1** and **az800l08-vnet2** are its spokes).
 
 ### Task 3: Test transitivity of virtual network peering
@@ -241,13 +242,13 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
     | Setting | Value |
     | --- | --- |
-    | Source type | **Virtual machine** |
-    | Virtual machine | **az800l08-vm0** |
-    | Destination | **Specify manually** |
-    | URI, FQDN or IP address | **10.82.0.4** |
-    | Protocol | **TCP** |
-    | Destination Port | **3389** |
-    | Diagnostic tests | Select **Connectivity** and **Next hop** from the list |
+    | Source type | **Virtual machine(1)** |
+    | Virtual machine | **az800l08-vm0(2)** |
+    | Destination | **Specify manually(3)** |
+    | URI, FQDN or IP address | **10.82.0.4(4)** |
+    | Protocol | **TCP(5)** |
+    | Destination Port | **3389(6)** |
+    | Diagnostic tests | Select **Connectivity** and **Next hop(7)** from the list |
 
     > **Note**: **10.82.0.4** represents the private IP address of **az800l08-vm2**. 
 
@@ -270,6 +271,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     | Protocol | **TCP** |
     | Destination Port | **3389** |
     | Diagnostic tests | Select **Connectivity** and **Next hop** from the list |
+
+    ![](media/new2.png)
 
 1. Select **Run diagnostic tests** and wait until results of the connectivity check are returned. Note that the status is **Unreachable**.
 
