@@ -516,7 +516,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 <validation step="e61e31af-224b-4ff6-94d4-b86acfa02071" />
  
-### Review
+### Summary
 In this lab, you have completed:
 - Generate and download an ARM template and parameters files by using the Azure portal.
 - Review the ARM template and parameters files for Azure VM deployment.
