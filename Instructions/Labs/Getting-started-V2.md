@@ -1,7 +1,64 @@
 # Getting Started with Your AZ-800: Administering Windows Server Hybrid Core Infrastructure Workshop
  
 Welcome to your AZ-800: Administering Windows Server Hybrid Core Infrastructure workshop! We've prepared a seamless environment for you to explore and learn about configuring and managing Windows Server on-premises, hybrid, and infrastructure as a service (IaaS) platform workloads. Let's begin by making the most of this experience:
+
+## Lab 06: Deploying and Configuring Windows Server on Azure VMs
+
+Overall Estimated Timing: 2 Hours 15 Minutes
+
+## Overview 
+
+In this hands-on lab, you will automate the deployment and configuration of Windows Server virtual machines in Azure. You will create and customize ARM templates to deploy Azure virtual machines and configure them using VM extensions. The lab also introduces additional security controls, including application allow-listing with AppLocker, file integrity monitoring, adaptive network protection, DDoS protection, and Just-In-Time (JIT) VM access management. By completing this lab, you will gain practical experience in implementing Infrastructure as Code (IaC) and applying Azure-native security capabilities to strengthen the protection and manageability of Windows Server workloads running in Azure.
+
+## Objectives
+
+ By the end of this lab, you will be able to: 
+
+- **Create and customize ARM templates** to automate the deployment of Windows Server virtual machines and supporting Azure resources.
+- **Configure Azure VM Extensions** to perform automated post-deployment operating system configuration tasks.
+- **Deploy Windows Server virtual machines** in Azure using Infrastructure as Code principles.
+- **Implement secure administrative access** through Azure security controls and Just-In-Time (JIT) VM access.
+- **Enhance the security posture** of Windows Server workloads using AppLocker, file integrity monitoring, adaptive network hardening, and DDoS protection.
+
+## Prerequisites
+ Before starting this lab, you should have:
+
+- Basic knowledge of Microsoft Azure and Azure Resource Manager.
+- Familiarity with Azure Virtual Machines and networking concepts.
+- Understanding of Infrastructure as Code (IaC) principles and ARM templates.
+- Basic knowledge of Windows Server administration.
+- Familiarity with Azure security concepts such as Network Security Groups (NSGs), Microsoft Defender for Cloud, and Just-In-Time access.
+
+## Architecture Explaination
+
+This architecture uses ARM Templates to automate the deployment of a Windows Server Virtual Machine within an Azure Virtual Network (VNet). VM Extensions are used to perform post-deployment configuration tasks and maintain system consistency.
+
+Network traffic is secured through a Network Security Group (NSG), while Just-In-Time (JIT) VM Access restricts administrative access to approved users and IP addresses. AppLocker and File Integrity Monitoring help secure the operating system by controlling application execution and monitoring critical file changes.
+
+Microsoft Defender for Cloud provides continuous security monitoring, recommendations, and threat protection, while Azure DDoS Protection safeguards internet-facing resources against denial-of-service attacks.
+
+## Architecture Diagram
+
+![Architecture diagram](media/Arch.png)
+
+## Explanation of Components
+
+- **Azure Resource Manager (ARM) Templates**: Automate Azure resource deployment through reusable Infrastructure as Code templates.
+
+- **Azure Virtual Machines**: Host and run Windows Server workloads within the Azure cloud environment.
  
+- **Azure VM Extensions**: Perform automated configuration and management tasks on deployed virtual machines.
+
+- **Virtual Network and Network Security Groups**: Control and secure network traffic flowing to and from Azure resources.
+
+- **Microsoft Defender for Cloud**: Provide continuous security assessment, monitoring, and threat protection.
+
+- **AppLocker and File Integrity Monitoring**: Enforce application control policies and detect unauthorized file modifications.
+
+- **Azure DDoS Protection**: Mitigate network-based attacks to maintain application availability.
+
+- **Just-In-Time (JIT) VM Access**: Reduce exposure by granting temporary administrative access only when needed.
+
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
@@ -16,13 +73,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](media/lab02-envtab.png)
+![Explore Lab Resources](media/envtabnew.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Use the Split Window Feature](media/lab02-splittab.png)
+![Use the Split Window Feature](media/splitwindow.png)
  
 ## Managing Your Virtual Machine
  
