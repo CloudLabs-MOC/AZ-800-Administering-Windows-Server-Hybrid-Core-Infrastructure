@@ -114,13 +114,18 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](media/AZ-800-l9-5.png)
 
    ### 3. Create a new partition using the entire disk space and assign a drive letter (M)  
+
    ```powershell
    New-Partition -DiskNumber 1 -UseMaximumSize -DriveLetter M
    ```	
+   ![](media/lab09-17-3.png)
+
    ### 4. Format the partition with the ReFS file system  
+
    ```powershell
    Format-Volume -DriveLetter M -FileSystem ReFS
    ```
+   ![](media/lab09-17-4.png)
 
 3. At the **Windows PowerShell** prompt, enter the following commands, and press Enter after each to copy from **SEA-ADM1** a script that creates sample files to be deduplicated, execute it, and identify the outcome:
 
@@ -129,10 +134,14 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ## PowerShell Commands for Drive Mapping and File Management
 
    ### 1. Map a network drive to `X:` pointing to `\\SEA-ADM1\Labfiles`
+
    ```powershell
    New-PSDrive -Name 'X' -PSProvider FileSystem -Root '\\SEA-ADM1\Labfiles'
    ```
+   ![](media/lab09-19-1.png)
+
    ### 2. Create a directory `M:\Data`
+
    ```powershell
    New-Item -Type Directory -Path 'M:\Data' -Force
    ```
@@ -146,9 +155,13 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](media/AZ-800-l9-7.png)
 
    ### 4. Execute the copied script
+
    ```powershell
    Start-Process -FilePath M:\Data\CreateLabFiles.cmd -PassThru
    ```
+   
+   ![](media/lab09-19-4.png)
+
    ### 5. Change the working directory to `M:\Data`
    ```powershell
    Set-Location -Path M:\Data
