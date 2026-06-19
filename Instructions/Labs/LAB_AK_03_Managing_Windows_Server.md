@@ -33,7 +33,7 @@ In this task, you will install Windows Admin Center on SEA-ADM1. You will downlo
 
 1. On the **HOSTVM (1)** dropdown menu, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media/hostvm.png)
 
 1. On the **SEA-ADM1** login screen, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
@@ -59,6 +59,7 @@ In this task, you will install Windows Admin Center on SEA-ADM1. You will downlo
    ```powershell
    Start-Process -FilePath '.\WindowsAdminCenter.exe' -ArgumentList '/VERYSILENT' -Wait
    ```
+   ![](media/pscmd.png)
 
    > **Note:** Wait until the installation completes. This should take about 2 minutes.
    
@@ -102,6 +103,8 @@ In this task, you will use Windows Admin Center to add SEA-DC1 for remote admini
    ![](images/WAC45.png)
 
 1. In the Add or create resources pane, on the **Servers** tile, select **Add (2)**.
+
+   ![](media/new.png)
 
 1. In the **Server name** text box, enter **sea-dc1.contoso.com (1)**  and click on **Add** (2).  
 

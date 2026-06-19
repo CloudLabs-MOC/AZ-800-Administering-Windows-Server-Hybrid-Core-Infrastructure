@@ -54,12 +54,6 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
    ![](media/lab6-12-2.png)
 
-1. If you see the pop-up **Action Required**, click **Ask Later**.
-
-   ![](media/action.png) 
-
-   >**Note:** Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
-
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
     ![](media/AZ-800-g7.png)
@@ -104,6 +98,8 @@ In this task, you will use the Azure portal to create resource groups and create
    |Confirm Password|**Pa55w.rd1234** **(11)**|
    |Public inbound ports|None **(12)**|
    |Would you like to use an existing Windows Server license|Off **(13)**|
+
+   >Note: While selecting the Image, **Go to See all images** select **Windows Server** and select the **Windows Server 2022 Datacenter: Azure Edition - x64 Gen2 (6)**
 
    ![](media/AZ-800-l6-3.png)
 
@@ -237,7 +233,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. On **SEA-ADM1**, switch to the browser window displaying the Azure portal.
 
-1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search **Deploy a Custom Template** and select **Deploy a custom template (2)** from the results.
+1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search **Deploy a Custom Template (1)** and select **Deploy a custom template (2)** from the results.
 
    ![](media/AZ-800-l6-15.png)
 
@@ -290,7 +286,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. On the **Resource groups** page, select the **AZ800-L0601-RG** entry.
 
-    ![](media/AZ-800-l6-20.png)
+    ![](media/rg1.png)
 
 1. On the **AZ800-L0601-RG** page, on the **Overview** page, review the list of resources, including the Azure VM **az800l06-vm0**.
 
@@ -309,7 +305,7 @@ In this task, you will use the Azure portal to create resource groups and create
    ![](media/lab6-12-7.png)
 
 1. On the **Microsoft.Template \| Overview** page, select **Template**, and note that this is the same template you used for deployment.
-
+   ![](media/temp.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -323,6 +319,8 @@ In this task, you will use the Azure portal to create resource groups and create
 ### Task 1: Verify the status of Azure Microsoft Defender for Cloud
 
 1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search for and select **Microsoft Defender for Cloud**.
+
+    ![](media/mdfc.png)
 
 1. On the **Overview** page of Microsoft Defender for Cloud, on the vertical menu on the left side, in the **Management** section, select **Environment settings (1)**. 
 
@@ -459,7 +457,7 @@ In this task, you will use the Azure portal to create resource groups and create
 >**Note:** This task is necessary to trigger re-evaluation of the JIT status of the Azure VM. By default, this might take up to 24 hours.
 
 1. In the Azure portal, browse back to the **AZ800-L0601-RG** page, and then in the list of resources, select the entry representing the Azure VM **az800l06-vm0**.
-
+   ![](media/rg.png)
 1. On the **az800l06-vm0** page, under **Settings** section select **Configuration (1)**. 
 
 1. On the **az800l06-vm0 \| Configuration** page, select **Enable just-in-time (2)** VM access and select the **Open Microsoft Defender for Cloud** link.
@@ -503,6 +501,8 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. Verify that you can successfully access via Remote Desktop the operating system running in the Azure VM and close the Remote Desktop session.
 
+      ![](media/rdp.png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -510,7 +510,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 <validation step="e61e31af-224b-4ff6-94d4-b86acfa02071" />
  
-### Review
+### Summary
 In this lab, you have completed:
 - Generate and download an ARM template and parameters files by using the Azure portal.
 - Review the ARM template and parameters files for Azure VM deployment.
@@ -523,3 +523,4 @@ In this lab, you have completed:
 - Connect to the Azure VM via JIT VM access.
 
 ## You have successfully completed this lab.
+

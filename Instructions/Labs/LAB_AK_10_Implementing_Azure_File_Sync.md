@@ -26,9 +26,8 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 > **Note**: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-SEA-SVR2**, and **AZ-800T00A-SEA-ADM1** virtual machines are hosting the installation of **SEA-DC1**, **SEA-SVR1**, **SEA-SVR2**, and **SEA-ADM1**, respectively.
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+>**Note**: 
+>While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Implementing Distributed File System (DFS) Replication in your on-premises environment
 
@@ -266,6 +265,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the **Storage Sync Services** page, select **FileSync1** under **Sync** section, select **Registered servers**, and verify that there are no currently registered servers.
 
+    ![](./media/new4.png)
+
     <validation step="f75e9fe1-a77f-4ece-b64e-f02e20b24fde" />
 
 ## Exercise 3: Replacing DFS Replication with File Sync-based replication
@@ -282,7 +283,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select the checkbox next to the entry for File Sync agent for Windows Server 2025 (**StorageSyncAgent_WS2025.msi (1)**), and select **Next (2)** to start the download. After the download is complete, close the Microsoft Edge tab that opened for the download.
 
-    ![](./media/AZ-800-l10-33.png)
+    ![](./media/new3.png)
 
 1. Use File Explorer to copy the downloaded file to the **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10** folder.
    
@@ -475,7 +476,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
    Invoke-StorageSyncCloudTiering -Path S:\Data 
    ```
-1. On **SEA-ADM1**, switch to the File Explorer window displaying the content of the **\\\\SEA-SVR2\\Data** folder.
+1. On **SEA-ADM1**, switch to the File Explorer window displaying the content of the `\\SEA-SVR2\Data` folder.
 
       ![](./media/AZ-800-l10-47.png)
 
@@ -491,7 +492,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 ### Task 1: Monitor File Sync replication
 
-1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **C:\\Windows\\INF** and **\\\\SEA-SVR2\Data\\** side-by-side. Drag the folder INF and paste/drop it in **\\\\SEA-SVR2\\Data\\** folder. The folder will sync to the cloud endpoint, which will cause sync traffic.
+1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **C:\\Windows\\INF** and `\\SEA-SVR2\Data\` side-by-side. Drag the folder INF and paste/drop it in `\\SEA-SVR2\Data\` folder. The folder will sync to the cloud endpoint, which will cause sync traffic.
 
     ![](./media/AZ-800-l10-50.png)
 
@@ -505,7 +506,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select the **Files Synced** graph, and then explore how you can customize the graph by using a filter.
 
-1. Switch to the File Explorer window displaying the content of drive **Z** mapped to the Azure File share and verify that the drive contains the content of the **INF** folder synchronized from **\\\\SEA-SVR2\\Data**.
+1. Switch to the File Explorer window displaying the content of drive **Z** mapped to the Azure File share and verify that the drive contains the content of the **INF** folder synchronized from `\\SEA-SVR2\Data`.
 
 1. Switch to the Azure portal displaying **Sync1** under **Monitoring (1)** section, select **status (2)** and verify that the **INF** sync traffic is reflected in the **Files Synced** and **Bytes Synced** graphs. The **INF** folder has more than 800 files, and its size is more than 40 MB.
 
@@ -515,11 +516,11 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 ### Task 2: Test replication conflict resolution
 
-1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **\\\\SEA-SVR1\Data\\** and **\\\\SEA-SVR2\Data\\** side-by-side.
+1. On **SEA-ADM1**, position the File Explorer windows displaying the content of `\\SEA-SVR1\Data\` and `\\SEA-SVR2\Data\` side-by-side.
 
-1. In the File Explorer window displaying the content of **\\\\SEA-SVR2\Data\\**, create a file named **Demo.txt**. 
+1. In the File Explorer window displaying the content of `\\SEA-SVR2\Data\`, create a file named **Demo.txt**. 
 
-1. In the File Explorer window displaying the content of **\\\\SEA-SVR1\Data\\**, create a file named **Demo.txt**. 
+1. In the File Explorer window displaying the content of `\\SEA-SVR1\Data\`, create a file named **Demo.txt**. 
 
 1. Add an arbitrary text to the first **Demo.txt** file and save the change.
 
@@ -528,6 +529,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    >**Note:** Make sure to save the change to the second file as soon as possible. You're creating files with the same name but different content to intentionally trigger a sync conflict.
 
 1. In each File Explorer window, review their content and verify what they contain, in addition to the **Demo.txt** file, also check for **Demo-SEA-SVR2.txt** (and potentially **Demo-Cloud.txt**). 
+
+    ![](./media/lab10-june26-t1p2.png)
 
    >**Note:** This is because File Sync detected a sync conflict and added a suffix representing the endpoint name (**SEA-SVR2**) or **Cloud** to the file that caused the conflict.
 
