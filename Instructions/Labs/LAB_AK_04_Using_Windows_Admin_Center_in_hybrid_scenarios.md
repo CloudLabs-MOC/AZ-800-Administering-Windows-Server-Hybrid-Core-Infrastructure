@@ -1,5 +1,7 @@
 # Lab 04: Using Windows Admin Center in hybrid scenarios
 
+## Estimated time: 90 Minutes
+
 ## Lab scenario
 
 To address concerns regarding the consistent operational and management model, regardless of the location of managed systems, you'll test the capabilities of Windows Admin Center in the hybrid environment containing different versions of the Windows Server operating system running on-premises and in Microsoft Azure virtual machines (VMs).
@@ -13,8 +15,6 @@ In this lab, you will perform:
 - Exercise 2: Implementing hybrid connectivity by using the Azure Network Adapter
 - Exercise 3: Deploying Windows Admin Center gateway in Azure
 - Exercise 4: Verifying functionality of the Windows Admin Center gateway in Azure
-
-## Estimated time: 90 Minutes
 
 ## Architecture Diagram
 
@@ -102,7 +102,7 @@ In this task, you will deploy an Azure VM using an ARM template. This Azure VM w
 
 1. In the Azure portal, close the Cloud Shell pane.
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search for and select the **az800l04-vnet** virtual network.
+1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search **(1)** for and select the **az800l04-vnet (2)** virtual network.
 
    ![](media/lab4g7.png) 
 
@@ -159,6 +159,8 @@ In this task, you will register Windows Admin center with Azure.
 
        ![](media/lab4-12-8.png)
 
+1. Then click on **sea-adm1-contoso.com (Gateway)**.
+
 1. In Windows Admin Center, select **Networks (1)**, and then select **+ Add Azure Network Adapter (Preview) (2)**.
 
    > **Note:** Depending on the screen resolution, you might need to select the **ellipsis** icon if the **Actions** menu is not available.
@@ -181,7 +183,7 @@ In this task, you will register Windows Admin center with Azure.
 
    ![](media/lab4g11.png)
 
-1. In the **Enter code** text box, paste the code you copied into Clipboard, and then select **Next**.
+1. In the **Enter codef (1)** text box, paste the code you copied into Clipboard, and then select **Next (2)**.
 
    ![](media/lab4g12.png)
 
@@ -195,9 +197,13 @@ In this task, you will register Windows Admin center with Azure.
 
 1. In Windows Admin Center, verify that the sign in was successful and close the newly opened tab of the Microsoft Edge window.
 
+   ![](media/windows-admin-c.png)
+
 1. In the **Get started with Azure in Windows Admin Center** pane, ensure that **Azure Active Directory application(Microsoft Entra application)** is set to **Create new (1)**, and then select **Connect (2)**.
 
    ![](media/lab4g15.png)
+
+   >**Note**: If you encounter an error, retry this step up to two times. If it still does not work, skip this steps and proceed to Exercise 3.
 
 1. In the listing of the steps of the registration procedure, select **Sign in**. This will open a pop-up window labeled **Permissions requested**.
 
@@ -237,7 +243,7 @@ In this task, you will install windows admin center gateway in Azure.
 
 1. Back in the Azure portal, open the Cloud Shell pane by selecting the **Cloud Shell** icon.
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu, select **Upload**, and then upload the **C:\Users\Administrator.CONTOSO\Downloads\Deploy-WACAzVM.ps1** file into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Manage files** dropdown to select **Upload/Download files** option, in the drop-down menu, select **Upload**, and then upload the **C:\Users\Administrator.CONTOSO\Downloads\Deploy-WACAzVM.ps1** file into the Cloud Shell home directory.
 
 1. From the Cloud Shell pane, run the following command to enable the compatibility for the **AzureRm** PowerShell cmdlets that are used by the Windows Admin Center provisioning script:
 
@@ -257,6 +263,8 @@ In this task, you will install windows admin center gateway in Azure.
    $size = 'Standard_D2s_v3'
    ```
 
+   ![](media/lab04-cmd-2.png)
+
 1. From the Cloud Shell pane, run the following commands to set the script parameters variable:
 
    ```powershell
@@ -271,34 +279,44 @@ In this task, you will install windows admin center gateway in Azure.
      SecurityGroupName = $nsgName
    }
    ```
+   ![](media/lab04-cmd-9.png)
 
 1. From the Cloud Shell pane, run the following commands to disable certificate verification for PowerShell remoting (when prompted to confirm the installation from an untrusted repository, enter **A** and press Enter):
 
    ```powershell
    Install-Module -Name pswsman
    ```
+   ![](media/lab04-cmd-10.png)
 
    ```powershell
    Disable-WSManCertVerification -All
    ```
+   ![](media/lab04-cmd-11.png)
 
 1. From the Cloud Shell pane, run the following command to launch the provisioning script:
 
    ```powershell
    ./Deploy-WACAzVM.ps1 @scriptParams
    ```
+   ![](media/lab04-cmd-12.png)
 
 1. When prompted to provide the name for the local Administrator account, enter the **Student**.
+
+   ![](media/lab04-cmd-12.png)
 
 1. When prompted to provide the password for the local Administrator account, enter the **Pa55w.rd1234**.
 
    >**Note:** Wait for the provisioning script to complete. This might take about 5 minutes.
+
+   ![](media/progress-deployment.png)
    
 1. Close the Cloud Shell pane.
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search for and select **Virtual Machines**, and then, on the **Compute infrastructure | Virtual machines** page, select the **az800l04-vmwac** entry.
+1. In the Azure portal, in the **Search resources, services, and docs** text box in the toolbar, search **(1)** for and select **Virtual Machines (2)**, and then, on the **Compute infrastructure | Virtual machines** page, select the **az800l04-vmwac (3)** entry.
 
-   ![](media/lab4-12-11.png)
+   ![](media/lab04-vm.png)
+
+   ![](media/select-vm-compute.png)
 
 1. On **az800l04-vmwac** page, Under the **Connect (1)** section, select **Connect (2)** and then select **Download RDP file (3)**.
 
@@ -306,14 +324,29 @@ In this task, you will install windows admin center gateway in Azure.
 
    ![](media/az800nl4t.png)
 
+1. When Downloading the RDP file if any pop-up shows to keep downloading or Delete. Then select **Keep** to download.
+
+1. After downloading finished in Downloads click on **open file**.
+
+1. A pop-up saying to connect RDP click on **connect** option. 
+
+   ![](media/rdp-connect.png)
+
+1. On Windows Security pop-up click on **More choices (1)** which shows options. Select **Use a different account (2)**.
+
+   ![](media/select-more-choice.png)
+
 1. When prompted, use the below credentials
 
-    - **Username** - Student
-    - **Password** - Pa55w.rd1234
+    - **Username (1)** - Student
+    - **Password (2)** - Pa55w.rd1234
+    - Then click **Ok (3)**.
 
-1. Within the Remote Desktop session to **az800l04-vmwac** vm, select **Start (1)**, and then select **Windows PowerShell (Admin) (2)**.
+      ![](media/student-cred.png)
 
-    ![](media/lab4-12-13.png)
+1. Within the Remote Desktop session to **az800l04-vmwac** vm, select **Start (1)**, and then select **Windows PowerShell (2)**.
+
+    ![](media/win-powershell.png)
 
     > **Note:** If **Server Manager** opens automatically, close it before proceeding.
 
@@ -322,7 +355,11 @@ In this task, you will install windows admin center gateway in Azure.
    ```powershell
    Start-BitsTransfer -Source https://aka.ms/WACDownload -Destination "$env:USERPROFILE\Downloads\WindowsAdminCenter.exe"
    ```
-1. Open a file explorer, navigate to the **Downloads** folder, and run the **WindowsAdminCenter.exe** file. This will start the **Windows Admin Center (v2) Installer** wizard.
+   ![](media/cmd-1-student.png)
+
+1. Open a file explorer, navigate to the **Downloads (1)** folder, and run the **WindowsAdminCenter.exe** file. This will start the **Windows Admin Center (v2) Installer (2)** wizard.
+
+   ![](media/wac-select.png)
 
 1. On the **Welcome to the Windows Admin Center setup wizard** page, select **Next**.
 
@@ -354,7 +391,7 @@ In this task, you will install windows admin center gateway in Azure.
 
    ![](media/lab4-12-16.png)
 
-   ![](media/lab4-12-17.png)   
+   ![](media/wac-finish.png)   
 
 ## Exercise 4: Verifying functionality of the Windows Admin Center gateway in Azure
 
@@ -364,7 +401,9 @@ In this exercise, you will verify functionality of the WAC gateway in Azure.
 
 In this task, you will connect to the WAC gateway running in Azure VM.
 
-1. On **SEA-ADM1**, on the **az800l04-vmwac** page, select the **Overview** entry on the left menu and copy the **DNS Name**.
+1. On **SEA-ADM1**, on the **az800l04-vmwac** page, select the **Overview (1)** entry on the left menu and copy the **DNS Name (2)**.
+
+   ![](media/copy-dnsname.png)
 
 1. On **SEA-ADM1**, start Microsoft Edge and paste the **DNS Name** in the `https://` format.
 
@@ -411,12 +450,14 @@ In this task, you will enable powershell remoting on an Azure VM.
    ```powershell
    Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-PUBLIC -RemoteAddress Any
    ```
+   ![](media/firewall-cmd.png)
 
 1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command, and then select **Run** to enable PowerShell Remoting:
 
    ```powershell
    Enable-PSRemoting -Force -SkipNetworkProfileCheck
    ```
+   ![](media/remoting-cmd.png)
 
 ### Task 3: Connect to an Azure VM by using the Windows Admin Center gateway running in Azure VM
 
@@ -442,7 +483,7 @@ In this task, you will connect to an Azure VM using WAC gateway running in Azure
 
    ![](media/lab4-12-21.png) 
 
-### Review
+### Summary 
 
 In this lab, you have completed:
 
@@ -452,3 +493,5 @@ In this lab, you have completed:
 - Verifying functionality of the Windows Admin Center gateway in Azure
 
  ## You have successfully completed this lab
+
+### Happy Learning!!

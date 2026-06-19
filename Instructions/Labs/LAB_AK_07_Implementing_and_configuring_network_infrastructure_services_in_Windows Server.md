@@ -18,9 +18,15 @@ In this lab, you will perform:
 
    ![](media/mod7art.png)  
 
-### Note 
+   The architecture diagram highlights the two lab components covered in this module:
 
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+   - **DHCP for Exercise 1**, which provides centralized IP address assignment and lease management for client devices.
+
+   - **DNS for Exercise 2**, which provides name resolution so users and services can locate network resources by name.
+
+
+
+> **Note**: While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Deploying and configuring DHCP
 
@@ -53,13 +59,17 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. In the left pane, select **Extensions (2)**. Review the available extensions.
 
-1. Select the **DHCP** and **DNS (3)** extensions, and then select **Install (4)** if not installed already. The extension will install and Windows Admin Center will refresh.
-
-    ![](media/lab7-12-1.png)
-
 1. In the details pane, select **Installed extensions (1)** and verify that the list includes the extensions you just installed **DHCP** and **DNS** **(2)**.
 
     ![](media/lab7-12-2.png)
+
+1. If not installed already. Search the **DHCP** and **DNS (2)** extensions under **Available extension (1)** tab, and then select **Install (3)**. The extension will install and Windows Admin Center will refresh.
+
+    ![](media/available-extensions.png)
+
+1. In the **Settings (1)** dropdown select **All connections (2)** option from the list.
+
+   ![](media/all-conn.png)
 
 1. In the All connections pane, select **+ Add (1)**.
 
@@ -73,7 +83,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    > **Note**: While performing step 6, if you see an error message stating, **"You can add this server to your list of connections, but we can't confirm it's available."**, select **Add**.  
 
-   - In the **All Connections** pane, select **sea-svr6.contoso.com** **(1)** and then click on **Manage as** **(2)**.  
+1. In the **All Connections** pane, select **sea-svr6.contoso.com** **(1)** and then click on **Manage as** **(2)**.  
    - In the **Specify your credentials** dialog box:  
      - Ensure that **Use another account for this connection** **(3)** is selected.  
      - Enter the Administrator credentials:  
@@ -87,6 +97,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. In **All connections** pane, select **sea-svr6.contoso.com (1)** and click on **Connect (2)**.
 
     ![](media/lab7-12-3.png)
+
+    > **Note**: If you get any **Connection error** please retry 2-3 times or start from **step-12**.
    
 1. On the **sea-svr6.contoso.com** page, in the **Tools** list, select **Roles & features (1)**. In the Roles and features pane, select the **DHCP Server (2)** checkbox, and then select **+ Install (3)**.
 
@@ -97,6 +109,10 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](media/lab7-178.png)
 
    > **Note**: Ignore the error message and Wait until the DHCP role state is changed to **Installed**.
+
+1. In the Roles and features page click on **Refresh (1)** and check the DHCP state changes to **Installed (2)**
+
+   ![](media/rf-dhcp-installed.png)
 
 1. Refresh the **Microsoft Edge** page back on the **sea-svr6.contoso.com** page, in the **Tools** list, select **DHCP (1)**, and then, in the details pane, select **Install (2)** to install the DHCP PowerShell tools. 
 
@@ -166,7 +182,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
     ![](media/lab7-1714.png)
 
-1. In the **DHCP** window, in the Actions pane, select **More Actions**, and then select **Add Server**.
+1. In the **DHCP** window, in the Actions pane, select **More Actions (1)**, and then select **Add Server (2)**.
 
     ![](media/AZ-800-l7-5.png)
 
@@ -215,7 +231,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    - Mode: **Hot standby (3)**
    - Role of Partner Server: **Standby (4)**
    - Addresses reserved for standby server: **5% (5)**
-   - State Switchover Interval: **Disabled**
+   - State Switchover Interval: **Disabled** (It should be unchecked)
    - Enable Message Authentication: **Enabled (6)**
    - Shared Secret: **DHCP-Failover (7)**
 
@@ -250,6 +266,9 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. On the **Specify the partner server to use for failover** screen, in the **Partner Server** box, enter **172.16.10.44 (1)**, select the **Reuse existing failover relationships configured with this server (if any exist) (2)** checkbox, and then select **Next (3)**.
 
     ![](media/AZ-800-l7-18.png)
+
+    >**Note** If you can't go to next step then click on **Cancel** and you will be in step -  12 again. There select **refresh (2)** option from **More actions (1)**. Then start from step - 12.
+    > ![](media/refresh.png)
 
 1. On the **Select from failover relationships which are already configured on this server** screen, select **Next**, and then select **Finish**.
 
@@ -297,13 +316,21 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select **Close (2)** to return to the **Ethernet Status** window.
 
-1. On **SEA-ADM1**, in the **DHCP** window, expand the **172.16.10.44** node, expand the **IPv4** node, expand the **Scope [172.16.0.0] Contoso** node, and then select **Address Leases**.
+1. On **SEA-ADM1**, in the **DHCP** window, expand the **172.16.10.44 (1)** node, expand the **IPv4 (2)** node, expand the **Scope [172.16.0.0] Contoso (3)** node, and then select **Address Leases (4)**.
+
+   ![](media/scope-1p.png)
+
+   >**Note** If you don't find **Scope [172.16.0.0] Contoso** then click **F5** option to refresh.
 
 1. Verify that there is an entry representing the **SEA-ADM1.contoso.com** lease.
 
-1. On **SEA-ADM1**, in the **DHCP** window, expand the **sea-dc1** node, expand the **IPv4** node, expand the **Scope [172.16.0.0] Contoso** node, and then select **Address Leases**.
+   ![](media/sea-adm1.png)
 
-1. Verify that here as well there is an entry representing the **SEA-ADM1.contoso.com** lease.
+1. On **SEA-ADM1**, in the **DHCP** window, expand the **sea-dc1 (1)** node, expand the **IPv4 (2)** node, expand the **Scope [172.16.0.0] Contoso (3)** node, and then select **Address Leases (5)**.
+
+   ![](media/sea-dc1.png)
+
+1. Verify that here as well there is an entry representing the **SEA-ADM1.contoso.com (5)** lease.
 
 1. Select **sea-svr6(172.16.10.44) (1)**, in the Actions pane, select **More Actions**, select **All tasks (2)**, and then select **Stop (3)**.
 
@@ -332,6 +359,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. Select **Close** to return to the **Ethernet Status** window.
 
 1. In the **Ethernet Status** window, select **Properties**.
+
+   ![](media/ethernet-properties.png)
 
 1. In the **Ethernet Properties** dialog box, select **Internet Protocol Version 4 (TCP/IPv4) (1)**, and then select **Properties (2)**.
 
@@ -369,7 +398,9 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    > **Note**: If the **DNS** entry is not available in the **Tools** list for **sea-svr6.contoso.com**, refresh the **Microsoft Edge** page and try again.
 
-1. Wait until a notification appears indicating that the DNS PowerShell tools are installed. If necessary, select the **Notifications** icon to verify the current status.
+1. Wait until a notification appears indicating that the DNS PowerShell tools are installed. If necessary, select the **Notifications (1)** icon to verify the **current status (2)**.
+
+   ![](media/dns-notification.png)
 
    >**Note**: If prompted **DNS powershell tools are  not installed** , click on **install**.
 
@@ -387,6 +418,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
      ![](media/AZ-800-l7-30.png)
 
+     > **Note**: If Error occurs just retry the step again. 
+
 1. Back in the DNS pane, select **TreyResearch.net (1)** then under **Record - TreyResearch.net**, select **+ Create a new DNS record (2)** (you need to scroll down).
 
 1. In the **Create a new DNS record** pane, specify the following settings, and then select **Create (7)**:
@@ -402,7 +435,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On **SEA-ADM1**, select **Start (1)**, and then select **Windows PowerShell (2)**.
 
-    ![](media/AZ-800-l7-32.png)
+    ![](media/win-shell.png)
 
 1. In the **Windows PowerShell** console, enter the following command, and then press Enter to validate that the new DNS record provides the name resolution:
 
@@ -437,6 +470,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
     ![](media/AZ-800-l7-36.png)
 
 1. In the **SEA-SVR6.contoso.com Properties** dialog box, select **OK**.
+
+    ![](media/save.png)
 
 ### Task 4: Configure conditional forwarding
 
@@ -512,7 +547,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    ![](media/lab7-12-10.png)
 
-1. On **SEA-ADM1**, switch back to the **Ethernet Status** window.
+1. On **SEA-ADM1**, switch back to the **Ethernet Status**.
 
 1. In the **Ethernet Status** window, select **Properties**.
 
@@ -551,7 +586,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Close all open windows.
 
-### Review
+### Summary
 In this lab, you have completed:
 - Install the DHCP role and authorize the DHCP server
 - Create a scope
@@ -561,3 +596,5 @@ In this lab, you have completed:
 - Configure DNS policies and verify DNS policy functionality
 
 ## You have successfully completed this lab.
+
+### Happy Learning!!

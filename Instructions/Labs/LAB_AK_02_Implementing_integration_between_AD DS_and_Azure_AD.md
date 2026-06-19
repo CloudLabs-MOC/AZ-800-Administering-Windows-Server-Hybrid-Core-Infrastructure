@@ -22,11 +22,9 @@ In this lab, you will perform:
 
 ## Architecture Diagram
 
-   ![](media/mod2art.png)  
+   ![](media/architect-diagram.png)  
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+> **Note**: While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Preparing Microsoft Entra ID for AD DS integration
 
@@ -92,6 +90,10 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
 
    ![](media/azz5.png)
 
+1. If you do not see the domain name, use the Refresh tab.
+
+   ![](media/lab02-E1-t1-refresh.png)
+
    > **Note**: While, in general, you would use DNS records to verify a domain, this lab doesn't require the use of a verified domain.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
@@ -105,7 +107,7 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
 
 In this task, you will create a new user account in Microsoft Entra ID and assign it the Global Administrator role. This user will be used to manage the integration and ensure you have sufficient permissions for the steps ahead.
 
-1. On **SEA-ADM1**, navigate back to the **Microsoft Entra ID** page in the Azure portal, from the left-hand navigation pane select **Users**.
+1. On **SEA-ADM1**, navigate back to the **Microsoft Entra ID** page in the Azure portal, from the left-hand navigation pane select **Users** under **Manage** dropdown.
 
     ![](media/azz22.png)
 
@@ -135,13 +137,15 @@ In this task, you will create a new user account in Microsoft Entra ID and assig
     
     ![](media/az-7.png)
 
-1. On the **Create new user** page, select **Review + create** and **Create**.
+1. On the **Create new user** page, make sure the **Global Administator** **(1)** is added  select **Review + create (2)** and **Create**.
 
-    ![](media/azz11.png)
+    ![](media/new-user-GA.png)
 
-1. Once created you can see the created user in the **Users** page.
+1. Once created you can see the created user **admin1 (1)** in the **Users** page and copy the **user principal name (2)** of that user if you missed from above steps.
 
-    ![](media/azz2.png)
+    ![](media/UPN.png)
+
+    >**Note** If you don't see the user click on **Refresh tab**.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -181,6 +185,8 @@ In this task, you will change the password for the newly created Global Administ
    >**Note**: Record the complex password you used as you'll use it later in this lab.
 
 1. If you see the pop-up **Action Required**, click **Ask Later**.
+
+1. If you see the pop-up **Lets keep your account safe** and then click **Next** option.
 
    >**Note** : Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
  
@@ -248,7 +254,9 @@ In this exercise, you will download, install, and configure Microsoft Entra Conn
 
 In this task, you will download, install, and configure Microsoft Entra Connect, which is the tool used to synchronize on-premises Active Directory with Microsoft Entra ID. You will connect both environments and configure sync options to enable the integration process.
 
-1. On **SEA-ADM1**, in the Microsoft Edge window displaying the Azure portal, browse to **Microsoft Entra ID**.
+1. On **SEA-ADM1**, in the Microsoft Edge window displaying the Azure portal, browse to **Microsoft Entra ID (1)** and select the **Microsoft Entra ID (2)**.
+
+   ![](media/entra-id.png)
 
 1. On the **Microsoft Entra ID** page, from the left-hand navigation pane, under the **Manage** select **Microsoft Entra Connect**.
 
@@ -313,9 +321,11 @@ In this exercise, you will verify the integration between AD DS and Microsoft En
 
 In this task, you will verify the synchronization status in the Azure portal, ensuring that users and groups from your on-premises AD DS are successfully synced with Microsoft Entra ID.
 
-1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal. 
+1. On **SEA-ADM1**, switch to the Azure portal on Microsoft Edge browser. 
 
-1. On the **Microsoft Entra ID** page, select **Users**.
+1. On the **Microsoft Entra ID** page, select **Users (2)** under **Manage (1)**.
+
+   ![](media/entra-user.png)
 
 1. Note that the user list includes users synced from Microsoft Entra ID.
 
@@ -425,7 +435,11 @@ In this task, you will verify the sync between On-premises and Entra ID
 
 1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and go back to the **Microsoft Entra ID** page.
 
-1. On the **Microsoft Entra ID** page, select **Users**.
+   ![](media/entra-id.png)
+
+1. On the **Microsoft Entra ID** page, select **Users (1)** under **Manage**.
+
+   ![](media/entra-user.png)
 
 1. On the **All Users (1)** page, search for the user **Sumesh (2)** and select **Sumesh (3)**.
 
@@ -441,7 +455,7 @@ In this task, you will verify the sync between On-premises and Entra ID
 
 1. In Microsoft Edge, go back to the **All Users** page.
 
-1. On the **All Users** page, search for the user **Jordan** and select it.
+1. On the **All Users** page, search for the user **Jordan Mitchell** and select it.
 
    ![](media/az-23.png)   
 
@@ -524,7 +538,11 @@ In this task, you will configure pass-through authentication (PTA) for seamless 
 
 1. On **SEA-ADM1**, on the **Start** menu, expand **Azure AD Connect**, and then select **Azure AD Connect**.
 
+   ![](media/az-25.png)   
+
 1. In the **Welcome to Microsoft Entra Connect Sync** window, select **Configure**.
+
+   ![](media/az-26.png)   
 
 1. On the **Additional tasks** page, select **Change user sign-in (1)**, then select **Next (2)**.
 
@@ -533,6 +551,9 @@ In this task, you will configure pass-through authentication (PTA) for seamless 
 1. On the **Connect to Microsoft Entra ID** page, enter the following credentials, and then select **Next**.
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+      ![](media/AZ-800-l3-25.png)      
+   
    
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
@@ -569,16 +590,20 @@ In this task, you will configure pass-through authentication (PTA) for seamless 
 
 In this task, you will verify that pass-through authentication has been successfully set up in your Azure environment. You will check the authentication settings in Microsoft Entra ID through the Azure portal, ensuring that the integration between on-premises AD DS and Microsoft Entra ID is functioning properly.
 
-1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and go back to the **Microsoft Entra ID** page.
+1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and go back to the **Microsoft Entra ID (1)** page select the **Microsoft Entra ID (2)**.
 
-1. On the **Microsoft Entra ID** page in the Azure portal, select **Microsoft Entra Connect**.
+   ![](media/entra-id.png)
+
+1. On the **Microsoft Entra ID** page in the Azure portal, select **Microsoft Entra Connect** under **Overview** page.
+
+   ![](media/entra-connect.png)
 
 1. On the **Microsoft Entra Connect** page, in left navigation pane select **Connect Sync (1)** and review the information under **User Sign-In**.
 Under **User Sign-In**, select **Seamless single sign-on (2)**.
 
    ![](media/az-40.png)
 
-1. On the **Seamless single sign-on** page, note the on-premises domain name.
+1. On the **Seamless single sign-on** page, note the on-premises domain name status marked green.
 
    ![](media/az-41.png)
 
@@ -656,7 +681,7 @@ In this task, you will install the Microsoft Entra ID Password Protection proxy 
 
    > **Note:** Verify that each service has the **Running** status.
 
-   >**Note:** If you encounter any error, please re run the command.
+   >**Note:** If you encounter any error, please re run the command 3-4 times.
 
 1. In the **Windows PowerShell** console, enter the following command and press Enter to start a PowerShell Remoting session to **SEA-SVR1**:
 
@@ -677,11 +702,15 @@ In this task, you will install the Microsoft Entra ID Password Protection proxy 
 
    ![](media/lab2-12-11.png)   
 
-   >**Note:** If you encounter any error, please re run the command.
+   >**Note:** If you encounter any error, please re run the command 2 - 3 times.
 
-1. As instructed, open another Microsoft Edge window, browse to **https://microsoft.com/devicelogin** and when prompted, enter the code included in the message displayed in the PowerShell Remoting session. 
+1. As instructed, open another Microsoft Edge window in **Private-browser**, browse to **https://microsoft.com/devicelogin** and when prompted, enter the code included in the message displayed in the PowerShell Remoting session. After click **Next** button.
 
    ![](media/lab2-12-12.png)
+
+1. On the **Pick an account** page, select **+ Use another account**.
+
+    ![](media/AZ-800-l3-2.png)
 
 1. When prompted, authenticate by using following credentials, and then select **Continue**.
 
@@ -712,7 +741,13 @@ In this task, you will install the Microsoft Entra ID Password Protection proxy 
    Register-AzureADPasswordProtectionForest -AccountUpn <Azure_AD_Global_Admin> -AuthenticateUsingDeviceCode
    ```
 
-1. As instructed, open another Microsoft Edge window, browse to **https://microsoft.com/devicelogin** and when prompted, enter the code included in the message displayed in the PowerShell Remoting session. 
+1. As instructed, open another Microsoft Edge window in **Private-browser**, browse to **https://microsoft.com/devicelogin** and when prompted, enter the code included in the message displayed in the PowerShell Remoting session. After click the **Next** button.
+
+   ![](media/lab2-12-12.png)
+
+1. On the **Pick an account** page, select **+ Use another account**.
+
+    ![](media/AZ-800-l3-2.png)
 
 1. When prompted, authenticate by using the following credentials, and then select **Continue**.
 
@@ -727,6 +762,7 @@ In this task, you will install the Microsoft Entra ID Password Protection proxy 
    ```powershell
    Exit-PSsession
    ```
+   ![](media/exit-cmd-sea-dc1.png)
 
 ### Task 5: Enable password protection in Azure
 
@@ -762,7 +798,8 @@ In this task, you will configure password protection settings in Microsoft Entra
      ![](media/az-56.png)
 
 
-### Review
+### Summary 
+
 In this lab, you have completed:
 - Preparing Microsoft Entra ID for AD DS integration
 - Preparing on-premises AD DS for Microsoft Entra ID integration
@@ -771,3 +808,5 @@ In this lab, you have completed:
 - Implementing Azure AD integration features in AD DS
 
 ## You have successfully completed this lab.
+
+### Happy Learning!!

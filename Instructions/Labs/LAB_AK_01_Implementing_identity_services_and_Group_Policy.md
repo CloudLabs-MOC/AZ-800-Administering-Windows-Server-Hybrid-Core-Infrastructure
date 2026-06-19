@@ -592,6 +592,7 @@ In this task, you will use the Group Policy Modeling Wizard to simulate the appl
 > **Results**: After this exercise, you should have successfully created and configured GPOs.
 
 ### Summary 
+
 In this lab, you have completed:
 - Deploy AD DS on a new Windows Server Core server.
 - Manage AD DS objects with GUI tools and with Windows PowerShell.

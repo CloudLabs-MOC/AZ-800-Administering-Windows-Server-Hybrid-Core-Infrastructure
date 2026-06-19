@@ -126,7 +126,9 @@ By following this workaround, you can ensure accurate execution of the PowerShel
 
 1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
        
-1. If prompted to stay signed in, you can click "No."
+1. If prompted to stay signed in, you can click **"No."**![
+    
+](entra-id.png)
  
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
 
