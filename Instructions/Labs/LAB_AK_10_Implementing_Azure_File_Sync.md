@@ -476,7 +476,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
    Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
    Invoke-StorageSyncCloudTiering -Path S:\Data 
    ```
-1. On **SEA-ADM1**, switch to the File Explorer window displaying the content of the **\\\\SEA-SVR2\\Data** folder.
+1. On **SEA-ADM1**, switch to the File Explorer window displaying the content of the `\\SEA-SVR2\Data` folder.
 
       ![](./media/AZ-800-l10-47.png)
 
@@ -492,7 +492,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 ### Task 1: Monitor File Sync replication
 
-1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **C:\\Windows\\INF** and **\\\\SEA-SVR2\Data\\** side-by-side. Drag the folder INF and paste/drop it in **\\\\SEA-SVR2\\Data\\** folder. The folder will sync to the cloud endpoint, which will cause sync traffic.
+1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **C:\\Windows\\INF** and `\\SEA-SVR2\Data\` side-by-side. Drag the folder INF and paste/drop it in `\\SEA-SVR2\Data\` folder. The folder will sync to the cloud endpoint, which will cause sync traffic.
 
     ![](./media/AZ-800-l10-50.png)
 
@@ -506,7 +506,7 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 1. Select the **Files Synced** graph, and then explore how you can customize the graph by using a filter.
 
-1. Switch to the File Explorer window displaying the content of drive **Z** mapped to the Azure File share and verify that the drive contains the content of the **INF** folder synchronized from **\\\\SEA-SVR2\\Data**.
+1. Switch to the File Explorer window displaying the content of drive **Z** mapped to the Azure File share and verify that the drive contains the content of the **INF** folder synchronized from `\\SEA-SVR2\Data`.
 
 1. Switch to the Azure portal displaying **Sync1** under **Monitoring (1)** section, select **status (2)** and verify that the **INF** sync traffic is reflected in the **Files Synced** and **Bytes Synced** graphs. The **INF** folder has more than 800 files, and its size is more than 40 MB.
 
@@ -516,11 +516,11 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 ### Task 2: Test replication conflict resolution
 
-1. On **SEA-ADM1**, position the File Explorer windows displaying the content of **\\\\SEA-SVR1\Data\\** and **\\\\SEA-SVR2\Data\\** side-by-side.
+1. On **SEA-ADM1**, position the File Explorer windows displaying the content of `\\SEA-SVR1\Data\` and `\\SEA-SVR2\Data\` side-by-side.
 
-1. In the File Explorer window displaying the content of **\\\\SEA-SVR2\Data\\**, create a file named **Demo.txt**. 
+1. In the File Explorer window displaying the content of `\\SEA-SVR2\Data\`, create a file named **Demo.txt**. 
 
-1. In the File Explorer window displaying the content of **\\\\SEA-SVR1\Data\\**, create a file named **Demo.txt**. 
+1. In the File Explorer window displaying the content of `\\SEA-SVR1\Data\`, create a file named **Demo.txt**. 
 
 1. Add an arbitrary text to the first **Demo.txt** file and save the change.
 
@@ -529,6 +529,8 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
    >**Note:** Make sure to save the change to the second file as soon as possible. You're creating files with the same name but different content to intentionally trigger a sync conflict.
 
 1. In each File Explorer window, review their content and verify what they contain, in addition to the **Demo.txt** file, also check for **Demo-SEA-SVR2.txt** (and potentially **Demo-Cloud.txt**). 
+
+    ![](./media/lab10-june26-t1p2.png)
 
    >**Note:** This is because File Sync detected a sync conflict and added a suffix representing the endpoint name (**SEA-SVR2**) or **Cloud** to the file that caused the conflict.
 

@@ -100,10 +100,6 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
     ![](media/AZ-800-g7.png)
 
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**
-
-    ![](media/AZ-800-g8.png)
-
  
 ## Support Contact
  

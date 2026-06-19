@@ -1,6 +1,5 @@
+# Lab 06: Deploying and configuring Windows Server on Azure VMs
 
-<<<<<<< HEAD
-=======
 ## Lab scenario
 
 You need to address concerns regarding your current infrastructure. You have an outdated operational model, a limited use of automation, and Information Security team concerns regarding additional controls that should be applied to Azure VMs running Windows Server-based workloads. You have decided to develop and implement an automated deployment and configuration process for Azure VMs running Windows Server.
@@ -37,7 +36,7 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 
 1. On the **HOSTVM dropdown menu (1)**, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1new.png)
+    ![](media/AZ-800-l1-1.png)
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 
@@ -54,12 +53,6 @@ In this task, you will connect to your Azure subscription and enable enhanced se
 1. In the **Enter password** dialog box, copy and paste **Password (1)**: <inject key="AzureAdUserPassword"></inject> and then select **Sign in (2)**.
 
    ![](media/lab6-12-2.png)
-
-1. If you see the pop-up **Action Required**, click **Ask Later**.
-
-   ![](media/action.png) 
-
-   >**Note:** Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
 
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
@@ -106,7 +99,7 @@ In this task, you will use the Azure portal to create resource groups and create
    |Public inbound ports|None **(12)**|
    |Would you like to use an existing Windows Server license|Off **(13)**|
 
->Note: While selecting the Image, **Go to See all images** select **Windows Server** and select the **Windows Server 2022 Datacenter: Azure Edition - x64 Gen2 (6)**
+   >Note: While selecting the Image, **Go to See all images** select **Windows Server** and select the **Windows Server 2022 Datacenter: Azure Edition - x64 Gen2 (6)**
 
    ![](media/AZ-800-l6-3.png)
 
@@ -240,7 +233,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. On **SEA-ADM1**, switch to the browser window displaying the Azure portal.
 
-1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search **Deploy a Custom Template** and select **Deploy a custom template (2)** from the results.
+1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search **Deploy a Custom Template (1)** and select **Deploy a custom template (2)** from the results.
 
    ![](media/AZ-800-l6-15.png)
 
@@ -327,7 +320,7 @@ In this task, you will use the Azure portal to create resource groups and create
 
 1. In the Azure portal, on the toolbar, in the **Search resources, services, and docs** text box, search for and select **Microsoft Defender for Cloud**.
 
-   ![](media/mdfc.png)
+    ![](media/mdfc.png)
 
 1. On the **Overview** page of Microsoft Defender for Cloud, on the vertical menu on the left side, in the **Management** section, select **Environment settings (1)**. 
 
@@ -531,4 +524,3 @@ In this lab, you have completed:
 
 ## You have successfully completed this lab.
 
->>>>>>> ebd00d9f0dc068fa734c4a24051900ae24df3584
