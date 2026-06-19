@@ -16,13 +16,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Access Your VM and Lab Guide](media/lab02-envtab.png)
+![Access Your VM and Lab Guide](media/env-tab.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Access Your VM and Lab Guide](media/lab02-splittab.png)
+![Access Your VM and Lab Guide](media/split-tab.png)
  
 ## Managing Your Virtual Machine
  
@@ -94,17 +94,9 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
       ![Enter Your Password](media/lab2-12-1.png)
 
-1. If **Action required** pop-up window appears, click on **Ask later**
-
-    ![](media/getting_started_ask_later_sc.png)
-
 1. If prompted to **Stay signed in**, you can click **No**
  
     ![](media/AZ-800-g7.png)
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**.
- 
-     ![](media/AZ-800-g8.png)
 
 ## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
 
