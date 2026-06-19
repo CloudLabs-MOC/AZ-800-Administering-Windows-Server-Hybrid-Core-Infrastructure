@@ -21,9 +21,8 @@ In this lab, you will perform:
 
    ![](media/mod5art.png)  
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+>Note :
+>While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Creating and configuring VMs
 In this exercise, you will install and configure the Hyper-V role on a Windows Server. You will ensure that the required hardware and software prerequisites are met and verify that Hyper-V is running correctly.
@@ -33,7 +32,7 @@ In this task, you will install the Hyper-V role on a Windows Server machine usin
 
 1. On the **HOSTVM dropdown menu (1)**, select **SEA-ADM1 (2)** to connect to the administrator VM.  
 
-    ![](media/AZ-800-l1-1.png)
+    ![](media/hostvm.png)
 
 1. On the **SEA-ADM1 login screen**, sign in as **CONTOSO\Administrator** with the password **Pa55w.rd**.  
 

@@ -26,9 +26,8 @@ Virtual machines: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-
 
 > **Note**: **AZ-800T00A-SEA-DC1**, **AZ-800T00A-SEA-SVR1**, **AZ-800T00A-SEA-SVR2**, and **AZ-800T00A-SEA-ADM1** virtual machines are hosting the installation of **SEA-DC1**, **SEA-SVR1**, **SEA-SVR2**, and **SEA-ADM1**, respectively.
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+>**Note**: 
+>While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Implementing Distributed File System (DFS) Replication in your on-premises environment
 
@@ -266,6 +265,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the **Storage Sync Services** page, select **FileSync1** under **Sync** section, select **Registered servers**, and verify that there are no currently registered servers.
 
+    ![](./media/new4.png)
+
     <validation step="f75e9fe1-a77f-4ece-b64e-f02e20b24fde" />
 
 ## Exercise 3: Replacing DFS Replication with File Sync-based replication
@@ -282,7 +283,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Select the checkbox next to the entry for File Sync agent for Windows Server 2025 (**StorageSyncAgent_WS2025.msi (1)**), and select **Next (2)** to start the download. After the download is complete, close the Microsoft Edge tab that opened for the download.
 
-    ![](./media/AZ-800-l10-33.png)
+    ![](./media/new3.png)
 
 1. Use File Explorer to copy the downloaded file to the **C:\Labfiles\AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure-master\Allfiles\Labfiles\Lab10** folder.
    

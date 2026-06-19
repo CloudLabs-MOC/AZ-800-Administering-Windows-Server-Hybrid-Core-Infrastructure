@@ -1,7 +1,8 @@
 # Getting Started with Your AZ-800: Administering Windows Server Hybrid Core Infrastructure Workshop
  
 Welcome to your AZ-800: Administering Windows Server Hybrid Core Infrastructure workshop! We've prepared a seamless environment for you to explore and learn about configuring and managing Windows Server on-premises, hybrid, and infrastructure as a service (IaaS) platform workloads. Let's begin by making the most of this experience:
- 
+
+
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
@@ -16,13 +17,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](media/lab02-envtab.png)
+![Explore Lab Resources](media/envtabnew.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Use the Split Window Feature](media/lab02-splittab.png)
+![Use the Split Window Feature](media/splitwindow.png)
  
 ## Managing Your Virtual Machine
  
