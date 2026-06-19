@@ -46,17 +46,9 @@ In this lab, you will perform:
 
       ![Enter Your Password](./media/lab2-12-1.png)  
 
-1. If **Action Required** pop-up window appears, click on **Ask later**.
-   
-   ![](media/action.png)
-
 1. On the **Stay signed in?** dialog box, select the Don’t show this again check box and then select **No**.
 
      ![](media/AZ-800-g7.png)
-
-1. On the **Welcome to Microsoft Azure** page, select **Cancel**.
-
-     ![](media/AZ-800-g8.png)
 
 1. In the Azure portal, open the **Cloud Shell (1)** pane by selecting the toolbar icon next to the search text box.
 
@@ -158,7 +150,7 @@ In this lab, you will perform:
     | Allow 'az800l08-vnet1' to access 'az800l08-vnet0' | **Select the checkbox (4)** |
     | Allow 'az800l08-vnet1' to receive forwarded traffic from 'az800l08-vnet0'| **Select the checkbox (5)** |
 
-    ![](images/lab08-p2t1p3.png)
+    ![](./media/lab08-p2t1p3.png)
 
 1. Specify the following settings for **Local virtual network** (leave others with their default values), and then select **Add (4)**:
 
@@ -168,7 +160,7 @@ In this lab, you will perform:
     | Allow 'az800l08-vnet0' to access 'az800l08-vnet1' | **Select the checkbox (2)** |
     | Allow 'az800l08-vnet0' to receive forwarded traffic from 'az800l08-vnet1'| **Select the checkbox (3)** |
     
-    ![](media/AZ-800-l8-9.png)
+     ![](media/AZ-800-l8-9.png)
 
      >**Note**: Wait for the operation to complete.
 
