@@ -17,13 +17,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](media/envtabnew.png)
+![Explore Lab Resources](media/lab02-envtab.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Use the Split Window Feature](media/splitwindow.png)
+![Use the Split Window Feature](media/lab02-splittab.png)
  
 ## Managing Your Virtual Machine
  
@@ -95,10 +95,13 @@ By following this workaround, you can ensure accurate execution of the PowerShel
  
       ![Enter Your Password](media/lab2-12-1.png)
 
-
 5. If prompted to **Stay signed in**, you can click **No.**
  
     ![](media/AZ-800-g7.png)
+
+6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**
+
+    ![](media/AZ-800-g8.png)
 
  
 ## Support Contact

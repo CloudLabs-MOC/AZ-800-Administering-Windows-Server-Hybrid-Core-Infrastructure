@@ -17,9 +17,7 @@ In this lab, you will perform:
 
    ![](media/mod1art.png)  
 
-### Note 
-
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.     
+> **Note:** While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.     
 
 ## Exercise 1: Deploying a new domain controller on Server Core
 
@@ -39,9 +37,13 @@ In this task, you will install the AD DS role on the SEA-SVR1 server using Power
 
      >**Note:** If copy-paste is not working, please type the password manually.
 
-1. On **SEA-ADM1**, right click **Start (1)**, and then select **Windows PowerShell (Admin) (2)**.
+1. On **SEA-ADM1**, In Search bar type **Windows PowerShell (1)** and select the **Windows Powershell (2)**.
 
-    ![](media/AZ-800-l1-3.png)
+    ![](media/lab01-windows-ps.png)
+
+1. Make sure you are in **SEA-ADM1** vm and windows powershell cmd prompt will appears . 
+
+   ![](media/lab01-cmd-prompt-sea-adm1.png)
 
 1. After copying the commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.    
 
@@ -50,14 +52,23 @@ In this task, you will install the AD DS role on the SEA-SVR1 server using Power
    ```powershell
    Install-WindowsFeature -Name AD-Domain-Services -ComputerName SEA-SVR1
    ```
+
+   ![](media/lab01-cmd-1-sea-adm1.png)
+
 1. To verify that the AD DS role is installed on **SEA-SVR1**, enter the following command, and then press Enter:
 	
    ```powershell
    Get-WindowsFeature -ComputerName SEA-SVR1
    ```
-1. In the output of the previous command, search for the **Active Directory Domain Services** checkbox, and then verify that it is selected. Then, search for **Remote Server Administration Tools**. Notice the **Role Administration Tools** node below it, and then verify that the **AD DS and AD LDS Tools** node is also selected.
+   ![](media/lab01-cmd-2-sea-adm1.png)
 
-   > **Note**: Under the **AD DS and AD LDS Tools** node, only **Active Directory module for Windows PowerShell** has been installed and not the graphical tools, such as the Active Directory Administrative Center. If you centrally manage your servers, you will not usually need these on each server. If you want to install them, you must specify the AD DS tools by running the **Add-WindowsFeature** cmdlet with the **RSAT-ADDS** command.
+1. In the output of the previous command, search for the **Active Directory Domain Services (2)** checkbox, and then verify that it is selected. Then,scroll down  for **Remote Server Administration Tools (3)** selected. Notice the **Role Administration Tools (4)** node below it, and then verify that the **AD DS and AD LDS Tools (4)** node is also selected.
+
+    ![](media/lab01-cmd-2-sea-adm1.png)
+
+    ![](media/lab01-cmd-2-2-sea-adm1.png)
+
+   > **Note**: Under the **AD DS and AD LDS Tools (4)** node, only **Active Directory module for Windows PowerShell** has been installed and not the graphical tools, such as the Active Directory Administrative Center. If you centrally manage your servers, you will not usually need these on each server. If you want to install them, you must specify the AD DS tools by running the **Add-WindowsFeature** cmdlet with the **RSAT-ADDS** command.
 
    > **Note**: You might need to wait a brief time after the installation process is complete before verifying that the AD DS role has installed. If you do not observe the expected results from the **Get-WindowsFeature** command, you can try again after a few minutes.
 
@@ -67,11 +78,37 @@ In this task, you will configure the SEA-SVR1 server to be promoted to a domain 
 
 1. On **SEA-ADM1**, in the **Start** menu, type **Server Manager (1)** in the search box, and then select **Server Manager (2)** from the results.  
 
-    ![](media/AZ-800-l1-4.png)
+   ![](media/AZ-800-l1-4.png)
 
-1. In **Server Manager**, select **All Servers (1)**. On the **Manage (2)** menu, select **Add Servers (3)**.  
+1. In **Server Manager**, select **All Servers (1)** and check the **SEA-SVR1 (2)** has IP, Online On the **Manage (3)** menu, select **Add Servers (4)**.  
 
-    ![](media/AZ-800-l1-5.png)
+   ![](media/servers-all.png)
+
+   > **Note**: If **SEA-SVR1** server has no **IP** and In **Managing area - Target computer not accessible**. Then follow the below steps to start the server. Otherwise if everything is good you can skip the below steps.
+
+   - Switch from **SEA-ADM1 (1)** vm to **HOSTVM (2)** from dropdown at top. 
+
+      ![](media/switch-host.png) 
+
+   - Search for **Hyper-V Manager (1)** in search bar in hostvm and select **Hyper-V Manager (2)**.
+
+      ![](media/Hyper-v-search.png)
+
+   - Select the **HostVM (1)** option under Hyper-V Manager. Under Virtual Machines check the **SEA-SVR1 (2)** right click and **Start (3)** the server which changes from **off state - Running**.
+
+      ![](media/start-the-server.png)
+
+      ![](media/state-running.png)
+
+   - Switch back to **SEA-ADM1 (2)** from **HOSTVM (1)**. 
+
+      ![](media/AZ-800-l1-1.png)
+
+   
+1. continue where you left. In **Server Manager**, select **All Servers (1)** and check the **SEA-SVR1 (2)** has IP, Online On the **Manage (3)** menu, select **Add Servers (4)**.  
+
+   ![](media/servers-all.png)
+
 
 1. In the **Add Servers** dialog box, maintain the default settings, and then select **Find Now (1)**.
 
@@ -79,9 +116,9 @@ In this task, you will configure the SEA-SVR1 server to be promoted to a domain 
 
     ![](media/AZ-800-l1-6.png)
 
-1. On **SEA-ADM1**, ensure that the installation of the **AD DS (1)** role on SEA-SRV1 is complete and that the server was added to **Server Manager**. Then select the **Notifications (2)** flag symbol.
+1. On **SEA-ADM1**, ensure that the installation of the **AD DS (1)** role on SEA-SRV1 is complete and that the server was added to **Server** list.  Then select the **Notifications (3)** flag symbol.
    
-   ![](media/lab01-p2t2p1.png)
+   ![](media/adds-notification.png)
 
 1. Note the post-deployment configuration of **SEA-SVR1**, and then select the **Promote this server to a domain controller** link.
    
@@ -123,16 +160,18 @@ In this task, you will configure the SEA-SVR1 server to be promoted to a domain 
 
 1. In Notepad, edit the generated Windows PowerShell script:
 
-   - Delete the comment lines that begin with the number sign (**#**).
-   - Remove the **Import-Module** line.
-   - Remove the grave accents (**`**) at the end of each line.
+   - Delete the comment lines that begin with the number sign (**#**) **(1)**.
+   - Remove the **Import-Module (2)** line.
+   - Remove the grave accents (**`**) **(3)** at the end of each line.
    - Remove the line breaks.
 
+     ![](media/script-notepad.png)
+
+   - After completing the preceding steps, the command is formed. This is used in next steps.
+   
      ![](media/lab1-12-2.png)
 
-1. Now the **Install-ADDSDomainController** command and all the parameters are on one line. Place the cursor in front of the line, and then, on the **Edit** menu, select **Select All** to select the whole line. On the menu, select **Edit**, and then select **Copy**.
-
-1. Minimize the **Notepad**.
+1. Then minimize the **Notepad**.
 
 1. Back to **Review Options** page, select **Cancel (1)** and when prompted for confirmation, select **Yes (2)** to cancel the wizard.
 
@@ -168,9 +207,9 @@ In this task, you will configure the SEA-SVR1 server to be promoted to a domain 
 
 1. Close Notepad without saving the file.
 
-1. After **SEA-SVR1** restarts, on **SEA-ADM1**, switch to **Server Manager**, and on the left side, select the **AD DS (1)** node. Note that **SEA-SVR1 (2)** has been added as a server and that the warning notification has disappeared.
+1. After **SEA-SVR1** restarts, on **SEA-ADM1**, switch to **Server Manager**, and on the left side, select the **AD DS (1)** node. Note that **SEA-SVR1 (2)** has been added as a server and that the **warning notification (3)** has disappeared.
 
-   ![](media/lab1f8.png)
+   ![](media/notification-gone.png)
 
    > **Note**: You might have to select **Refresh**.
 
@@ -187,16 +226,22 @@ In this task, you will create an Organizational Unit (OU) called Seattle, create
    ```powershell
    New-ADOrganizationalUnit -Name "Seattle" -Path "DC=contoso,DC=com" -ProtectedFromAccidentalDeletion $true -Server SEA-DC1.contoso.com
    ```
+   ![](media/t3-cmd1.png)
+
 1. To create a user account for **Ty Carlson** in the **Seattle** OU, enter the following command, and then press Enter:
 
    ```powershell
    New-ADUser -Name Ty -DisplayName 'Ty Carlson' -GivenName Ty -Surname Carlson -Path 'OU=Seattle,DC=contoso,DC=com'
    ```
+   ![](media/t3-cmd2.png)
+
 1. To set the password for the Ty's user account, enter the following command, and then press Enter:
 
    ```powershell
    Set-ADAccountPassword Ty
    ```
+   ![](media/t3-cmd3.png)
+
 1. When you receive a prompt for the **current password**, press **Enter**.
 
 1. When you receive a prompt for the **desired password**, enter **Pa55w.rd** and then press Enter.
@@ -210,16 +255,23 @@ In this task, you will create an Organizational Unit (OU) called Seattle, create
    ```powershell
    Enable-ADAccount Ty
    ```
-1. To create a domain global group named **SeattleBranchUsers**, enter the following command, and then press Enter:
+
+   ![](media/t3-cmd-enable.png)
+
+1. To create a domain global group named **SeattleBranchUsers**, enter the following command, and then press Enter and wait for 1 minute it creates group and no output will dispaly just continue with next command.
 
    ```powershell
    New-ADGroup SeattleBranchUsers -Path 'OU=Seattle,DC=contoso,DC=com' -GroupScope Global -GroupCategory Security
    ```
+   ![](media/t3-cmd-settle.png)
+
 1. To add the **Ty** user account to the newly created group, enter the following command, and then press Enter:
 
    ```powershell
    Add-ADGroupMember -Identity SeattleBranchUsers -Members Ty
    ```
+   ![](media/t3-cmd-ty.png)
+
 1. To confirm that the user is in the group, enter the following command, and then press Enter:
 
    ```powershell
@@ -237,7 +289,7 @@ In this task, you will create an Organizational Unit (OU) called Seattle, create
    > **Note**: This is necessary to allow sign in with the **CONTOSO\\Ty** user account to **SEA-ADM1**.
 
 
-> **Results**: After this exercise, you should have successfully created a new domain controller and managed objects in AD DS.
+   > **Results**: After this exercise, you should have successfully created a new domain controller and managed objects in AD DS.
 
 ## Exercise 2: Configuring Group Policy
 
@@ -253,7 +305,9 @@ In this task, you will create a new GPO named CONTOSO Standards, configure it to
 
 1. If necessary, switch to the **Group Policy Management** window.
 
-1. In the **Group Policy Management** console, in the navigation pane, expand **Forest:Contoso.com**, **Domains**, and **Contoso.com**, and then select the **Group Policy Objects** container.
+1. In the **Group Policy Management** console, in the navigation pane, expand **Forest:Contoso.com (1)**, **Domains**, and **Contoso.com (2)**, and then select the **Group Policy Objects (3)** container.
+
+   ![](media/group-policy-expand.png)
 
 1. In the navigation pane, right-click or access the context menu for the **Group Policy Objects** container, and then select **New**.
 
@@ -263,9 +317,9 @@ In this task, you will create a new GPO named CONTOSO Standards, configure it to
 
    ![](media/AZ-800-l1-13.png)
 
-1. In the details pane, right-click or access the context menu for the **CONTOSO Standards (1)** Group Policy Object (GPO), and then select **Edit (2)**.
+1. In the details pane, right-click or access the context menu for the **CONTOSO Standards (2)** from **Group Policy Object (GPO) (1)** left folder structure, and then select **Edit (3)**.
 
-   ![](media/AZ-800-l1-14.png)
+   ![](media/Group-contoso.png)
 
 1. In the **Group Policy Management Editor** window, in the navigation pane, expand **User Configuration (1)**, expand **Policies (2)**, expand **Administrative Templates (3)**, and then select **System (4)**.
 
@@ -287,7 +341,7 @@ In this task, you will create a new GPO named CONTOSO Standards, configure it to
 
    ![](media/AZ-800-l1-19.png)
 
-1. Double-click or select the **Password protect the screen saver** policy setting, and then press Enter.
+1. In that Personalization, Double-click or select the **Password protect the screen saver** policy setting, and then press Enter.
 
    ![](media/lab1f12.png)
 
@@ -337,6 +391,8 @@ In this task, you will review the applied Group Policy settings on a client mach
 
 1. On the login screen, select **Other user (1)**. Enter **CONTOSO\\Ty (2)** as the username and the provided password  **Pa55w.rd(3)**.  
 
+    > **Note** When signing out if it dispalys closing apps pop-up  then select **Sign out anyway** option.
+
     ![](media/AZ-800-l1-38.png)
 
    > **Note:** while logging into the Hyper-V virtual machines, if a message appears stating **"Press Ctrl+Alt+Delete to unlock"**, navigate to the **Actions** menu in the Virtual Machine Connection window and select the **Ctrl+Alt+Delete** option, as shown in the image below and you will find the Other User option to Sign in
@@ -367,13 +423,17 @@ In this task, you will review the applied Group Policy settings on a client mach
 
       ![](media/AZ-800-l1-42.png)
 
-      ![](media/AZ-800-l1-43.png)
-
 1. In the **Registry Editor** dialog box, select **OK**.
+
+   ![](media/AZ-800-l1-43.png)
 
 1. On the **Start menu (1)**, select the **Ty Carlson account (2)** and then click **Sign out (3)**.  
 
    ![](media/AZ-800-l1-44.png)
+
+    > **Note:** while logging into the Hyper-V virtual machines, if a message appears stating **"Press Ctrl+Alt+Delete to unlock"**, navigate to the **Actions** menu in the Virtual Machine Connection window and select the **Ctrl+Alt+Delete** option, as shown in the image below and you will find the Other User option to Sign in
+   
+    ![Manage Your Virtual Machine](media/lab1-12-9.png)
 
 1. On the login screen, sign back in as **CONTOSO\Administrator** with the password **Pa55w.rd**. 
 
@@ -393,7 +453,7 @@ In this task, you will create and link a Seattle Application Override Group Poli
 
    ![](media/lab1f18.png)
 
-1. In the **New GPO** dialog box, in the **Name** text box, enter **Seattle Application Override**, and then select **OK**.
+1. In the **New GPO** dialog box, in the **Name** text box, enter **Seattle Application Override (1)**, and then select **OK (2)**.
 
    ![](media/lab1f19.png)
 
@@ -417,11 +477,11 @@ In this task, you will create and link a Seattle Application Override Group Poli
 
 In this task, you will verify the order of precedence for Group Policy Objects (GPOs) in the Seattle OU. The Seattle Application Override GPO will have higher precedence over the CONTOSO Standards GPO, meaning that its settings, such as screen saver timeout, will overwrite the corresponding settings from the CONTOSO Standards GPO. By reviewing the Group Policy Inheritance tab, you will confirm how policies are applied and their impact on the Seattle OU.
 
-1. Back in the **Group Policy Management Console** tree, ensure that the **Seattle** OU is selected.
+1. Back in the **Group Policy Management Console (1)** tree, ensure that the **Seattle (2)** OU is selected.
 
-1. Select the **Group Policy Inheritance (1)** tab and review its content **(2)**.
+1. Select the **Group Policy Inheritance (3)** tab and review its content **Seattle Application Override (4)**.
 
-   ![](media/lab1f20.png)
+   ![](media/seattle-group-inheritence.png)
 
    > **Note**: The Seattle Application Override GPO has higher precedence than the CONTOSO Standards GPO. The screen saver time-out policy setting that you just configured in the Seattle Application Override GPO is applied after the setting in the CONTOSO Standards GPO. Therefore, the new setting will overwrite the CONTOSO Standards GPO setting. Screen saver time-out will be disabled for users within the scope of the Seattle Application Override GPO.
 
@@ -519,7 +579,9 @@ In this task, you will use the Group Policy Modeling Wizard to simulate the appl
 
     ![](media/AZ-800-l1-36.png)
 
-1. In the details pane, select the **Details** tab, and then select **show all**.
+1. In the details pane, select the **Details (2)** tab under **Ty on SEA-ADM1 (1)**, and then select **show all (3)**.
+
+   ![](media/details-page.png)
 
 1. In the report, scroll down until you locate the **User Details** section, and then locate the **Control Panel/Personalization** section. Note that the **Screen saver timeout** settings are disabled and the winning GPO is set to Seattle Application Override GPO.
 
@@ -529,7 +591,8 @@ In this task, you will use the Group Policy Modeling Wizard to simulate the appl
 
 > **Results**: After this exercise, you should have successfully created and configured GPOs.
 
-### Review
+### Summary 
+
 In this lab, you have completed:
 - Deploy AD DS on a new Windows Server Core server.
 - Manage AD DS objects with GUI tools and with Windows PowerShell.
@@ -538,3 +601,4 @@ In this lab, you have completed:
 
 ## You have successfully completed this lab.
 
+### Happy Learning!!
