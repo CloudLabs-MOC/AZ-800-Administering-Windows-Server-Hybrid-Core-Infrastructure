@@ -1,5 +1,7 @@
 # Lab 09: Implementing storage solutions in Windows Server
 
+## Estimated time: 90 Minutes
+
 ## Lab scenario
 
 At Contoso, Ltd., you need to implement the Storage Spaces feature on the Windows Server servers to simplify storage access and provide redundancy at the storage level. Management wants you to test Data Deduplication to save storage. They also want you to implement Internet Small Computer System Interface (iSCSI) storage to provide a simpler solution for deploying storage in the organization. Additionally, the organization is exploring options for making storage highly available and researching the requirements that it must meet for high availability. You want to test the feasibility of using highly available storage, specifically Storage Spaces Direct.
@@ -12,8 +14,6 @@ In this lab, you will perform:
 - **Exercise 2:** Configure iSCSI storage.
 - **Exercise 3:** Configure Storage Spaces.
 - **Exercise 4:** Implement Storage Spaces Direct.
-
-## Estimated time: 90 Minutes
 
 ## Architecture Diagram
 
@@ -49,13 +49,17 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    ![](media/AZ-800-l9-1.png)
 
+1. In the **Select Installation Type** pane click **Next**.
+
+   ![](media/installation.png)
+
 1. On the **Select destination server** page , in the Server Pool pane, select **SEA-SVR3.Contoso.com (1)**, and then select **Next (2)**.
 
    ![](media/srvr-selection01.png)
 
 1. On the **Select server roles** page, in the Roles pane, expand the **File and Storage Services** item, and then expand the **File and iSCSI Services** item, select the **Data Deduplication (1)** item, and then select **Next (2)**.
 
-   ![](media/srvr-roles01.png)
+   ![](media/file-storage.png)
 
 1. On the **Select features** page, select **Next**, and then in the **Confirm installation selections** page, select **Install**.
 
@@ -83,11 +87,13 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Switch to the **SEA-SVR3** console session, and then, if needed, sign in as **CONTOSO\Administrator** with a password of **Pa55w.rd**.
 
-    > **Note:** Minimize the current VM window, then select and start **SEA-SVR3** from the **labVM** desktop.
+   ![](media/sea-svr3-start.png)
 
-    >**Note:** If copy-paste is not working, please type the password manually.
+   > **Note:** Minimize the current VM window, then select and start **SEA-SVR3** from the **labVM** desktop.
 
-    ![](media/lab9k4.png)
+   >**Note:** If copy-paste is not working, please type the password manually.
+
+   ![](media/lab9k4.png)
 
 1. If presented with the **SConfig** menu, at **Enter number to select an option**, enter **15** and press Enter to exit to a **PowerShell** console session.
    
@@ -108,13 +114,18 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](media/AZ-800-l9-5.png)
 
    ### 3. Create a new partition using the entire disk space and assign a drive letter (M)  
+
    ```powershell
    New-Partition -DiskNumber 1 -UseMaximumSize -DriveLetter M
    ```	
+   ![](media/lab09-17-3.png)
+
    ### 4. Format the partition with the ReFS file system  
+
    ```powershell
    Format-Volume -DriveLetter M -FileSystem ReFS
    ```
+   ![](media/lab09-17-4.png)
 
 3. At the **Windows PowerShell** prompt, enter the following commands, and press Enter after each to copy from **SEA-ADM1** a script that creates sample files to be deduplicated, execute it, and identify the outcome:
 
@@ -123,10 +134,14 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ## PowerShell Commands for Drive Mapping and File Management
 
    ### 1. Map a network drive to `X:` pointing to `\\SEA-ADM1\Labfiles`
+
    ```powershell
    New-PSDrive -Name 'X' -PSProvider FileSystem -Root '\\SEA-ADM1\Labfiles'
    ```
+   ![](media/lab09-19-1.png)
+
    ### 2. Create a directory `M:\Data`
+
    ```powershell
    New-Item -Type Directory -Path 'M:\Data' -Force
    ```
@@ -140,9 +155,13 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ![](media/AZ-800-l9-7.png)
 
    ### 4. Execute the copied script
+
    ```powershell
    Start-Process -FilePath M:\Data\CreateLabFiles.cmd -PassThru
    ```
+   
+   ![](media/lab09-19-4.png)
+
    ### 5. Change the working directory to `M:\Data`
    ```powershell
    Set-Location -Path M:\Data
@@ -165,7 +184,23 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. Switch back to the console session to **SEA-ADM1**, and then, within the console session, switch to **Server Manager**.
 
-   > **Note:** Minimize the current VM window, then select **SEA-ADM1** from the taskbar.
+   > **Note:** Minimize the current VM window, then select **SEA-ADM1** from the taskbar and if vm is off please click on start.
+
+   - If you are unable to login to **SEA-ADM1** and it shows **press Ctrl+Alt+Delete to unlock (1)** then go to **Actions (2)** tab and select **Ctrl+Alt+Delete (3)** option.
+
+      ![](media/start-vm.png)
+
+   - If prompted to sign in as **CONTOSO\Administrator** then add passowrd - **Pa55w.rd** **(1)** and click arrow icon **->** **(2)** to Enter.
+
+      ![](media/sigin-user.png)
+
+   - You will be in **SEA-ADM1** **(1)** vm and click on **Maximize (2)** option to see the taskbar and windows icon at bottom to work.
+
+      ![](media/maximize.png)
+
+1. On **SEA-ADM1** window search the **Server Manager (1)** from search bar and select **Server Manager (2)**. 
+
+   ![](media/server-m-navigation.png)
 
 1. In the **Server Manager** tree pane, select **File and Storage Services**, and then select **Disks**.
 
@@ -179,23 +214,25 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. In the **Volume (M:\\) Deduplication Settings** window, in the **Data deduplication** drop-down list, select the **General purpose file server (1)** setting.
 
-   ![](media/AZ-800-l9-12.png)
+   - In the **Deduplicate files older than (in days):** text box, replace the default value of **3** with **0** **(2)**.
 
-1. In the **Deduplicate files older than (in days):** text box, replace the default value of **3** with **0** **(2)**.
+   - Select the **Set Deduplication Schedule (3)** button.
 
-1. Select the **Set Deduplication Schedule (3)** button.
+      ![](media/AZ-800-l9-12.png)
 
 1. In the **SEA-SVR3 Deduplication Schedule** window, select **Enable throughput optimization (1)**, and then select **OK (2)**.
 
    ![](media/enable-thrptopt01.png)
 
-1. Back in the **Volume (M:\\) Deduplication Settings** window, select **OK**.
+1. Back in the **Volume (M:\\) Deduplication Settings** window, select **OK** which closes the page and goes back to **Server Manager** keep it open and minimize it to use later.
 
    ![](media/AZ-800-l9-13.png)
 
 ### Task 3: Test Data Deduplication
 
-1. On **SEA-ADM1**, start Microsoft Edge, and then browse to `https://SEA-ADM1.contoso.com`.
+1. On **SEA-ADM1**, start Microsoft Edge, and then browse to `https://SEA-ADM1.contoso.com`. 
+
+   >**Note** If copy-paste doesn't work try to add it manually.
  
    >**Note**: If you get **NET::ERR_CERT_DATE_INVALID** error, select **Advanced (2)** on the Edge browser page, at the bottom of page select **Continue to sea-adm1-contoso.com (unsafe) (3)**.
 
@@ -208,7 +245,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
      ![](media/lab7-172.png)
 
-1. In the All connections pane, select **+ Add (1)**.
+1. Then you will be at **Windows Admin Centre (WAC)** page. In the All connections pane, select **+ Add (1)**.
 
    ![](media/lab7-173.png)
 
@@ -234,6 +271,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. In **All connections** pane, select **sea-svr3.contoso.com (1)**.
 
    ![](media/lab09-p2t1p1.png)
+
+   >**Note**: If you get any **Connection Error** retry connecting 2-3 times.
 
 1. On the **sea-svr3.contoso.com** page, in the **Tools** menu, select **PowerShell (2)**, and then, when prompted, sign in as the **CONTOSO\Administrator** user with **Pa55w.rd (3)** as its password.
 
@@ -274,9 +313,22 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
    ```powershell
    Get-DedupStatus –Volume M: | fl
+   ```
+
+   ![](media/cmd-1-wac.png)
+
+   ```powershell
    Get-DedupVolume –Volume M: |fl
+   ```
+
+   ![](media/cmd-2-wac.png)
+
+   ```powershell
    Get-DedupMetadata –Volume M: |fl
    ```
+
+   ![](media/cmd-3-wac.png)
+
 1. On **SEA-ADM1**, switch to the Disks pane in **Server Manager**, and then, in the **TASKS** menu in the upper right corner, select **Refresh**.
 
    ![](media/disk-refresh.png)
@@ -288,6 +340,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 1. In the **Volume (M:\\) Properties** window, review the values for **Deduplication rate** and **Deduplication savings**.
 
    ![](media/volume-proper.png)
+
+   > **Note**: If you doesn't find right values please refresh again and check.
 
 ## Exercise 2: Configuring iSCSI storage
 
@@ -409,6 +463,8 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
 
 1. On the **Enable Authentication** page, select **Next**.
 
+   ![](media/enabled-auth.png)
+
 1. On the **Confirm selections (1)** page, select **Create (2)**.
 
    ![](media/iscsi-create01.png)
@@ -424,15 +480,27 @@ using the following settings:
    - Name: **iSCSIDisk2**
    - Disk size: **5 GB**, **Dynamically Expanding**
    - iSCSI target: **iSCSIFarm**
-   - On **Assign ISCSI Target**: select **Existing ISCSI target**
+   - On **Assign ISCSI Target**: select **Existing ISCSI target (1)** and click **Next (2)**.
   
      ![](media/lab9k14.png)
+
+   - On **Confirm Selections** page: check the **details (1)** and click **create (2)**.
  
      ![](media/iscsi-create201.png)
+
+   - On **Results** page: click **close**.
+
+1. Now minimize the **SEA-ADM1** vm.
      
 1. Switch to the **SEA-DC1** console session, and then, if needed, sign in as **CONTOSO\Administrator** with a password of **Pa55w.rd**.
 
+   ![](media/sea-dc1-vm.png)
+
+   ![](media/signin-pass.png)
+
 1. If presented with the **SConfig** menu, at the **Enter number to select an option**, enter **15** and press Enter to exit to a **PowerShell** console session.
+
+   ![](media/sconfig.png)
 
 1. At the **Windows PowerShell** prompt, enter the following commands, and press Enter after each, to start the iSCSI Initiator service and display the iSCSI Initiator configuration:
 
@@ -440,6 +508,8 @@ using the following settings:
    Start-Service -Name MSiSCSI
    iscsicpl
    ```
+   
+   ![](media/iscsi-cmd.png)
 
    > **Note**: The **iscsicpl** command will open an **iSCSI Initiator Properties** window.
 
@@ -516,6 +586,7 @@ using the following settings:
    for ($num = 1;$num -le 4; $num++) {Clear-Disk -Number $num -RemoveData -RemoveOEM -ErrorAction SilentlyContinue}
    for ($num = 1;$num -le 4; $num++) {Set-Disk -Number $num -IsOffline $true}
    ```
+   ![](media/enter-y-loop.png)
 
    > **Note**: This is necessary in order to prepare for the next exercise.
 
@@ -548,6 +619,8 @@ using the following settings:
    ![](media/new-strpool01.png)
 
 1. In the **New Storage Pool Wizard**, on the **Before you begin** page, select **Next**.
+
+   ![](media/Before-begin.png)
 
 1. On the **Specify a storage pool name and subsystem** page, in the **Name** text box, enter **SP1 (1)**. In the **Description** text box, enter **Storage Pool 1 (2)**. In the **Select the group of available disks (also known as a primordial pool) that you want to use** listing, select the **SEA-SVR3 (3)** entry, and then select **Next (4)**.
 
@@ -601,11 +674,13 @@ using the following settings:
 
 1. On the **View results** page, **clear** the **Create a volume when this wizard closes** check box, and then select **Close**.
 
+   ![](media/results-uncheckbox.png)
+
 1. In **Server Manager**, in the navigation pane, ensure that the **Volumes (1)** entry is selected.
 
-1. In the **VOLUMES** area, select **TASKS (2)**, and then select **New Volume (3)**.
+   - In the **VOLUMES** area, select **TASKS (2)**, and then select **New Volume (3)**.
 
-    ![](media/AZ-800-l9-42.png)
+      ![](media/AZ-800-l9-42.png)
 
 1. In the **New Volume Wizard**, on the **Before you begin** page, select **Next**.
 
@@ -635,6 +710,11 @@ using the following settings:
 
 1. On **SEA-ADM1**, switch to the **Windows PowerShell** hosting PowerShell Remoting session to **SEA-SVR3**.
 
+   
+   ```powershell
+   Enter-PSSession -ComputerName SEA-SVR3
+   ```
+
 1. In the **Windows PowerShell** console, at the **[SEA-SVR3]** prompt, enter the following command and press Enter to enable all of the File and Printer Sharing rules of Windows Defender Firewall with Advanced Security:
 
    ```powershell
@@ -643,7 +723,9 @@ using the following settings:
 
 1. On **SEA-ADM1**, in the taskbar, select the **File Explorer** icon.
 
-1. In the **File Explorer** window, in the **Address bar**, enter **\\\\SEA-SVR3.contoso.com\\t$**.
+1. In the **File Explorer (1)** window, in the **Address bar**, enter **\\\\SEA-SVR3.contoso.com\\t$**. **(2)**
+
+   ![](media/file-explorer.png)
 
 1. In File Explorer, in the Details pane, display the context-sensitive menu, and then, in the menu, select **New Folder**. Replace the default name assigned to the new folder with **TestData**, and then press Enter.
 
@@ -651,7 +733,9 @@ using the following settings:
 
 1. In File Explorer, double-click the newly created **TestData** folder.
 
-1. In File Explorer, in the Details pane, display context-sensitive menu, and then, in the menu, select **New**, and then select **Text Document**. Replace the default name assigned to the new file with **TestDocument**, and then press Enter.
+1. In File Explorer, in the Details pane, display context-sensitive menu, and then, in the menu, select **New (1)**, and then select **Text Document (2)**. Replace the default name assigned to the new file with **TestDocument**, and then press Enter.
+
+   ![](media/text-document.png)
 
    ![](media/testdocument.png)
 
@@ -719,6 +803,7 @@ using the following settings:
    for ($num = 1;$num -le 4; $num++) {Clear-Disk -Number $num -RemoveData -RemoveOEM -ErrorAction SilentlyContinue}
    for ($num = 1;$num -le 4; $num++) {Set-Disk -Number $num -IsOffline $true}
    ```
+   ![](media/remove-disk-loop.png)
 
    > **Note**: This is necessary in order to prepare for the next exercise.
 
@@ -731,6 +816,20 @@ using the following settings:
 1. On **SEA-ADM1**, in **Server Manager**, in the console tree, select **All Servers**, and verify that **SEA-SVR1**, **SEA-SVR2**, and **SEA-SVR3** have the **Manageability** status of **Online – Performance counters not started (2)** before continuing.
 
    ![](media/AZ-800-l9-48.png)
+
+   > **Note**: If not Online-Performance counters not started. Then follow this below steps. 
+
+   - Go to **HOSTVM** and search and select **Hyper-V-Manager** and under **HOSTVM (1)** tab check the servers are **running (2)**. 
+
+      ![](media/hyper-v-manager-1.png)
+
+   - If not right-click on the **SEA-SVR2** server and select **start (2)** and same for required servers to test in lab.
+
+      ![](media/hyper-v-manager-start.png)
+
+   - Then check the state changes from off -> Running.
+
+      ![](media/hyper-v-manager-running.png)
 
 1. In **Server Manager**, in the navigation pane, select **File and Storage Services**, and then select **Disks (1)**.
 
@@ -759,6 +858,8 @@ using the following settings:
 1. Select **Implement-StorageSpacesDirect.ps1 (2)**, and then select **Open (3)**.
 
    ![](media/psfile-open01.png)
+
+   ![](media/win-script.png)
 
    > **Note**: The script is divided into numbered steps. There are eight steps, and each step has a number of commands. To execute an individual line, you can place the cursor anywhere within that line and press F8 or select the **Run Selection** in the toolbar of the **Windows PowerShell ISE** window. To execute multiple lines, select all of them in their entirety, and then use either F8 or the **Run Selection** toolbar icon. The sequence of steps is described in the instructions of this exercise. Ensure that each step completes before starting the next one.
 
@@ -796,13 +897,21 @@ using the following settings:
 
    ![](media/createcluster01.png)
 
+1. Then it creates a cluster. 
+
+   ![](media/cluster-connected.png)
+
 ### Task 3: Enable Storage Spaces Direct
 
 1. On **SEA-ADM1**, switch to the **Administrator: Windows PowerShell ISE** window, select the line in step 4 starting with **Invoke-Command**, and then press F8 to enable Storage Spaces Direct on the newly installed cluster.
 
+   ![](media/step-4-result.png)
+
    > **Note**: Wait until the step completes. This should take about 1 minute.
 
 1. In the **Administrator: Windows PowerShell ISE** window, select the line in step 5 starting with **Invoke-Command**, and then press F8 to create **S2DStoragePool**.
+
+   ![](media/step-5-result.png)
 
    > **Note**: Wait until the step completes. This should take less than 1 minute. In the output of the command, verify that the **FriendlyName** attribute has a value of **S2DStoragePool**.
 
@@ -826,6 +935,8 @@ using the following settings:
 
 1. In the **Administrator: Windows PowerShell ISE** window, select the line in step 7 starting with **Invoke-Command**, and then press F8 to create a File Server cluster role.
 
+   ![](media/step-7-result.png)
+
    > **Note**: Wait until the step completes. This should take less than 1 minute. 
 
 1. Verify that the output of the command includes the role definition, with the attribute **FriendlyName** set to **S2D-SOFS**. This validates that the command was successful.
@@ -837,6 +948,8 @@ using the following settings:
    ![](media/s2d-role01.png)
 
 1. In the **Administrator: Windows PowerShell ISE** window, select the three lines in step 8, starting with **Invoke-Command**, and then press F8 to create a file share.
+
+   ![](media/step-8-result.png)
 
    > **Note**: Wait until the step completes. This should take less than 1 minute. 
 
@@ -922,6 +1035,8 @@ using the following settings:
    > **Note**: It may take a few minutes for the alert to be automatically removed.
 
 1. Refresh the browser page displaying Windows Admin Center and verify that all servers are healthy.
+
+
 
 ## Summary
 

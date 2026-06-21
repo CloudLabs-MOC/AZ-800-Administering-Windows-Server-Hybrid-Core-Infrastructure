@@ -56,19 +56,9 @@ In this task, you will create a custom domain in Microsoft Entra ID (Azure AD) b
  
      ![Enter Your Password](./media/lab2-12-1.png)   
 
-1. If you see the pop-up **Action Required**, click **Ask Later**.
-
-   ![](media/action.png) 
-
-   >**Note**: Please follow the steps outlined on page 1 to set up MFA if the **Ask Later** option is not visible. Once MFA setup is complete, please enter the number displayed on the screen in the Authenticator app and proceed. 
-
 1. If prompted to **Stay signed in**, you can click **No**.
 
     ![](media/AZ-800-g7.png)
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-    ![](media/AZ-800-g8.png)
 
 1. On the Azure portal, from the **Search resources, Services, and docs(G+/)** blade, search for **Microsoft Entra ID (1)** and select **Microsoft Entra ID (2)** from the services.
 
@@ -433,7 +423,7 @@ In this task, you will Start the sync between On-premises and Entra ID.
 
 In this task, you will verify the sync between On-premises and Entra ID
 
-1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and go back to the **Microsoft Entra ID** page.
+1. On **SEA-ADM1**, switch to the Microsoft Edge window displaying the Azure portal and go back to the **Microsoft Entra ID (1)** page by typing in search bar as **Microsoft Entra ID (1)**.
 
    ![](media/entra-id.png)
 

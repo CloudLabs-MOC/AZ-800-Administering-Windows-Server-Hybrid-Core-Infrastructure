@@ -385,7 +385,7 @@ In this task, you will install windows admin center gateway in Azure.
 
    ![](media/lab4-12-15.png)
 
-1. Select **Install**, and when the installation is complete, ensure the **Start Windows Admin Center: `https://az800l04-vmwac:443`** box is selected, and select **Finish**.
+1. Select **Install**, and when the installation is complete, ensure the **Start Windows Admin Center: `https://az800l04-vmwac:443`** **(1)** box is selected, and select **Finish (2)**.
 
    >**Note:** The installation may take up to 5 minutes.
 
@@ -405,16 +405,17 @@ In this task, you will connect to the WAC gateway running in Azure VM.
 
    ![](media/copy-dnsname.png)
 
-1. On **SEA-ADM1**, start Microsoft Edge and paste the **DNS Name** in the `https://` format.
+1. On **SEA-ADM1**, start Microsoft Edge and paste the **DNS Name (1)** in the `https://` format.
 
-1. In Microsoft Edge window, disregard the message **Your connection isn't private**, select **Advanced**, and then select the link starting with the text **Continue to**.
+1. In Microsoft Edge window, disregard the message **Your connection isn't private**, select **Advanced (2)**, and then select the **link (3)** starting with the text **Continue to**.
 
    ![](media/lab4g30.png)  
 
 1. When prompted, in the **Sign in to access this site** dialog box, sign in with the below credentials
 
-    - **Username** - Student
-    - **Password** - Pa55w.rd1234
+    - **Username (1)** - Student
+    - **Password (2)** - Pa55w.rd1234
+    - Click on **Sign In (3)** option.
 
       ![](media/lab4g31.png)  
 
@@ -445,14 +446,14 @@ In this task, you will enable powershell remoting on an Azure VM.
    ```
    ![](media/lab4-12-19.png)
 
-1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command, and then select **Run** to open the Windows Remote Management inbound port:
+1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command **(1)**, and then select **Run (2)** to open the Windows Remote Management inbound port:
 
    ```powershell
    Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-PUBLIC -RemoteAddress Any
    ```
    ![](media/firewall-cmd.png)
 
-1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command, and then select **Run** to enable PowerShell Remoting:
+1. In the **PowerShell Script** section, replace the text you entered in the previous step with the following command **(1)**, and then select **Run (2)** to enable PowerShell Remoting:
 
    ```powershell
    Enable-PSRemoting -Force -SkipNetworkProfileCheck

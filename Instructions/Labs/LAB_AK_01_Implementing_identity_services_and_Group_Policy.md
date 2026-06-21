@@ -405,7 +405,7 @@ In this task, you will review the applied Group Policy settings on a client mach
 
     ![](media/AZ-800-l1-23.png)
 
-1. In the search box in Control Panel, enter **screen saver**, and then select **Change screen saver**. (It might take a few minutes for the option to display.)
+1. In the search box in Control Panel, enter **screen saver (1)**, and then select **Change screen saver (2)**. (It might take a few minutes for the option to display.)
 
     ![](media/lab1-12-10.png)
 
