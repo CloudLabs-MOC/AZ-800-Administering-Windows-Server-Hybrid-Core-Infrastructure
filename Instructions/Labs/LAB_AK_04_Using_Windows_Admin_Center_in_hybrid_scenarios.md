@@ -20,9 +20,14 @@ In this lab, you will perform:
 
   ![](media/mod4art.png)  
 
-### Note 
+   The diagram highlights the main components below:
 
-While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
+   - **Azure VMs running Windows Server:** The lab machines that will be provisioned and managed in Azure.
+   - **Azure Network Adapter:** The connectivity component used to extend the on-premises environment to Azure.
+   - **Windows Admin Center gateway in Azure:** The management gateway deployed to access and manage Azure-hosted resources.
+   - **Verification in Windows Admin Center:** The final check to confirm the gateway and Azure VM connectivity are working.
+
+>**Note** : While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Provisioning Azure VMs running Windows Server
 
@@ -132,9 +137,9 @@ In this exercise, you will implement hybrid connectivity using the Azure Network
 
 In this task, you will register Windows Admin center with Azure.
 
-1. On **SEA-ADM1**, start Microsoft Edge, and then browse to `https://SEA-ADM1.contoso.com`.
+1. On **SEA-ADM1**, start Microsoft Edge, and then browse to `https://SEA-ADM1.contoso.com`. **(1)**
 
-   >**Note:** If you get **NET::ERR_CERT_DATE_INVALID** error, select **Advanced** on the Edge browser page, at the bottom of page select **Continue to sea-adm1-contoso.com (unsafe)**. 
+   >**Note:** If you get **NET::ERR_CERT_DATE_INVALID** error, select **Advanced (2)** on the Edge browser page, at the bottom of page select **Continue to sea-adm1-contoso.com (unsafe) (3)**. 
 
     ![](media/lab7-171.png)
 
