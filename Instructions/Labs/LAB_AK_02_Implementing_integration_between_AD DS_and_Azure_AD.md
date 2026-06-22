@@ -24,6 +24,14 @@ In this lab, you will perform:
 
    ![](media/architect-diagram.png)  
 
+   The diagram highlights the main components below:
+
+   - **Microsoft Entra ID:** The cloud directory that stores users, groups, and the custom domain used in the lab.
+   - **Active Directory Domain Services (AD DS):** The on-premises directory used to manage users, computers, and policies.
+   - **Microsoft Entra Connect:** The sync tool that connects AD DS with Microsoft Entra ID.
+   - **Synchronization verification:** The checks used to confirm that users and groups are syncing between the two directories.
+   - **Security features:** Password protection, password writeback, and pass-through authentication to improve sign-in security.
+
 > **Note**: While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
 
 ## Exercise 1: Preparing Microsoft Entra ID for AD DS integration
@@ -526,7 +534,7 @@ In this task, you will configure password writeback in Microsoft Entra Connect t
 
 In this task, you will configure pass-through authentication (PTA) for seamless user sign-in between Microsoft Entra ID and your on-premises AD DS. PTA will ensure that user sign-ins are securely routed through your on-premises environment without the need for storing passwords in the cloud.
 
-1. On **SEA-ADM1**, on the **Start** menu, expand **Azure AD Connect**, and then select **Azure AD Connect**.
+1. On **SEA-ADM1**, on the **Start** menu, expand **Azure AD Connect (1)**, and then select **Azure AD Connect (2)**.
 
    ![](media/az-25.png)   
 

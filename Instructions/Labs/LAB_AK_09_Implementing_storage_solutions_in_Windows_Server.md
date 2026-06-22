@@ -19,6 +19,15 @@ In this lab, you will perform:
 
    ![](media/mod9art.png)  
 
+   The diagram highlights the main components below:
+
+   - **Data Deduplication:** A storage optimization feature that reduces duplicate data and saves disk space.
+   - **iSCSI storage:** A network-based storage solution used to present remote storage as local disks.
+   - **Storage Spaces:** A storage pooling and resiliency feature that combines disks into flexible virtual storage.
+   - **Storage Spaces Direct:** A hyper-converged storage platform that uses local disks across servers for highly available storage.
+
+   
+
 ### Note 
 
 While performing the lab, when pasting commands, please use **Shift + Insert** to paste them into the Command Prompt in the upcoming steps.
@@ -159,7 +168,7 @@ While performing the lab, when pasting commands, please use **Shift + Insert** t
    ```powershell
    Start-Process -FilePath M:\Data\CreateLabFiles.cmd -PassThru
    ```
-   
+
    ![](media/lab09-19-4.png)
 
    ### 5. Change the working directory to `M:\Data`
