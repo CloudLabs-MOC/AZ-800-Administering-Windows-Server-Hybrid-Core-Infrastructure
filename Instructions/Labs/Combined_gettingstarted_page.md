@@ -4,77 +4,78 @@ Welcome to your AZ-800: Administering Windows Server Hybrid Core Infrastructure 
 
 ## Overview
 
-In these hands-on labs, you will develop the skills required to build, deploy, monitor, and troubleshoot AI-powered cloud solutions on Microsoft Azure. Working as an Azure Developer, you will implement Azure compute and containerization patterns, build serverless APIs with Azure Functions, and integrate services using event-driven and message-based architectures such as Azure Service Bus and Event Grid. The labs also cover Azure data services that support AI workloads, including Azure Cosmos DB for NoSQL, Azure Database for PostgreSQL with pgvector, and Azure Managed Redis for caching, streaming, and vector search. By completing these labs, you will gain the practical experience needed to connect services, orchestrate AI workflows, and build secure, scalable, and observable AI-driven applications on Azure.
+In these hands-on labs, you will develop the skills required to plan, implement, and manage a hybrid Windows Server core infrastructure that spans an on-premises datacenter and Microsoft Azure. Working as a Windows Server hybrid administrator for Contoso, Ltd., you will deploy and manage Active Directory Domain Services (AD DS) and Group Policy, integrate your on-premises identity infrastructure with Microsoft Entra ID, and use Windows Admin Center to administer servers consistently both on-premises and in Azure. The labs also cover Hyper-V virtualization and Windows containers, deploying and securing Windows Server on Azure VMs with Resource Manager templates, core network infrastructure services such as DHCP and DNS, hybrid virtual networking with VNet peering and Azure DNS zones, and enterprise storage solutions including Data Deduplication, iSCSI, Storage Spaces, Storage Spaces Direct, and Azure File Sync. By completing these labs, you will gain the practical experience needed to deploy, secure, connect, and troubleshoot Windows Server workloads across hybrid on-premises and Azure environments.
 
 ## Objectives
 
 By the end of these labs, you will be able to:
 
-1. **Provision and configure Azure AI infrastructure:** Deploy and manage Azure AI resources, Azure Functions, Azure Container Apps, Azure Container Registry, and supporting Azure services required for AI-powered applications.
+1. **Implement identity services and Group Policy:** Deploy a new domain controller on Server Core, promote it remotely, manage AD DS objects, and create, link, and scope Group Policy Objects (GPOs) to enforce configuration standards.
 
-2. **Develop cloud-native AI applications:** Build serverless APIs, containerized applications, and backend services that integrate Azure AI capabilities using the Azure SDKs, REST APIs, and modern application development patterns.
+1. **Implement integration between AD DS and Microsoft Entra ID:** Prepare Microsoft Entra ID and on-premises AD DS for integration, install and configure Microsoft Entra Connect, verify directory synchronization, and implement Entra ID Password Protection, pass-through authentication, and self-service password reset (SSPR) with password writeback.
 
-3. **Implement event-driven and distributed architectures:** Design and integrate applications using Azure Service Bus, Azure Event Grid, and asynchronous messaging to enable scalable, loosely coupled AI workflows.
+1. **Manage Windows Server:** Install Windows Admin Center, add servers for remote administration, configure extensions, and administer servers remotely using Windows Admin Center and PowerShell remoting.
 
-4. **Work with AI-ready data platforms:** Store, retrieve, and manage structured, unstructured, and vectorized data using Azure Cosmos DB for NoSQL, Azure Database for PostgreSQL with pgvector, Azure Managed Redis, and Azure Storage.
+1. **Use Windows Admin Center in hybrid scenarios:** Provision Azure VMs running Windows Server using Resource Manager templates, implement hybrid connectivity with the Azure Network Adapter, and deploy and verify a Windows Admin Center gateway in Azure.
 
-5. **Build intelligent search and retrieval solutions:** Implement vector search, semantic retrieval, and Retrieval-Augmented Generation (RAG) scenarios by combining Azure AI Search with vector-enabled databases and AI models.
+1. **Implement and configure virtualization in Windows Server:** Create and configure Hyper-V virtual switches, virtual hard disks, and virtual machines, manage them through Windows Admin Center, and install and manage Windows Server containers using Docker.
 
-6. **Deploy and manage containerized workloads:** Build, publish, deploy, and maintain container images using Azure Container Registry, Azure Container Apps, and Azure Container Registry Tasks.
+1. **Implement and configure network infrastructure services in Windows Server:** Deploy and configure highly available DHCP with failover, and deploy and configure DNS, including zones, forwarding, conditional forwarding, and DNS policies.
 
-7. **Secure AI applications and cloud resources:** Configure authentication, authorization, secrets management, managed identities, and network security to protect applications and Azure resources.
+1. **Implement hybrid networking infrastructure:** Configure a hub-and-spoke virtual network topology in Azure with VNet peering and user-defined routes, and implement DNS name resolution using Azure private and public DNS zones.
 
-8. **Monitor, troubleshoot, and optimize applications:** Collect telemetry, diagnose failures, monitor application health, and improve the performance, scalability, and reliability of AI-powered cloud solutions using Azure monitoring and diagnostic tools.
+1. **Implement storage solutions in Windows Server:** Configure Data Deduplication, iSCSI storage, redundant Storage Spaces, and Storage Spaces Direct to provide efficient, resilient, and scalable storage.
 
-9. **Integrate Azure services into end-to-end AI workflows:** Connect compute, messaging, storage, databases, and AI services to build automated, scalable, and production-ready intelligent applications.
-
-10. **Apply cloud-native development best practices:** Build resilient, maintainable, and observable AI applications by following modern Azure development patterns, automation techniques, and operational best practices.
+1. **Implement Azure File Sync:** Replace on-premises DFS Replication with Azure File Sync, configure sync groups and server endpoints, enable cloud tiering, and monitor and troubleshoot replication conflicts.
 
 ## Pre-requisites
 
-- Experience with Azure development concepts.
-- Proficiency in a programming language such as C# or Python is recommended.
-- Familiarity with Azure compute, containerization, serverless development, event-driven architectures, data services, and REST APIs will help learners get the most from this course.
+- Experience administering Windows Server, including Active Directory Domain Services, DNS, DHCP, and Group Policy.
+- Familiarity with core networking concepts such as IP addressing, routing, and name resolution.
+- Basic knowledge of Microsoft Azure, including Azure VMs, Resource Manager templates, and virtual networking.
+- Familiarity with PowerShell for administering and automating Windows Server and Azure resources will help learners get the most from this course.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure's cloud-native services work together to build, deploy, integrate, and operate intelligent AI applications. Throughout these labs, you will provision compute resources, implement serverless and containerized workloads, connect applications using event-driven messaging, manage AI-ready data stores, and build secure, scalable, and observable AI-powered solutions.
+The lab architecture demonstrates how an on-premises Windows Server infrastructure integrates with Microsoft Azure to deliver a hybrid core infrastructure. Throughout these labs, you will work across domain controllers, member servers, and admin workstations on-premises (such as SEA-DC1, SEA-ADM1, and SEA-SVR1/2/3), extend identity and management to Microsoft Entra ID and Windows Admin Center, and provision, secure, and connect Windows Server workloads running as Azure VMs.
 
-1. **Azure AI Services and Azure OpenAI:** Provide the intelligence layer for AI-powered applications, enabling capabilities such as natural language processing, document understanding, embeddings, and generative AI experiences.
+1. **On-premises Active Directory Domain Services (AD DS):** Domain controllers and member/Server Core servers provide identity, authentication, and Group Policy-based configuration management for the Contoso.com domain.
 
-2. **Azure Compute Services:** Azure Functions, Azure Container Apps, and Azure Container Registry host and execute serverless APIs, containerized applications, and background processing workloads that power AI solutions.
+1. **Microsoft Entra ID:** Synchronizes with on-premises AD DS through Microsoft Entra Connect to provide hybrid identity, password protection, pass-through authentication, and self-service password reset.
 
-3. **Azure Messaging and Integration Services:** Azure Service Bus and Azure Event Grid enable reliable, asynchronous communication between distributed services, allowing applications to respond to events and orchestrate AI workflows.
+1. **Windows Admin Center:** Provides a single, browser-based management gateway for administering both on-premises servers and Azure VMs, including Hyper-V, containers, storage, and DNS/DHCP extensions.
 
-4. **Azure Data Services:** Azure Cosmos DB for NoSQL, Azure Database for PostgreSQL with pgvector, Azure Managed Redis, and Azure Storage provide persistent storage, vector search, caching, streaming, and document storage for AI-enabled applications.
+1. **Hyper-V and Containers:** Host virtual machines and Windows containers on-premises, enabling virtualization proof-of-concept scenarios and container-based application deployment with Docker.
 
-5. **Azure Developer Tools:** Azure Portal, Azure CLI, Visual Studio Code, Azure SDKs, and REST APIs are used to provision infrastructure, deploy applications, manage cloud resources, monitor workloads, and troubleshoot AI solutions throughout the labs.
+1. **Azure Virtual Networking:** Hub-and-spoke virtual networks connected through VNet peering and user-defined routes, with Azure private and public DNS zones providing hybrid and internet name resolution.
+
+1. **Network Infrastructure Services:** DHCP (with failover) and DNS (with zones, forwarding, conditional forwarding, and policies) provide core IP addressing and name resolution services for the Contoso environment.
+
+1. **Storage Infrastructure:** Data Deduplication, iSCSI storage, Storage Spaces, and Storage Spaces Direct deliver efficient, resilient, and scalable local and clustered storage.
+
+1. **Azure File Sync:** Synchronizes on-premises file shares (replacing DFS Replication) with Azure file shares, enabling multi-site collaboration and cloud tiering.
 
 ## Explanation of Components
 
-1. **Azure AI Services & Azure OpenAI:** Provide prebuilt and generative AI capabilities that enable applications to understand, generate, and process text, images, documents, and other content using REST APIs and Azure SDKs.
+1. **Active Directory Domain Services (AD DS) & Group Policy:** AD DS stores identity objects and handles authentication for a domain. Group Policy applies centralized configuration to users and computers through GPOs linked at the domain or OU level.
 
-2. **Azure Functions:** Executes event-driven, serverless code that processes requests, orchestrates AI workflows, and integrates Azure services without managing infrastructure.
+1. **Microsoft Entra Connect & Microsoft Entra ID:** Microsoft Entra ID is Microsoft's cloud identity service, and Microsoft Entra Connect syncs on-premises AD DS objects into it for a single hybrid identity.
 
-3. **Azure Container Apps:** Hosts containerized AI applications and APIs, providing scalable, managed execution for microservices and background processing workloads.
+1. **Windows Admin Center:** A browser-based management console for Windows Server that provides a unified interface for administering servers on-premises and in Azure.
 
-4. **Azure Container Registry (ACR):** Stores and manages container images used by Azure Container Apps and other Azure compute services, supporting secure image versioning and deployment.
+1. **Hyper-V:** Windows Server's native virtualization role, letting a host run multiple VMs using virtual switches and virtual hard disks.
 
-5. **Azure Service Bus:** Provides reliable message queues and publish/subscribe messaging that decouple application components and enable asynchronous communication between AI services.
+1. **Microsoft Defender for Cloud:** Defender for Cloud assesses security posture.
 
-6. **Azure Event Grid:** Delivers events from Azure resources and applications, allowing services to react automatically to changes and trigger downstream AI workflows.
+1. **DHCP & DNS:** DHCP automatically assigns IP addresses from a defined scope; DNS resolves hostnames to IP addresses using zones, forwarders, and policies.
 
-7. **Azure Cosmos DB for NoSQL:** Stores application data, conversation history, metadata, and other structured information using a globally distributed NoSQL database.
+1. **Azure Virtual Network Peering & Routing:** VNet peering connects two virtual networks for direct private communication; user-defined routes (UDRs) override default routing to send traffic through a specific next hop.
 
-8. **Azure Database for PostgreSQL with pgvector:** Stores relational data while enabling vector similarity search, supporting Retrieval-Augmented Generation (RAG) and semantic search scenarios.
+1. **Azure Private & Public DNS Zones:** A Private DNS zone resolves names only within linked virtual networks; a Public DNS zone hosts internet-facing records that resolve globally.
 
-9. **Azure Managed Redis:** Improves application performance through distributed caching, streaming, session management, and vector search capabilities.
+1. **Data Deduplication, iSCSI, Storage Spaces & Storage Spaces Direct (S2D):** Data Deduplication removes redundant data to save space; iSCSI shares block storage over the network; Storage Spaces pools disks into resilient volumes; S2D extends that pooling across a failover cluster.
 
-10. **Azure Storage:** Provides secure storage for documents, images, datasets, application assets, and other files processed by AI applications.
-
-11. **Azure SDKs & REST APIs:** Enable developers to integrate Azure services into applications, automate workflows, and interact programmatically with Azure resources.
-
-12. **Azure Portal & Azure CLI:** Provide graphical and command-line tools for provisioning resources, deploying applications, monitoring services, and managing Azure infrastructure throughout the labs.
+1. **Azure File Sync:** Synchronizes on-premises file shares with an Azure file share, keeping locations updated and optionally tiering cold files to Azure.
 
 ## Accessing Your Lab Environment
  
@@ -126,7 +127,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
 
-    ![Manage Your Virtual Machine](media/gext.png)
+    ![Manage Your Virtual Machine](media/timeextend.png)
 
     >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
 
