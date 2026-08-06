@@ -175,7 +175,7 @@ By following this workaround, you can ensure accurate execution of the PowerShel
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-   ![](../media/maybelater.png)
+   ![](./media/maybelater.png)
    
  
 ## Support Contact
